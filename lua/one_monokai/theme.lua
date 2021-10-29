@@ -91,15 +91,11 @@ theme.load_editor = function()
 		PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
 	}
 
-	--Set transparent background
-	if set.disable_background then
-		-- normal text and background color
-		editor.Normal = { fg = colors.fg, bg = colors.none }
-		editor.SignColumn = { fg = colors.fg, bg = colors.none }
-	else
-		-- normal text and background color
-		editor.Normal = { fg = colors.fg, bg = colors.bg }
-		editor.SignColumn = { fg = colors.fg, bg = colors.bg }
+	if set.one_monokai_no_bg then
+		editor.Normal = { fg = colors.white }
+		editor.SignColumn = { fg = colors.white }
+		editor.LineNr = { fg = colors.grey }
+		editor.CursorLineNr = { fg = colors.white }
 	end
 
 	return editor
@@ -187,6 +183,8 @@ theme.load_lang = function()
 		cssClassNameDot = { fg = colors.pink },
 		cssURL = { fg = colors.orange, style = "underline,italic" },
 	}
+
+	return lang
 end
 
 return theme

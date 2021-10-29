@@ -3,21 +3,13 @@ local util = {}
 local theme = require("one_monokai.theme")
 
 util.highlight = function(group, color)
-	local sp = color.sp and "guisp=" .. color.sp or ""
 	local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
 	local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
 	local style = color.style and "gui=" .. color.style or "gui=NONE"
 
-	local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
+	local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg
 
 	cmd(highlight)
-end
-
-function util.onColorScheme()
-	if set.colors_name ~= "one_monokai" then
-		cmd("autocmd! OneMonokai")
-		cmd("augroup! OneMonokai")
-	end
 end
 
 -- Load the theme
