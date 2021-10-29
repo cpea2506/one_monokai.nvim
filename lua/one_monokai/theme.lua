@@ -90,6 +90,18 @@ theme.load_editor = function()
 		PmenuSel = { fg = colors.white, bg = colors.black },
 		PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
 	}
+
+	--Set transparent background
+	if set.disable_background then
+		-- normal text and background color
+		editor.Normal = { fg = colors.fg, bg = colors.none }
+		editor.SignColumn = { fg = colors.fg, bg = colors.none }
+	else
+		-- normal text and background color
+		editor.Normal = { fg = colors.fg, bg = colors.bg }
+		editor.SignColumn = { fg = colors.fg, bg = colors.bg }
+	end
+
 	return editor
 end
 
