@@ -1,0 +1,180 @@
+local colors = require("one_monokai.colors")
+
+local theme = {}
+
+theme.load_syntax = function()
+	local syntax = {
+		Constant = { fg = colors.purple },
+		Number = { fg = colors.purple },
+		Float = { fg = colors.purple },
+		Boolean = { fg = colors.aqua },
+		Character = { fg = colors.yellow },
+		String = { fg = colors.yellow },
+
+		Type = { fg = colors.cyan },
+		Structure = { fg = colors.cyan },
+		StorageClass = { fg = colors.cyan },
+		Typedef = { fg = colors.cyan },
+
+		Identifier = { fg = colors.green },
+		Function = { fg = colors.green },
+
+		Statement = { fg = colors.pink },
+		Operator = { fg = colors.pink },
+		Label = { fg = colors.pink },
+		Keyword = { fg = colors.cyan },
+
+		PreProc = { fg = colors.green },
+		Include = { fg = colors.pink },
+		Define = { fg = colors.pink },
+		Macro = { fg = colors.green },
+		PreCondit = { fg = colors.green },
+
+		Special = { fg = colors.purple },
+		SpecialChar = { fg = colors.pink },
+		Delimiter = { fg = colors.pink },
+		SpecialComment = { fg = colors.cyan },
+		Tag = { fg = colors.pink },
+
+		Todo = { fg = colors.orange, style = "bold,italic" },
+		Comment = { fg = colors.warmgrey, style = "italic" },
+
+		Underlined = { fg = colors.green, style = "underline" },
+		Ignore = {},
+		Error = { fg = colors.red, bg = colors.darkred },
+	}
+
+	return syntax
+end
+
+theme.load_editor = function()
+	local editor = {
+		Normal = { fg = colors.white, bg = colors.black },
+		ColorColumn = { bg = colors.darkblack },
+		Cursor = { fg = colors.black, bg = colors.white },
+		CursorColumn = { bg = colors.lightblack2 },
+		CursorLine = { bg = colors.lightblack2 },
+		Nontext = { fg = colors.grey },
+		StatusLine = { fg = colors.lightgrey, bg = colors.darkerblack },
+		StatusLineNC = { fg = colors.lightgrey, bg = colors.darkblack },
+		Tabline = { fg = colors.white, bg = colors.darkblack, style = "reverse" },
+		Visual = { bg = colors.grey },
+		Search = { fg = colors.black, bg = colors.yellow },
+		MatchParen = { fg = colors.white, style = "bold,underline" },
+		Question = { fg = colors.yellow },
+		ModeMsg = { fg = colors.yellow },
+		MoreMsg = { fg = colors.yellow },
+		ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
+		WarningMsg = { fg = colors.red },
+		VertSplit = { fg = colors.darkerblack, bg = colors.black },
+		LineNr = { fg = colors.grey, bg = colors.black },
+		CursorLineNr = { fg = colors.white, bg = colors.black },
+		SignColumn = { bg = colors.black },
+
+		SpecialKey = { fg = colors.pink },
+		Title = { fg = colors.yellow },
+		Directory = { fg = colors.aqua },
+
+		-- diff
+		DiffAdd = { fg = colors.addfg, bg = colors.addbg },
+		DiffDelete = { fg = colors.black, bg = colors.delbg },
+		DiffChange = { fg = colors.changefg, bg = colors.changebg },
+		DiffText = { fg = colors.black, bg = colors.cyan },
+
+		-- fold
+		Folded = { fg = colors.warmgrey, bg = colors.darkblack },
+		FoldColumn = { bg = colors.darkblack },
+
+		-- popup menu
+		Pmenu = { fg = colors.white, bg = colors.darkblack },
+		PmenuSel = { fg = colors.white, bg = colors.black },
+		PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
+	}
+	return editor
+end
+
+theme.load_plugins = function()
+	local plugins = {
+		-- dashboard
+		DashboardHeader = { fg = colors.cyan },
+		DashboardCenter = { fg = colors.yellow },
+		DashboardFooter = { fg = colors.aqua },
+
+		-- NvimTree
+		NvimTreeFolderIcon = { fg = colors.yellow },
+		NvimTreeGitStaged = { fg = colors.green },
+		NvimTreeGitDirty = { fg = colors.pink },
+	}
+
+	return plugins
+end
+
+theme.load_lang = function()
+	local lang = {
+		-- java
+		jpropertiesIdentifier = { fg = colors.pink },
+
+		-- vim
+		vimCommand = { fg = colors.pink },
+
+		-- javascript
+		jsFuncName = { fg = colors.green },
+		jsThis = { fg = colors.pink },
+		jsFunctionKey = { fg = colors.green },
+		jsPrototype = { fg = colors.cyan },
+		jsExceptions = { fg = colors.cyan },
+		jsFutureKeys = { fg = colors.cyan },
+		jsBuiltins = { fg = colors.cyan },
+		jsArgsObj = { fg = colors.cyan },
+		jsStatic = { fg = colors.cyan },
+		jsSuper = { fg = colors.cyan },
+		jsFuncArgRest = { fg = colors.purple, sytle = "italic" },
+		jsFuncArgs = { fg = colors.orange, style = "italic" },
+		jsStorageClass = { fg = colors.cyan },
+		jsDocTags = { fg = colors.cyan, sytle = "italic" },
+
+		-- Typescript
+		typescriptArrowFuncArg = { fg = colors.orange, style = "italic" },
+		typescriptFuncType = { fg = colors.orange, style = "italic" },
+		typescriptCall = { fg = colors.orange, style = "italic" },
+		typescriptVariable = { fg = colors.cyan },
+		typescriptModule = { fg = colors.cyan },
+		typescriptPredefinedType = { fg = colors.cyan },
+		typescriptFuncTypeArrow = { fg = colors.cyan },
+		typescriptImport = { fg = colors.pink },
+		typescriptExport = { fg = colors.pink },
+		typescriptCastKeyword = { fg = colors.pink },
+		typescriptOperator = { fg = colors.pink },
+		typescriptEndColons = { fg = colors.white },
+		typescriptObjectLabel = { fg = colors.green },
+		typescriptAmbientDeclaration = { fg = colors.pink },
+
+		-- Html
+		htmlTag = { fg = colors.white },
+		htmlEndTag = { fg = colors.white },
+		htmlTagName = { fg = colors.pink },
+		htmlArg = { fg = colors.green },
+		htmlSpecialChar = { fg = colors.purple },
+
+		-- Xml
+		xmlTag = { fg = colors.pink },
+		xmlEndTag = { fg = colors.pink },
+		xmlTagName = { fg = colors.orange },
+		xmlAttrib = { fg = colors.green },
+
+		-- CSS
+		cssProp = { fg = colors.yellow },
+		cssUIAttr = { fg = colors.yellow },
+		cssFunctionName = { fg = colors.cyan },
+		cssColor = { fg = colors.purple },
+		cssPseudoClassId = { fg = colors.purple },
+		cssClassName = { fg = colors.green },
+		cssValueLength = { fg = colors.purple },
+		cssCommonAttr = { fg = colors.pink },
+		cssBraces = { fg = colors.white },
+		cssClassNameDot = { fg = colors.pink },
+		cssURL = { fg = colors.orange, style = "underline,italic" },
+	}
+end
+
+return theme
