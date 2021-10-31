@@ -22,7 +22,7 @@ Plug 'cpea2506/one_monokai.nvim'
 ```
 
 #### Note: 
-If you need better syntax highlighting, try this with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 😇
+You may need [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting 😇
 
 ## Configuration
 
@@ -34,7 +34,7 @@ Add these to your `init.vim`
 ```
 
 ### Option:
-- `one_monokai_no_bg`: Set to enable transparent background.
+- `one_monokai_no_bg`: enable transparent background.
 
 #### Default
 ```lua
