@@ -4,7 +4,7 @@ local theme = {}
 
 theme.load_syntax = function()
 	local syntax = {
-		Constant = { fg = colors.purple },
+		Constant = { fg = colors.aqua },
 		Number = { fg = colors.purple },
 		Float = { fg = colors.purple },
 		Boolean = { fg = colors.aqua },
@@ -157,12 +157,30 @@ theme.load_lang = function()
 		typescriptObjectLabel = { fg = colors.green },
 		typescriptAmbientDeclaration = { fg = colors.pink },
 
+		typescriptTSVariable = { fg = colors.aqua },
+		typescriptTSVariableBuiltin = { fg = colors.aqua },
+		typescriptTSProperty = { fg = colors.aqua },
+		typescriptTSNamespace = { fg = colors.aqua },
+
+		-- tsx
+		tsxTSConstructor = { fg = colors.aqua },
+		tsxTSKeyWordReturn = { fg = colors.pink },
+		tsxTSType = { fg = colors.aqua },
+		tsxTSVariableBuiltin = { fg = colors.aqua },
+		tsxTSParameter = { fg = colors.orange, style = "italic" },
+
 		-- Html
 		htmlTag = { fg = colors.white },
 		htmlEndTag = { fg = colors.white },
 		htmlTagName = { fg = colors.pink },
 		htmlArg = { fg = colors.green },
 		htmlSpecialChar = { fg = colors.purple },
+
+		-- dockerfile
+		dockerfileTSKeyWord = { fg = colors.pink },
+
+		-- bash
+		bashTSParameter = { fg = colors.orange, style = "italic" },
 
 		-- Xml
 		xmlTag = { fg = colors.pink },
