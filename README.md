@@ -21,6 +21,9 @@ use 'cpea2506/one_monokai.nvim'
 Plug 'cpea2506/one_monokai.nvim'
 ```
 
+#### Note: 
+If you need better syntax highlighting, try this with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 😇
+
 ## Configuration
 
 Add these to your `init.vim`
