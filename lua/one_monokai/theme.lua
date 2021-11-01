@@ -157,10 +157,11 @@ theme.load_lang = function()
 		typescriptObjectLabel = { fg = colors.green },
 		typescriptAmbientDeclaration = { fg = colors.pink },
 
-		typescriptTSVariable = { fg = colors.aqua },
 		typescriptTSVariableBuiltin = { fg = colors.aqua },
-		typescriptTSProperty = { fg = colors.aqua },
 		typescriptTSNamespace = { fg = colors.aqua },
+		typescriptTSConstructor = { fg = colors.aqua },
+		typescriptTSParameter = { fg = colors.orange, style = "italic" },
+		typescriptTSKeywordReturn = { fg = colors.pink },
 
 		-- tsx
 		tsxTSConstructor = { fg = colors.aqua },
