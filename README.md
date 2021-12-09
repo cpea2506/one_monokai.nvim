@@ -47,9 +47,9 @@ let g:one_monokai_no_bg = 1
 ```
 
 ## Inspiration
-This is the best theme I've ever seen in my eyes. I tried it written in Vim for a long time and found it's not so easy to understand and config. So I decided to write it in Lua for compatibility with Neovim.
+This is the best theme I've ever seen in my eyes. I tried it written in Vim for a long time and found it's not so easy to configuration. So I decided to write it in Lua for compatibility with Neovim.
 
-Thank for these talented and amazing people:
+Thanks for these talented and amazing people:
 
 - [one-monokai-vim](https://github.com/fratajczak/one-monokai-vim)
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
