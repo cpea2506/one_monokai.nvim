@@ -1,6 +1,6 @@
 # One Monokai Nvim
 ## About
-Vscode One Monokai theme written in lua for Neovim.
+Vscode One Monokai theme written in Lua for Neovim.
 
 <img width="1680" alt="One monokai look" src="https://user-images.githubusercontent.com/42694704/139383485-ae0be75e-225f-468a-9ce3-ba8cad20ff4c.png">
 
