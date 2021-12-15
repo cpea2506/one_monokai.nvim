@@ -39,11 +39,11 @@ Add these to your `init.vim`
 #### Default
 ```lua
 -- init.lua
-vim.g.one_monokai_no_bg = true
+vim.g.one_monokai_no_bg = false
 ```
 ```vim
 " init.vim
-let g:one_monokai_no_bg = 1
+let g:one_monokai_no_bg = 0
 ```
 
 ## Inspiration
