@@ -97,15 +97,14 @@ theme.load_editor = function()
 		editor.LineNr = { fg = colors.grey }
 		editor.CursorLineNr = { fg = colors.white }
 	end
-
 	return editor
 end
 
 theme.load_plugins = function()
 	local plugins = {
 		-- dashboard
-		DashboardHeader = { fg = colors.cyan },
-		DashboardCenter = { fg = colors.yellow },
+		DashboardHeader = { fg = colors.peanut },
+		DashboardCenter = { fg = colors.roman },
 		DashboardFooter = { fg = colors.aqua },
 
 		-- NvimTree
@@ -170,7 +169,7 @@ theme.load_lang = function()
 		tsxTSVariableBuiltin = { fg = colors.aqua },
 		tsxTSParameter = { fg = colors.orange, style = "italic" },
 
-		-- Html
+		-- html
 		htmlTag = { fg = colors.white },
 		htmlEndTag = { fg = colors.white },
 		htmlTagName = { fg = colors.pink },
@@ -189,7 +188,7 @@ theme.load_lang = function()
 		xmlTagName = { fg = colors.orange },
 		xmlAttrib = { fg = colors.green },
 
-		-- CSS
+		-- css
 		cssProp = { fg = colors.yellow },
 		cssUIAttr = { fg = colors.yellow },
 		cssFunctionName = { fg = colors.cyan },
@@ -201,8 +200,23 @@ theme.load_lang = function()
 		cssBraces = { fg = colors.white },
 		cssClassNameDot = { fg = colors.pink },
 		cssURL = { fg = colors.orange, style = "underline,italic" },
-	}
 
+		-- nvim-cmp
+		CmpItemAbbrDeprecated = { fg = colors.lightgrey, style = "strikethrough" },
+		CmpItemAbbrMatch = { fg = colors.aqua },
+
+		CmpItemKindClass = { fg = colors.yellow },
+		CmpItemKindModule = { fg = colors.yellow },
+		CmpItemKindInterface = { fg = colors.yellow },
+		CmpItemKindVariable = { fg = colors.cyan },
+		CmpItemKindConstant = { fg = colors.cyan },
+		CmpItemKindText = { fg = colors.milk },
+		CmpItemKindUnit = { fg = colors.milk },
+		CmpItemKindMethod = { fg = colors.pink },
+		CmpItemKindFunction = { fg = colors.green },
+		CmpItemKindKeyword = { fg = colors.lightgrey },
+		CmpItemKindProperty = { fg = colors.lightgrey },
+	}
 	return lang
 end
 
