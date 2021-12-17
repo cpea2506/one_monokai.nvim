@@ -9,7 +9,6 @@ local colors = {
 	lightgrey = "#9ca3b2",
 	darkgrey = "#64645e",
 	warmgrey = "#676e7b",
-	milk = "#d4d4d4",
 
 	pink = "#e06c75",
 	roman = "#ee6f73",
