@@ -87,7 +87,7 @@ theme.load_editor = function()
 
 		-- popup menu
 		Pmenu = { fg = colors.white, bg = colors.darkblack },
-		PmenuSel = { fg = colors.white, bg = colors.black },
+		PmenuSel = { fg = colors.black, bg = colors.pink },
 		PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
 	}
 
@@ -115,18 +115,45 @@ theme.load_plugins = function()
 		-- nvim-cmp
 		CmpItemAbbrDeprecated = { fg = colors.lightgrey, style = "strikethrough" },
 		CmpItemAbbrMatch = { fg = colors.aqua },
-
 		CmpItemKindStruct = { fg = colors.pink },
 		CmpItemKindEnum = { fg = colors.pink },
-		CmpItemKindMethod = { fg = colors.pink },
-		CmpItemKindValue = { fg = colors.aqua },
+		CmpItemKindClass = { fg = colors.pink },
+		CmpItemKindInterface = { fg = colors.pink },
+		CmpItemKindValue = { fg = colors.changefg },
+		CmpItemKindKeyword = { fg = colors.changefg },
+		CmpItemKindText = { fg = colors.changefg },
+		CmpItemKindProperty = { fg = colors.yellow },
+		CmpItemKindMethod = { fg = colors.yellow },
 		CmpItemKindField = { fg = colors.yellow },
-		CmpItemKindClass = { fg = colors.yellow },
 		CmpItemKindModule = { fg = colors.yellow },
-		CmpItemKindInterface = { fg = colors.yellow },
+		CompItemKindEnumMember = { fg = colors.yellow },
 		CmpItemKindVariable = { fg = colors.cyan },
 		CmpItemKindConstant = { fg = colors.cyan },
 		CmpItemKindFunction = { fg = colors.green },
+
+		-- indent blankline
+		IndentBlanklineIndent1 = { fg = colors.pink, style = "nocombine" },
+		IndentBlanklineIndent2 = { fg = colors.yellow, style = "nocombine" },
+		IndentBlanklineIndent3 = { fg = colors.green, style = "nocombine" },
+		IndentBlanklineIndent4 = { fg = colors.cyan, style = "nocombine" },
+		IndentBlanklineIndent5 = { fg = colors.aqua, style = "nocombine" },
+		IndentBlanklineIndent6 = { fg = colors.purple, style = "nocombine" },
+
+		-- crate
+		CratesNvimNoMatch = { fg = colors.pink, style = "nocombine" },
+		CratesNvimError = { fg = colors.delbg, style = "nocombine" },
+		CratesNvimUpgrade = { fg = colors.yellow, style = "nocombine" },
+		CratesNvimVersion = { fg = colors.green, style = "nocombine" },
+		CratesNvimPreRelease = { fg = colors.cyan, style = "nocombine" },
+		CratesNvimYanked = { fg = colors.delbg, style = "nocombine" },
+		CratesNvimLoading = { fg = colors.purple, style = "nocombine" },
+		CratesNvimPopupTitle = { fg = colors.pink, style = "nocombine" },
+		CratesNvimPopupVersion = { fg = colors.green, style = "nocombine" },
+		CratesNvimPopupPreRelease = { fg = colors.cyan, style = "nocombine" },
+		CratesNvimPopupYanked = { fg = colors.alizarin, style = "nocombine" },
+		CratesNvimPopupFeature = { fg = colors.aqua, style = "nocombine" },
+		CratesNvimPopupEnabled = { fg = colors.green, style = "nocombine" },
+		CratesNvimPopupTransitive = { fg = colors.pink, style = "nocombine" },
 	}
 
 	return plugins
