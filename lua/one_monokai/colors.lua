@@ -17,7 +17,6 @@ local colors = {
 	yellow = "#e5c07b",
 	purple = "#c678dd",
 	roman = "#ee6f73",
-	alizarin = "#da2c43",
 	peanut = "#f6d5a4",
 	orange = "#d19a66",
 	red = "#be5046",
