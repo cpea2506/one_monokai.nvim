@@ -154,6 +154,28 @@ theme.load_plugins = function()
 		CratesNvimPopupFeature = { fg = colors.aqua, style = "nocombine" },
 		CratesNvimPopupEnabled = { fg = colors.green, style = "nocombine" },
 		CratesNvimPopupTransitive = { fg = colors.pink, style = "nocombine" },
+
+		-- notify
+		NotifyERRORBorder = { fg = colors.roman },
+		NotifyWARNBorder = { fg = colors.delbg },
+		NotifyINFOBorder = { fg = colors.green },
+		NotifyDEBUGBorder = { fg = colors.purple },
+		NotifyTRACEBorder = { fg = colors.purple },
+		NotifyERRORIcon = { fg = colors.roman },
+		NotifyWARNIcon = { fg = colors.delbg },
+		NotifyINFOIcon = { fg = colors.green },
+		NotifyDEBUGIcon = { fg = colors.purple },
+		NotifyTRACEIcon = { fg = colors.purple },
+		NotifyERRORTitle = { fg = colors.roman },
+		NotifyWARNTitle = { fg = colors.delbg },
+		NotifyINFOTitle = { fg = colors.green },
+		NotifyDEBUGTitle = { fg = colors.purple },
+		NotifyTRACETitle = { fg = colors.purple },
+		NotifyERRORBody = { fg = colors.white },
+		NotifyWARNBody = { fg = colors.white },
+		NotifyINFOBody = { fg = colors.white },
+		NotifyDEBUGBody = { fg = colors.white },
+		NotifyTRACEBody = { fg = colors.white },
 	}
 
 	return plugins
