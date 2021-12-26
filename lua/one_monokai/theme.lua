@@ -89,6 +89,11 @@ theme.load_editor = function()
 		Pmenu = { fg = colors.white, bg = colors.darkblack },
 		PmenuSel = { fg = colors.black, bg = colors.pink },
 		PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
+
+		-- lsp document highlight
+		LspReferenceRead = { bg = colors.lightblack2, style = "bold" },
+		LspReferenceText = { bg = colors.lightblack2, style = "bold" },
+		LspReferenceWrite = { bg = colors.lightblack2, style = "bold" },
 	}
 
 	if set.one_monokai_no_bg then
