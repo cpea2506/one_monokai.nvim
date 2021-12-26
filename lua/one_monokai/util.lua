@@ -3,9 +3,9 @@ local util = {}
 local theme = require("one_monokai.theme")
 
 util.highlight = function(group, color)
-	local fg = color.fg and "guifg=" .. color.fg or "guifg=NONE"
-	local bg = color.bg and "guibg=" .. color.bg or "guibg=NONE"
-	local style = color.style and "gui=" .. color.style or "gui=NONE"
+	local fg = color.fg ~= nil and "guifg=" .. color.fg or "guifg=NONE"
+	local bg = color.bg ~= nil and "guibg=" .. color.bg or "guibg=NONE"
+	local style = color.style ~= nil and "gui=" .. color.style or "gui=NONE"
 
 	local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg
 
