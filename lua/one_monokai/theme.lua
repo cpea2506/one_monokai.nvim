@@ -94,34 +94,13 @@ theme.load_editor = function()
 		LspReferenceRead = { bg = colors.lightblack2, style = "bold" },
 		LspReferenceText = { bg = colors.lightblack2, style = "bold" },
 		LspReferenceWrite = { bg = colors.lightblack2, style = "bold" },
-
-		DiagnosticError = { fg = colors.roman },
-		DiagnosticWarn = { fg = colors.yellow },
-		DiagnosticInfo = { fg = colors.green },
-		DiagnosticHint = { fg = colors.cyan },
-
-		DiagnosticVirtualTextError = { fg = colors.roman },
-		DiagnosticVirtualTextWarn = { fg = colors.yellow },
-		DiagnosticVirtualTextInfo = { fg = colors.green },
-		DiagnosticVirtualTextHint = { fg = colors.cyan },
-
-		DiagnosticUnderlineError = { style = "undercurl", sp = colors.roman },
-		DiagnosticUnderlineWarn = { style = "undercurl", sp = colors.yellow },
-		DiagnosticUnderlineInfo = { style = "undercurl", sp = colors.green },
-		DiagnosticUnderlineHint = { style = "undercurl", sp = colors.cyan },
-
-		LspSignatureActiveParameter = { fg = colors.delbg },
-		LspCodeLens = { fg = colors.comment },
-
-		ALEErrorSign = { fg = colors.error },
-		ALEWarningSign = { fg = colors.warning },
 	}
 
 	if set.one_monokai_no_bg then
-		editor.Normal = { fg = colors.white }
-		editor.SignColumn = { fg = colors.white }
-		editor.LineNr = { fg = colors.grey }
-		editor.CursorLineNr = { fg = colors.white }
+		editor.Normal = { fg = colors.white, bg = "None" }
+		editor.SignColumn = { fg = colors.white, bg = "None" }
+		editor.LineNr = { fg = colors.grey, bg = "None" }
+		editor.CursorLineNr = { fg = colors.white, bg = "None" }
 	end
 	return editor
 end

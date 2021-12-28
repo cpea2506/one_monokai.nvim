@@ -1,8 +1,3 @@
-lua << EOF 
-
-package.loaded["one_monokai"] = nil
-
-require('one_monokai').setup()
-
-EOF
+lua package.loaded["one_monokai"] = nil
+lua require("one_monokai").setup()
 
