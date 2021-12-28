@@ -5,9 +5,10 @@ local theme = require("one_monokai.theme")
 util.highlight = function(group, color)
 	local fg = color.fg ~= nil and "guifg=" .. color.fg or "guifg=NONE"
 	local bg = color.bg ~= nil and "guibg=" .. color.bg or "guibg=NONE"
+	local sp = color.sp ~= nil and "guisp=" .. color.sp or ""
 	local style = color.style ~= nil and "gui=" .. color.style or "gui=NONE"
 
-	local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg
+	local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg .. " " .. sp
 
 	cmd(highlight)
 end
@@ -20,8 +21,8 @@ util.load = function()
 		cmd("syntax reset")
 	end
 
-	vim.o.background = "dark"
-	vim.o.termguicolors = true
+	vim.opt.background = "dark"
+	vim.opt.termguicolors = true
 	set.colors_name = "one_monokai"
 
 	local all_syntax = {
