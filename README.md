@@ -36,18 +36,18 @@ vim.cmd("colorscheme one_monokai")
 
 ### Option
 
-- `one_monokai_no_bg`: enable transparent background.
+- `one_monokai_transparent`: enable transparent background.
 
 #### Default
 
 ```lua
 -- lua
-vim.g.one_monokai_no_bg = false
+vim.g.one_monokai_transparent = false
 ``` 
 
 ```vim
 " vim
-let g:one_monokai_no_bg = 0
+let g:one_monokai_transparent = 0
 ```
 
 ### Custom
@@ -57,20 +57,21 @@ You can easily custom your highlight group. Override the list of supported value
 
 ```lua
 -- with default colors
-local colors = require "one_monokai.colors" 
+local colors = require "one_monokai.colors"
 
 -- with custom colors
-local custom_colors = {
-  green = "#0f0",
-  blue = "#0f0",
-  roman = "#e36965",
-  -- other colors
+colors.custom = {
+    green = "#00ff00",
+    blue = "#0000ff",
+    roman = "#e36965",
+    -- other colors
 }
 
 local themes = require "one_monokai.themes"
 themes.custom = {
-    DiffAdd = { fg = custom_colors.green },
-    DiffDelete = { fg = colors.black, bg = custom_colors.roman },
+    Normal = { fg = colors.aqua },
+    DiffAdd = { fg = colors.custom.green },
+    DiffDelete = { fg = colors.black, bg = colors.custom.roman },
     ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
     -- another highlight groups
 }
