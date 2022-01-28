@@ -51,7 +51,7 @@ let g:one_monokai_no_bg = 0
 ```
 
 ### Custom
-You can easily custom your highlight group. Override list of supported value or add more on your own.
+You can easily custom your highlight group. Override the list of supported values or add more on your own.
 1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/colors.lua)
 2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/themes.lua)
 
@@ -66,7 +66,6 @@ local custom_colors = {
   roman = "#e36965",
   -- other colors
 }
-
 
 local themes = require "one_monokai.themes"
 themes.custom = {
