@@ -26,4 +26,5 @@ return {
     delbg = "#f75f5f",
     changefg = "#d7d7ff",
     changebg = "#5f5f87",
+    none = "NONE",
 }
