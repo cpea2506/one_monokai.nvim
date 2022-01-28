@@ -10,10 +10,13 @@ local highlight = function(group, color)
     vim.cmd(highlight)
 end
 
--- Load the theme
-M.load = function(theme)
-    for group, color in pairs(theme) do
-        highlight(group, color)
+M.load_themes = function()
+    local themes = require "one_monokai.themes"
+
+    for _, theme in pairs(themes) do
+        for group, color in pairs(theme) do
+            highlight(group, color)
+        end
     end
 end
 

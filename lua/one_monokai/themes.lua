@@ -1,4 +1,5 @@
 local colors = require "one_monokai.colors"
+local transparent = vim.g.one_monokai_transparent
 
 local M = {}
 
@@ -44,7 +45,10 @@ M.syntax = {
 }
 
 M.editor = {
-    Normal = { fg = colors.white, bg = colors.black },
+    Normal = { fg = colors.white, bg = transparent and colors.none or colors.black },
+    LineNr = { fg = colors.grey, bg = transparent and colors.none or colors.black },
+    CursorLineNr = { fg = colors.white, bg = transparent and colors.none and colors.black },
+    SignColumn = { bg = transparent and colors.none or colors.black },
     ColorColumn = { bg = colors.darkblack },
     Cursor = { fg = colors.black, bg = colors.white },
     CursorColumn = { bg = colors.lightblack2 },
@@ -62,9 +66,6 @@ M.editor = {
     ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
     WarningMsg = { fg = colors.red },
     VertSplit = { fg = colors.darkerblack, bg = colors.black },
-    LineNr = { fg = colors.grey, bg = colors.black },
-    CursorLineNr = { fg = colors.white, bg = colors.black },
-    SignColumn = { bg = colors.black },
 
     SpecialKey = { fg = colors.pink },
     Title = { fg = colors.yellow },

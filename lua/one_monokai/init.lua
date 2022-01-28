@@ -1,7 +1,5 @@
 local M = {}
 
-local themes = require "one_monokai.themes"
-local colors = require "one_monokai.colors"
 local utils = require "one_monokai.utils"
 
 M.setup = function()
@@ -11,20 +9,19 @@ M.setup = function()
         vim.cmd "syntax reset"
     end
 
-    vim.opt.background = "dark"
-    vim.opt.termguicolors = true
+    vim.o.background = "dark"
+    vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
     if vim.g.one_monokai_no_bg then
-        themes.editor.Normal = { fg = colors.white }
-        themes.editor.SignColumn = { fg = colors.white }
-        themes.editor.LineNr = { fg = colors.grey }
-        themes.editor.CursorLineNr = { fg = colors.white }
+        vim.notify(
+            "Option one_monokai_no_bg has been deprecated. Please update follow the README",
+            vim.log.levels.WARN,
+            { title = "One Monokai" }
+        )
     end
 
-    for _, theme in pairs(themes) do
-        utils.load(theme)
-    end
+    utils.load_themes()
 end
 
 return M
