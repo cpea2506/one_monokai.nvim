@@ -208,18 +208,16 @@ M.lang = {
     typescriptObjectLabel = { fg = colors.green },
     typescriptAmbientDeclaration = { fg = colors.pink },
 
-    typescriptTSVariableBuiltin = { fg = colors.aqua },
-    typescriptTSNamespace = { fg = colors.aqua },
-    typescriptTSConstructor = { fg = colors.aqua },
-    typescriptTSParameter = { fg = colors.orange, style = "italic" },
-    typescriptTSKeywordReturn = { fg = colors.pink },
-
-    -- tsx
-    tsxTSConstructor = { fg = colors.aqua },
-    tsxTSKeyWordReturn = { fg = colors.pink },
-    tsxTSType = { fg = colors.aqua },
-    tsxTSVariableBuiltin = { fg = colors.aqua },
-    tsxTSParameter = { fg = colors.orange, style = "italic" },
+    -- rust
+    rustIdentifier = { fg = colors.aqua },
+    rustKeyword = { fg = colors.pink },
+    rustType = { fg = colors.aqua },
+    rustSigil = { fg = colors.pink },
+    rustSelf = { fg = colors.pink },
+    rustLifetime = { fg = colors.pink },
+    rustLet = { fg = colors.cyan },
+    rustParamName = { fg = colors.orange, style = "italic" },
+    rustModPath = { fg = colors.aqua },
 
     -- html
     htmlTag = { fg = colors.white },
@@ -228,13 +226,7 @@ M.lang = {
     htmlArg = { fg = colors.green },
     htmlSpecialChar = { fg = colors.purple },
 
-    -- dockerfile
-    dockerfileTSKeyWord = { fg = colors.pink },
-
-    -- bash
-    bashTSParameter = { fg = colors.orange, style = "italic" },
-
-    -- Xml
+    -- xml
     xmlTag = { fg = colors.pink },
     xmlEndTag = { fg = colors.pink },
     xmlTagName = { fg = colors.orange },
@@ -252,6 +244,37 @@ M.lang = {
     cssBraces = { fg = colors.white },
     cssClassNameDot = { fg = colors.pink },
     cssURL = { fg = colors.orange, style = "underline,italic" },
+}
+
+M.tree_sitter = {
+    -- dockerfile
+    dockerfileTSKeyWord = { fg = colors.pink },
+
+    -- bash
+    bashTSParameter = { fg = colors.orange, style = "italic" },
+
+    -- typescript
+    typescriptTSVariableBuiltin = { fg = colors.aqua },
+    typescriptTSNamespace = { fg = colors.aqua },
+    typescriptTSConstructor = { fg = colors.aqua },
+    typescriptTSParameter = { fg = colors.orange, style = "italic" },
+    typescriptTSKeywordReturn = { fg = colors.pink },
+
+    -- tsx
+    tsxTSConstructor = { fg = colors.aqua },
+    tsxTSKeyWordReturn = { fg = colors.pink },
+    tsxTSType = { fg = colors.aqua },
+    tsxTSVariableBuiltin = { fg = colors.aqua },
+    tsxTSParameter = { fg = colors.orange, style = "italic" },
+
+    -- rust
+    rustTSKeyword = { fg = colors.pink },
+    rustTSConstBuiltin = { fg = colors.aqua },
+    rustTSVariableBuiltin = { fg = colors.pink },
+    rustTSTypeBuiltin = { fg = colors.aqua },
+    rustTSType = { fg = colors.aqua },
+    rustTSParameter = { fg = colors.orange, style = "italic" },
+    rustTSKeywordFunction = { fg = colors.pink },
 }
 
 return M
