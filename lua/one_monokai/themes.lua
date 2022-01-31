@@ -192,11 +192,14 @@ M.lang = {
     jsStorageClass = { fg = colors.cyan },
     jsDocTags = { fg = colors.cyan, sytle = "italic" },
 
-    -- Typescript
+    -- typescript
     typescriptArrowFuncArg = { fg = colors.orange, style = "italic" },
     typescriptFuncType = { fg = colors.orange, style = "italic" },
     typescriptCall = { fg = colors.orange, style = "italic" },
     typescriptVariable = { fg = colors.cyan },
+    typescriptVariableDeclaration = { fg = colors.aqua },
+    typescriptDOMEventProp = { fg = colors.aqua },
+    typescriptGlobal = { fg = colors.aqua },
     typescriptModule = { fg = colors.cyan },
     typescriptPredefinedType = { fg = colors.cyan },
     typescriptFuncTypeArrow = { fg = colors.cyan },
@@ -207,6 +210,21 @@ M.lang = {
     typescriptEndColons = { fg = colors.white },
     typescriptObjectLabel = { fg = colors.green },
     typescriptAmbientDeclaration = { fg = colors.pink },
+    typescriptProp = { fg = colors.green },
+    typescriptAsyncFuncKeyword = { fg = colors.pink },
+    typescriptGlobalMethod = { fg = colors.green },
+    typescriptTypeReference = { fg = colors.aqua },
+    typescriptBinaryOp = { fg = colors.pink },
+    typescriptPromiseMethod = { fg = colors.green },
+    typescriptNull = { fg = colors.cyan },
+    typescriptArrayMethod = { fg = colors.green },
+    typescriptMember = { fg = colors.white },
+    typescriptDestructureVariable = { fg = colors.aqua },
+    typescriptArrayStaticMethod = { fg = colors.green },
+
+    -- tsx
+    tsxAttrib = { fg = colors.green },
+    tsxTagName = { fg = colors.aqua },
 
     -- rust
     rustIdentifier = { fg = colors.aqua },
