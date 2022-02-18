@@ -50,6 +50,9 @@ vim.g.one_monokai_transparent = false
 let g:one_monokai_transparent = 0
 ```
 
+#### Note: 
+Options need to be set before loading the colorscheme with `colorscheme`
+
 ### Custom
 You can easily custom your highlight group. Override the list of supported values or add more on your own.
 1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/colors.lua)
