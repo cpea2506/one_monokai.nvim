@@ -46,9 +46,9 @@ M.syntax = {
 
 M.editor = {
     Normal = { fg = colors.white, bg = transparent and colors.none or colors.black },
-    LineNr = { fg = colors.grey, bg = transparent and colors.none or colors.black },
-    CursorLineNr = { fg = colors.white, bg = transparent and colors.none and colors.black },
     SignColumn = { bg = transparent and colors.none or colors.black },
+    LineNr = { fg = colors.grey },
+    CursorLineNr = { fg = colors.white },
     ColorColumn = { bg = colors.darkblack },
     Cursor = { fg = colors.black, bg = colors.white },
     CursorColumn = { bg = colors.lightblack2 },
