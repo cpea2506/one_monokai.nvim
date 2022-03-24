@@ -1,5 +1,5 @@
 local colors = require "one_monokai.colors"
-local transparent = vim.g.one_monokai_transparent
+local transparent = vim.g.one_monokai_transparent or false
 
 local M = {}
 
@@ -45,27 +45,27 @@ M.syntax = {
 }
 
 M.editor = {
-    Normal = { fg = colors.white, bg = transparent and colors.none or colors.black },
-    SignColumn = { bg = transparent and colors.none or colors.black },
+    Normal = { fg = colors.fg, bg = transparent and colors.none or colors.bg },
+    SignColumn = { bg = transparent and colors.none or colors.bg },
     LineNr = { fg = colors.grey },
-    CursorLineNr = { fg = colors.white },
+    CursorLineNr = { fg = colors.fg },
     ColorColumn = { bg = colors.darkblack },
-    Cursor = { fg = colors.black, bg = colors.white },
+    Cursor = { fg = colors.bg, bg = colors.fg },
     CursorColumn = { bg = colors.lightblack2 },
     CursorLine = { bg = colors.lightblack2 },
     Nontext = { fg = colors.grey },
     StatusLine = { fg = colors.lightgrey, bg = colors.darkerblack },
     StatusLineNC = { fg = colors.lightgrey, bg = colors.darkblack },
-    Tabline = { fg = colors.white, bg = colors.darkblack, style = "reverse" },
+    Tabline = { fg = colors.fg, bg = colors.darkblack, style = "reverse" },
     Visual = { bg = colors.grey },
-    Search = { fg = colors.black, bg = colors.yellow },
-    MatchParen = { fg = colors.white, style = "bold,underline" },
+    Search = { fg = colors.bg, bg = colors.yellow },
+    MatchParen = { fg = colors.fg, style = "bold,underline" },
     Question = { fg = colors.yellow },
     ModeMsg = { fg = colors.yellow },
     MoreMsg = { fg = colors.yellow },
-    ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
+    ErrorMsg = { fg = colors.bg, bg = colors.red, style = "standout" },
     WarningMsg = { fg = colors.red },
-    VertSplit = { fg = colors.darkerblack, bg = colors.black },
+    VertSplit = { fg = colors.darkerblack, bg = colors.bg },
 
     SpecialKey = { fg = colors.pink },
     Title = { fg = colors.yellow },
@@ -73,17 +73,17 @@ M.editor = {
 
     -- diff
     DiffAdd = { fg = colors.addfg, bg = colors.addbg },
-    DiffDelete = { fg = colors.black, bg = colors.delbg },
+    DiffDelete = { fg = colors.bg, bg = colors.delbg },
     DiffChange = { fg = colors.changefg, bg = colors.changebg },
-    DiffText = { fg = colors.black, bg = colors.cyan },
+    DiffText = { fg = colors.bg, bg = colors.cyan },
 
     -- fold
     Folded = { fg = colors.warmgrey, bg = colors.darkblack },
     FoldColumn = { bg = colors.darkblack },
 
     -- popup menu
-    Pmenu = { fg = colors.white, bg = colors.darkblack },
-    PmenuSel = { fg = colors.black, bg = colors.pink },
+    Pmenu = { fg = colors.fg, bg = colors.darkblack },
+    PmenuSel = { fg = colors.bg, bg = colors.pink },
     PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
 
     -- lsp document highlight
@@ -162,11 +162,11 @@ M.plugins = {
     NotifyINFOTitle = { fg = colors.green },
     NotifyDEBUGTitle = { fg = colors.purple },
     NotifyTRACETitle = { fg = colors.purple },
-    NotifyERRORBody = { fg = colors.white },
-    NotifyWARNBody = { fg = colors.white },
-    NotifyINFOBody = { fg = colors.white },
-    NotifyDEBUGBody = { fg = colors.white },
-    NotifyTRACEBody = { fg = colors.white },
+    NotifyERRORBody = { fg = colors.fg },
+    NotifyWARNBody = { fg = colors.fg },
+    NotifyINFOBody = { fg = colors.fg },
+    NotifyDEBUGBody = { fg = colors.fg },
+    NotifyTRACEBody = { fg = colors.fg },
 }
 
 M.lang = {
@@ -207,7 +207,7 @@ M.lang = {
     typescriptExport = { fg = colors.pink },
     typescriptCastKeyword = { fg = colors.pink },
     typescriptOperator = { fg = colors.pink },
-    typescriptEndColons = { fg = colors.white },
+    typescriptEndColons = { fg = colors.fg },
     typescriptObjectLabel = { fg = colors.green },
     typescriptAmbientDeclaration = { fg = colors.pink },
     typescriptProp = { fg = colors.green },
@@ -218,7 +218,7 @@ M.lang = {
     typescriptPromiseMethod = { fg = colors.green },
     typescriptNull = { fg = colors.cyan },
     typescriptArrayMethod = { fg = colors.green },
-    typescriptMember = { fg = colors.white },
+    typescriptMember = { fg = colors.fg },
     typescriptDestructureVariable = { fg = colors.aqua },
     typescriptArrayStaticMethod = { fg = colors.green },
 
@@ -238,8 +238,8 @@ M.lang = {
     rustModPath = { fg = colors.aqua },
 
     -- html
-    htmlTag = { fg = colors.white },
-    htmlEndTag = { fg = colors.white },
+    htmlTag = { fg = colors.fg },
+    htmlEndTag = { fg = colors.fg },
     htmlTagName = { fg = colors.pink },
     htmlArg = { fg = colors.green },
     htmlSpecialChar = { fg = colors.purple },
@@ -259,7 +259,7 @@ M.lang = {
     cssClassName = { fg = colors.green },
     cssValueLength = { fg = colors.purple },
     cssCommonAttr = { fg = colors.pink },
-    cssBraces = { fg = colors.white },
+    cssBraces = { fg = colors.fg },
     cssClassNameDot = { fg = colors.pink },
     cssURL = { fg = colors.orange, style = "underline,italic" },
 }
