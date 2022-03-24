@@ -1,11 +1,11 @@
 local M = {}
 
 local highlight = function(group, color)
-    local fg = color.fg ~= nil and "guifg=" .. color.fg or "guifg=None"
-    local bg = color.bg ~= nil and "guibg=" .. color.bg or "guibg=None"
-    local style = color.style ~= nil and "gui=" .. color.style or "gui=None"
+    local fg = color.fg and "guifg=" .. color.fg or "guifg=None"
+    local bg = color.bg and "guibg=" .. color.bg or "guibg=None"
+    local style = color.style and "gui=" .. color.style or "gui=None"
 
-    local highlight = "hi " .. group .. " " .. style .. " " .. fg .. " " .. bg
+    local highlight = table.concat({ "highlight", group, fg, bg, style }, " ")
 
     vim.cmd(highlight)
 end
