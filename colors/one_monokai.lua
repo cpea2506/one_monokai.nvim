@@ -1,6 +1,6 @@
-for k in pairs(package.loaded) do
-    if k:match ".*one_monokai.*" then
-        package.loaded[k] = nil
+for mod in pairs(package.loaded) do
+    if mod:match ".*one_monokai.*" then
+        package.loaded[mod] = nil
     end
 end
 
