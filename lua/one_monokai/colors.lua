@@ -1,6 +1,6 @@
 return {
-    white = "#abb2bf",
-    black = "#282C34",
+    fg = "#abb2bf",
+    bg = "#282C34",
     lightblack = "#2d2e27",
     lightblack2 = "#383a3e",
     darkblack = "#26292F",
