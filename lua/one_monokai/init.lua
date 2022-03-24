@@ -1,8 +1,8 @@
 local M = {}
 
-local utils = require "one_monokai.utils"
-
 M.setup = function()
+    local utils = require "one_monokai.utils"
+
     vim.cmd "hi clear"
 
     if vim.fn.exists "syntax_on" then
@@ -13,15 +13,9 @@ M.setup = function()
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
-    if vim.g.one_monokai_no_bg then
-        vim.notify(
-            "Option one_monokai_no_bg has been deprecated. Please update follow the README",
-            vim.log.levels.WARN,
-            { title = "One Monokai" }
-        )
-    end
-
     utils.load_themes()
+
+    vim.cmd [[colorscheme one_monokai]]
 end
 
 return M
