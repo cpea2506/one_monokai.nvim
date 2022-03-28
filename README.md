@@ -42,16 +42,16 @@ require("one_monokai").setup()
 
 ```lua
 -- lua
-vim.g.one_monokai_transparent = false
+require("one_monokai").setup({
+    transparent = false
+})
 ``` 
 
 ```vim
 " vim
+" options need to be set before loading the colorscheme
 let g:one_monokai_transparent = 0
 ```
-
-#### Note: 
-Options need to be set before loading the colorscheme with `colorscheme` or `setup`
 
 ### Custom
 You can easily custom your highlight group. Override the list of supported values or add more on your own.
