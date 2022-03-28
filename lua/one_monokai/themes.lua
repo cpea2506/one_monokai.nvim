@@ -1,5 +1,5 @@
 local colors = require "one_monokai.colors"
-local transparent = vim.g.one_monokai_config.transparent
+local transparent = vim.g.one_monokai_config.transparent or vim.g.one_monokai_transparent
 
 local M = {}
 
