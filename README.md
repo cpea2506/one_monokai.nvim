@@ -31,7 +31,7 @@ colorscheme one_monokai
 
 ```lua
 -- lua
-vim.cmd("colorscheme one_monokai")
+require("one_monokai").setup()
 ```
 
 ### Option
@@ -51,7 +51,7 @@ let g:one_monokai_transparent = 0
 ```
 
 #### Note: 
-Options need to be set before loading the colorscheme with `colorscheme`
+Options need to be set before loading the colorscheme with `colorscheme` or `setup`
 
 ### Custom
 You can easily custom your highlight group. Override the list of supported values or add more on your own.
