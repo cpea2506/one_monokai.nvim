@@ -18,7 +18,6 @@ M.setup = function(user_config)
     vim.g.colors_name = "one_monokai"
 
     utils.set_config(default_config, user_config)
-
     utils.load_themes()
 
     vim.api.nvim_command "colorscheme one_monokai"
