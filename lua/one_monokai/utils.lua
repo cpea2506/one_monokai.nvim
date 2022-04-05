@@ -20,4 +20,16 @@ M.load_themes = function()
     end
 end
 
+M.set_config = function(default_config, user_config)
+    if not vim.g.one_monokai_config or not vim.g.one_monokai_config.loaded then
+        vim.g.one_monokai_config = vim.tbl_extend("keep", vim.g.one_monokai_config or {}, default_config)
+        vim.g.one_monokai_config.loaded = true
+    end
+
+    -- load user config into default config
+    if user_config then
+        vim.g.one_monokai_config = vim.tbl_extend("force", vim.g.one_monokai_config, user_config)
+    end
+end
+
 return M

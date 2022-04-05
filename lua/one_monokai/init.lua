@@ -17,11 +17,7 @@ M.setup = function(user_config)
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
-    -- load user config into default config
-    if not vim.g.one_monokai_config or not vim.g.one_monokai_config.loaded then
-        vim.g.one_monokai_config = vim.tbl_extend("force", default_config, user_config or {})
-        vim.g.one_monokai_config.loaded = true
-    end
+    utils.set_config(default_config, user_config)
 
     utils.load_themes()
 
