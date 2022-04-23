@@ -1,14 +1,14 @@
-return {
+local colors = {
     fg = "#abb2bf",
     bg = "#282C34",
-    lightblack = "#2d2e27",
-    lightblack2 = "#383a3e",
-    darkblack = "#26292F",
-    darkerblack = "#1e2024",
-    grey = "#4b5261",
-    lightgrey = "#9ca3b2",
-    darkgrey = "#64645e",
-    warmgrey = "#676e7b",
+    light_black = "#2d2e27",
+    vulcan = "#383a3e",
+    dark_black = "#26292F",
+    darker_black = "#1e2024",
+    gray = "#4b5261",
+    light_gray = "#9ca3b2",
+    dark_gray = "#64645e",
+    warm_gray = "#676e7b",
 
     pink = "#e06c75",
     green = "#98C379",
@@ -21,10 +21,8 @@ return {
     orange = "#d19a66",
     red = "#be5046",
     darkred = "#5f0000",
-    addfg = "#d7ffaf",
-    addbg = "#5f875f",
-    delbg = "#f75f5f",
-    changefg = "#d7d7ff",
-    changebg = "#5f5f87",
+    git = { add = "#d7ffaf", del = "#f75f5f", change = "#d7d7ff" },
     none = "NONE",
 }
+
+return colors

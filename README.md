@@ -20,7 +20,8 @@ Plug 'cpea2506/one_monokai.nvim'
 ```
 
 #### Note
-You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
+- Require Neovim 0.7
+- You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## Setup
 

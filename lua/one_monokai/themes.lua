@@ -36,10 +36,10 @@ M.syntax = {
     SpecialComment = { fg = colors.cyan },
     Tag = { fg = colors.pink },
 
-    Todo = { fg = colors.orange, style = "bold,italic" },
-    Comment = { fg = colors.warmgrey, style = "italic" },
+    Todo = { fg = colors.orange, bold = true, italic = true },
+    Comment = { fg = colors.warm_gray, italic = true },
 
-    Underlined = { fg = colors.green, style = "underline" },
+    Underlined = { fg = colors.green, underline = true },
     Ignore = {},
     Error = { fg = colors.red, bg = colors.darkred },
 }
@@ -47,49 +47,49 @@ M.syntax = {
 M.editor = {
     Normal = { fg = colors.fg, bg = transparent and colors.none or colors.bg },
     SignColumn = { bg = transparent and colors.none or colors.bg },
-    LineNr = { fg = colors.grey },
+    LineNr = { fg = colors.gray },
     CursorLineNr = { fg = colors.fg },
-    ColorColumn = { bg = colors.darkblack },
+    ColorColumn = { bg = colors.dark_black },
     Cursor = { fg = colors.bg, bg = colors.fg },
-    CursorColumn = { bg = colors.lightblack2 },
-    CursorLine = { bg = colors.lightblack2 },
-    Nontext = { fg = colors.grey },
-    StatusLine = { fg = colors.lightgrey, bg = colors.darkerblack },
-    StatusLineNC = { fg = colors.lightgrey, bg = colors.darkblack },
-    Tabline = { fg = colors.fg, bg = colors.darkblack, style = "reverse" },
-    Visual = { bg = colors.grey },
+    CursorColumn = { bg = colors.vulcan },
+    CursorLine = { bg = colors.vulcan },
+    Nontext = { fg = colors.gray },
+    StatusLine = { fg = colors.light_gray, bg = colors.darker_black },
+    StatusLineNC = { fg = colors.light_gray, bg = colors.dark_black },
+    Tabline = { fg = colors.fg, bg = colors.dark_black, reverse = true },
+    Visual = { bg = colors.gray },
     Search = { fg = colors.bg, bg = colors.yellow },
-    MatchParen = { fg = colors.fg, style = "bold,underline" },
+    MatchParen = { fg = colors.fg, bold = true, underline = true },
     Question = { fg = colors.yellow },
     ModeMsg = { fg = colors.yellow },
     MoreMsg = { fg = colors.yellow },
-    ErrorMsg = { fg = colors.bg, bg = colors.red, style = "standout" },
+    ErrorMsg = { fg = colors.bg, bg = colors.red, standout = true },
     WarningMsg = { fg = colors.red },
-    VertSplit = { fg = colors.darkerblack, bg = colors.bg },
+    VertSplit = { fg = colors.darker_black, bg = colors.bg },
 
     SpecialKey = { fg = colors.pink },
     Title = { fg = colors.yellow },
     Directory = { fg = colors.aqua },
 
     -- diff
-    DiffAdd = { fg = colors.addfg, bg = colors.addbg },
-    DiffDelete = { fg = colors.bg, bg = colors.delbg },
-    DiffChange = { fg = colors.changefg, bg = colors.changebg },
+    DiffAdd = { fg = colors.git.add },
+    DiffDelete = { fg = colors.git.del },
+    DiffChange = { fg = colors.git.change },
     DiffText = { fg = colors.bg, bg = colors.cyan },
 
     -- fold
-    Folded = { fg = colors.warmgrey, bg = colors.darkblack },
-    FoldColumn = { bg = colors.darkblack },
+    Folded = { fg = colors.warm_gray, bg = colors.dark_black },
+    FoldColumn = { bg = colors.dark_black },
 
     -- popup menu
-    Pmenu = { fg = colors.fg, bg = colors.darkblack },
+    Pmenu = { fg = colors.fg, bg = colors.dark_black },
     PmenuSel = { fg = colors.bg, bg = colors.pink },
-    PmenuThumb = { fg = colors.lightblack, bg = colors.grey },
+    PmenuThumb = { fg = colors.light_black, bg = colors.gray },
 
     -- lsp document highlight
-    LspReferenceRead = { bg = colors.lightblack2, style = "bold" },
-    LspReferenceText = { bg = colors.lightblack2, style = "bold" },
-    LspReferenceWrite = { bg = colors.lightblack2, style = "bold" },
+    LspReferenceRead = { bg = colors.vulcan, bold = true },
+    LspReferenceText = { bg = colors.vulcan, bold = true },
+    LspReferenceWrite = { bg = colors.vulcan, bold = true },
 }
 
 M.plugins = {
@@ -104,15 +104,14 @@ M.plugins = {
     NvimTreeGitDirty = { fg = colors.pink },
 
     -- nvim-cmp
-    CmpItemAbbrDeprecated = { fg = colors.lightgrey, style = "strikethrough" },
     CmpItemAbbrMatch = { fg = colors.aqua },
     CmpItemKindStruct = { fg = colors.pink },
     CmpItemKindEnum = { fg = colors.pink },
     CmpItemKindClass = { fg = colors.pink },
     CmpItemKindInterface = { fg = colors.pink },
-    CmpItemKindValue = { fg = colors.changefg },
-    CmpItemKindKeyword = { fg = colors.changefg },
-    CmpItemKindText = { fg = colors.changefg },
+    CmpItemKindValue = { fg = colors.git.change },
+    CmpItemKindKeyword = { fg = colors.git.change },
+    CmpItemKindText = { fg = colors.git.change },
     CmpItemKindProperty = { fg = colors.yellow },
     CmpItemKindMethod = { fg = colors.yellow },
     CmpItemKindField = { fg = colors.yellow },
@@ -121,30 +120,31 @@ M.plugins = {
     CmpItemKindVariable = { fg = colors.cyan },
     CmpItemKindConstant = { fg = colors.cyan },
     CmpItemKindFunction = { fg = colors.green },
+    CmpItemAbbrDeprecated = { fg = colors.light_gray, strikethrough = true },
 
     -- indent blankline
-    IndentBlanklineIndent1 = { fg = colors.pink, style = "nocombine" },
-    IndentBlanklineIndent2 = { fg = colors.yellow, style = "nocombine" },
-    IndentBlanklineIndent3 = { fg = colors.green, style = "nocombine" },
-    IndentBlanklineIndent4 = { fg = colors.cyan, style = "nocombine" },
-    IndentBlanklineIndent5 = { fg = colors.aqua, style = "nocombine" },
-    IndentBlanklineIndent6 = { fg = colors.purple, style = "nocombine" },
+    IndentBlanklineIndent1 = { fg = colors.pink, nocombine = true },
+    IndentBlanklineIndent2 = { fg = colors.yellow, nocombine = true },
+    IndentBlanklineIndent3 = { fg = colors.green, nocombine = true },
+    IndentBlanklineIndent4 = { fg = colors.cyan, nocombine = true },
+    IndentBlanklineIndent5 = { fg = colors.aqua, nocombine = true },
+    IndentBlanklineIndent6 = { fg = colors.purple, nocombine = true },
 
     -- crate
-    CratesNvimNoMatch = { fg = colors.pink, style = "nocombine" },
-    CratesNvimError = { fg = colors.delbg, style = "nocombine" },
-    CratesNvimUpgrade = { fg = colors.yellow, style = "nocombine" },
-    CratesNvimVersion = { fg = colors.green, style = "nocombine" },
-    CratesNvimPreRelease = { fg = colors.cyan, style = "nocombine" },
-    CratesNvimYanked = { fg = colors.delbg, style = "nocombine" },
-    CratesNvimLoading = { fg = colors.purple, style = "nocombine" },
-    CratesNvimPopupTitle = { fg = colors.purple, style = "nocombine" },
-    CratesNvimPopupVersion = { fg = colors.green, style = "nocombine" },
-    CratesNvimPopupPreRelease = { fg = colors.cyan, style = "nocombine" },
-    CratesNvimPopupYanked = { fg = colors.pink, style = "nocombine" },
-    CratesNvimPopupFeature = { fg = colors.aqua, style = "nocombine" },
-    CratesNvimPopupEnabled = { fg = colors.green, style = "nocombine" },
-    CratesNvimPopupTransitive = { fg = colors.pink, style = "nocombine" },
+    CratesNvimNoMatch = { fg = colors.pink },
+    CratesNvimError = { fg = colors.git.del },
+    CratesNvimUpgrade = { fg = colors.yellow },
+    CratesNvimVersion = { fg = colors.green },
+    CratesNvimPreRelease = { fg = colors.cyan },
+    CratesNvimYanked = { fg = colors.git.del },
+    CratesNvimLoading = { fg = colors.purple },
+    CratesNvimPopupTitle = { fg = colors.purple },
+    CratesNvimPopupVersion = { fg = colors.green },
+    CratesNvimPopupPreRelease = { fg = colors.cyan },
+    CratesNvimPopupYanked = { fg = colors.pink },
+    CratesNvimPopupFeature = { fg = colors.aqua },
+    CratesNvimPopupEnabled = { fg = colors.green },
+    CratesNvimPopupTransitive = { fg = colors.pink },
 
     -- notify
     NotifyERRORBorder = { fg = colors.roman },
@@ -187,15 +187,15 @@ M.lang = {
     jsArgsObj = { fg = colors.cyan },
     jsStatic = { fg = colors.cyan },
     jsSuper = { fg = colors.cyan },
-    jsFuncArgRest = { fg = colors.purple, sytle = "italic" },
-    jsFuncArgs = { fg = colors.orange, style = "italic" },
+    jsFuncArgRest = { fg = colors.purple, italic = true },
+    jsFuncArgs = { fg = colors.orange, italic = true },
     jsStorageClass = { fg = colors.cyan },
-    jsDocTags = { fg = colors.cyan, sytle = "italic" },
+    jsDocTags = { fg = colors.cyan, italic = true },
 
     -- typescript
-    typescriptArrowFuncArg = { fg = colors.orange, style = "italic" },
-    typescriptFuncType = { fg = colors.orange, style = "italic" },
-    typescriptCall = { fg = colors.orange, style = "italic" },
+    typescriptArrowFuncArg = { fg = colors.orange, italic = true },
+    typescriptFuncType = { fg = colors.orange, italic = true },
+    typescriptCall = { fg = colors.orange, italic = true },
     typescriptVariable = { fg = colors.cyan },
     typescriptVariableDeclaration = { fg = colors.aqua },
     typescriptDOMEventProp = { fg = colors.aqua },
@@ -234,7 +234,7 @@ M.lang = {
     rustSelf = { fg = colors.pink },
     rustLifetime = { fg = colors.pink },
     rustLet = { fg = colors.cyan },
-    rustParamName = { fg = colors.orange, style = "italic" },
+    rustParamName = { fg = colors.orange, italic = true },
     rustModPath = { fg = colors.aqua },
 
     -- html
@@ -261,21 +261,21 @@ M.lang = {
     cssCommonAttr = { fg = colors.pink },
     cssBraces = { fg = colors.fg },
     cssClassNameDot = { fg = colors.pink },
-    cssURL = { fg = colors.orange, style = "underline,italic" },
+    cssURL = { fg = colors.orange, underline = true, italic = true },
 }
 
 M.tree_sitter = {
     -- dockerfile
-    dockerfileTSKeyWord = { fg = colors.pink },
+    dockerfileTSKeyword = { fg = colors.pink },
 
     -- bash
-    bashTSParameter = { fg = colors.orange, style = "italic" },
+    bashTSParameter = { fg = colors.orange, italic = true },
 
     -- typescript
     typescriptTSVariableBuiltin = { fg = colors.aqua },
     typescriptTSNamespace = { fg = colors.aqua },
     typescriptTSConstructor = { fg = colors.aqua },
-    typescriptTSParameter = { fg = colors.orange, style = "italic" },
+    typescriptTSParameter = { fg = colors.orange, italic = true },
     typescriptTSKeywordReturn = { fg = colors.pink },
 
     -- tsx
@@ -283,7 +283,7 @@ M.tree_sitter = {
     tsxTSKeyWordReturn = { fg = colors.pink },
     tsxTSType = { fg = colors.aqua },
     tsxTSVariableBuiltin = { fg = colors.aqua },
-    tsxTSParameter = { fg = colors.orange, style = "italic" },
+    tsxTSParameter = { fg = colors.orange, italic = true },
 
     -- rust
     rustTSKeyword = { fg = colors.pink },
@@ -291,7 +291,7 @@ M.tree_sitter = {
     rustTSVariableBuiltin = { fg = colors.pink },
     rustTSTypeBuiltin = { fg = colors.aqua },
     rustTSType = { fg = colors.aqua },
-    rustTSParameter = { fg = colors.orange, style = "italic" },
+    rustTSParameter = { fg = colors.orange, italic = true },
     rustTSKeywordFunction = { fg = colors.pink },
 }
 
