@@ -20,7 +20,7 @@ Plug 'cpea2506/one_monokai.nvim'
 ```
 
 #### Note
-- Require Neovim 0.7
+- Require Neovim >= 0.7
 - You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## Setup
@@ -52,33 +52,6 @@ require("one_monokai").setup({
 " vim
 " options need to be set before loading the colorscheme
 let g:one_monokai_transparent = 0
-```
-
-### Custom
-You can easily custom your highlight group. Override the list of supported values or add more on your own.
-1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/colors.lua)
-2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/themes.lua)
-
-```lua
--- with default colors
-local colors = require "one_monokai.colors"
-
--- with custom colors
-colors.custom = {
-    green = "#00ff00",
-    blue = "#0000ff",
-    roman = "#e36965",
-    -- other colors
-}
-
-local themes = require "one_monokai.themes"
-themes.custom = {
-    Normal = { fg = colors.aqua },
-    DiffAdd = { fg = colors.custom.green },
-    DiffDelete = { fg = colors.black, bg = colors.custom.roman },
-    ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
-    -- another highlight groups
-}
 ```
 
 ## Inspiration
