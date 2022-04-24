@@ -285,6 +285,13 @@ M.tree_sitter = {
     tsxTSVariableBuiltin = { fg = colors.aqua },
     tsxTSParameter = { fg = colors.orange, italic = true },
 
+    -- javascript
+    javascriptTSConstructor = { fg = colors.aqua },
+    javascriptTSKeyWordReturn = { fg = colors.pink },
+    javascriptTSType = { fg = colors.aqua },
+    javascriptTSVariableBuiltin = { fg = colors.aqua },
+    javascriptTSParameter = { fg = colors.orange, italic = true },
+
     -- rust
     rustTSKeyword = { fg = colors.pink },
     rustTSConstBuiltin = { fg = colors.aqua },
