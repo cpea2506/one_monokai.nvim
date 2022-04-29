@@ -1,9 +1,10 @@
-local colors = require "one_monokai.colors"
-local transparent = vim.g.one_monokai_config.transparent or vim.g.one_monokai_transparent
+local config = require "one_monokai.config"
 
-local M = {}
+local colors = config.options.colors
+local transparent = config.options.transparent
+local user_themes = config.options.themes(colors)
 
-M.syntax = {
+local themes = {
     Constant = { fg = colors.aqua },
     Number = { fg = colors.purple },
     Float = { fg = colors.purple },
@@ -41,10 +42,8 @@ M.syntax = {
 
     Underlined = { fg = colors.green, underline = true },
     Ignore = {},
-    Error = { fg = colors.red, bg = colors.darkred },
-}
+    Error = { fg = colors.error.fg, bg = colors.error.bg },
 
-M.editor = {
     Normal = { fg = colors.fg, bg = transparent and colors.none or colors.bg },
     SignColumn = { bg = transparent and colors.none or colors.bg },
     LineNr = { fg = colors.gray },
@@ -63,8 +62,8 @@ M.editor = {
     Question = { fg = colors.yellow },
     ModeMsg = { fg = colors.yellow },
     MoreMsg = { fg = colors.yellow },
-    ErrorMsg = { fg = colors.bg, bg = colors.red, standout = true },
-    WarningMsg = { fg = colors.red },
+    ErrorMsg = { fg = colors.bg, bg = colors.error.fg, standout = true },
+    WarningMsg = { fg = colors.yellow },
     VertSplit = { fg = colors.darker_black, bg = colors.bg },
 
     SpecialKey = { fg = colors.pink },
@@ -90,9 +89,7 @@ M.editor = {
     LspReferenceRead = { bg = colors.vulcan, bold = true },
     LspReferenceText = { bg = colors.vulcan, bold = true },
     LspReferenceWrite = { bg = colors.vulcan, bold = true },
-}
 
-M.plugins = {
     -- dashboard
     DashboardHeader = { fg = colors.peanut },
     DashboardCenter = { fg = colors.roman },
@@ -167,9 +164,7 @@ M.plugins = {
     NotifyINFOBody = { fg = colors.fg },
     NotifyDEBUGBody = { fg = colors.fg },
     NotifyTRACEBody = { fg = colors.fg },
-}
 
-M.lang = {
     -- java
     jpropertiesIdentifier = { fg = colors.pink },
 
@@ -262,9 +257,7 @@ M.lang = {
     cssBraces = { fg = colors.fg },
     cssClassNameDot = { fg = colors.pink },
     cssURL = { fg = colors.orange, underline = true, italic = true },
-}
 
-M.tree_sitter = {
     -- dockerfile
     dockerfileTSKeyword = { fg = colors.pink },
 
@@ -302,4 +295,6 @@ M.tree_sitter = {
     rustTSKeywordFunction = { fg = colors.pink },
 }
 
-return M
+themes = vim.tbl_deep_extend("force", themes, user_themes)
+
+return themes

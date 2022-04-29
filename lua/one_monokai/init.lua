@@ -1,7 +1,6 @@
 local M = {}
 
 local set = vim.cmd
-
 local config = require "one_monokai.config"
 
 M.setup = function(user_config)
