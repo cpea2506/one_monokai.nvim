@@ -5,79 +5,60 @@ Vscode One Monokai theme written in Lua for Neovim.
 <img width="1680" alt="One monokai look" src="https://user-images.githubusercontent.com/42694704/139383485-ae0be75e-225f-468a-9ce3-ba8cad20ff4c.png">
 
 ## Installation
-Install with your favorite package manager.
-
-[packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use 'cpea2506/one_monokai.nvim'
 ```
 
-[vim-plug](https://github.com/junegunn/vim-plug)
-
-```lua
-Plug 'cpea2506/one_monokai.nvim'
-```
-
 #### Note
-You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
+- Require Neovim >= 0.7
+- You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## Setup
 
-```vim
-" vim
-colorscheme one_monokai
-```
-
 ```lua
--- lua
 require("one_monokai").setup()
 ```
 
-### Option
+### Options
 
-- `one_monokai_transparent`: enable transparent background.
+- `transparent`: enable transparent background.
+- `colors`: override list default colors.
+- `themes`: override list default highlight groups. The function accpet colors as argument
 
 #### Default
 
 ```lua
--- lua
-require("one_monokai").setup({
+{
     transparent = false
-})
-``` 
-
-```vim
-" vim
-" options need to be set before loading the colorscheme
-let g:one_monokai_transparent = 0
+    colors = require("one_monokai.colors"),
+    themes = function(colors)
+        return {}
+    end
+}
 ```
 
-### Custom
+### Customize example
 You can easily custom your highlight group. Override the list of supported values or add more on your own.
 1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/colors.lua)
 2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/themes.lua)
 
 ```lua
--- with default colors
-local colors = require "one_monokai.colors"
-
--- with custom colors
-colors.custom = {
-    green = "#00ff00",
-    blue = "#0000ff",
-    roman = "#e36965",
-    -- other colors
-}
-
-local themes = require "one_monokai.themes"
-themes.custom = {
-    Normal = { fg = colors.aqua },
-    DiffAdd = { fg = colors.custom.green },
-    DiffDelete = { fg = colors.black, bg = colors.custom.roman },
-    ErrorMsg = { fg = colors.black, bg = colors.red, style = "standout" },
-    -- another highlight groups
-}
+require("one_monokai").setup({
+    colors = {
+        green = "#00ff00",
+        blue = "#0000ff",
+        roman = "#e36965",
+        lmao = "#282c34",
+    },
+    themes = function(colors)
+        return {
+            Normal = { bg = colors.lmao },
+            Comment = { fg = colors.pink, italic = true },
+            ErrorMsg = { fg = "#000000", bg = "#ec6075", standout = true },
+        }
+    end,
+})
 ```
 
 ## Inspiration

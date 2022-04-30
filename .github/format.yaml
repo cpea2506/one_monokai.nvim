@@ -1,0 +1,23 @@
+name: format
+
+on:
+  pull_request:
+    branches:
+      - "dev"
+      - "main"
+    paths:
+      - 'lua/**'
+
+jobs:
+  stylua-check:
+    name: "Formatting check with Stylua"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint with stylua
+        uses: JohnnyMorganz/stylua-action@1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # CLI arguments
+          args: --check .
