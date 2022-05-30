@@ -1,8 +1,6 @@
-local config = require "one_monokai.config"
-
-local colors = config.options.colors
-local transparent = config.options.transparent
-local user_themes = config.options.themes(colors)
+local options = require("one_monokai.config").options
+local colors = require "one_monokai.colors"
+local transparent = options.transparent
 
 local themes = {
     Constant = { fg = colors.aqua },
@@ -95,7 +93,7 @@ local themes = {
     DashboardCenter = { fg = colors.roman },
     DashboardFooter = { fg = colors.aqua },
 
-    -- NvimTree
+    -- nvim tree
     NvimTreeFolderIcon = { fg = colors.yellow },
     NvimTreeGitStaged = { fg = colors.green },
     NvimTreeGitDirty = { fg = colors.pink },
@@ -171,7 +169,6 @@ local themes = {
     -- vim
     vimCommand = { fg = colors.pink },
 
-    -- javascript
     jsFuncName = { fg = colors.green },
     jsThis = { fg = colors.pink },
     jsFunctionKey = { fg = colors.green },
@@ -186,6 +183,11 @@ local themes = {
     jsFuncArgs = { fg = colors.orange, italic = true },
     jsStorageClass = { fg = colors.cyan },
     jsDocTags = { fg = colors.cyan, italic = true },
+    javascriptTSConstructor = { fg = colors.aqua },
+    javascriptTSKeyWordReturn = { fg = colors.pink },
+    javascriptTSType = { fg = colors.aqua },
+    javascriptTSVariableBuiltin = { fg = colors.aqua },
+    javascriptTSParameter = { fg = colors.orange, italic = true },
 
     -- typescript
     typescriptArrowFuncArg = { fg = colors.orange, italic = true },
@@ -216,10 +218,20 @@ local themes = {
     typescriptMember = { fg = colors.fg },
     typescriptDestructureVariable = { fg = colors.aqua },
     typescriptArrayStaticMethod = { fg = colors.green },
+    typescriptTSVariableBuiltin = { fg = colors.aqua },
+    typescriptTSNamespace = { fg = colors.aqua },
+    typescriptTSConstructor = { fg = colors.aqua },
+    typescriptTSParameter = { fg = colors.orange, italic = true },
+    typescriptTSKeywordReturn = { fg = colors.pink },
 
     -- tsx
     tsxAttrib = { fg = colors.green },
     tsxTagName = { fg = colors.aqua },
+    tsxTSConstructor = { fg = colors.aqua },
+    tsxTSKeyWordReturn = { fg = colors.pink },
+    tsxTSType = { fg = colors.aqua },
+    tsxTSVariableBuiltin = { fg = colors.aqua },
+    tsxTSParameter = { fg = colors.orange, italic = true },
 
     -- rust
     rustIdentifier = { fg = colors.aqua },
@@ -231,6 +243,13 @@ local themes = {
     rustLet = { fg = colors.cyan },
     rustParamName = { fg = colors.orange, italic = true },
     rustModPath = { fg = colors.aqua },
+    rustTSKeyword = { fg = colors.pink },
+    rustTSConstBuiltin = { fg = colors.aqua },
+    rustTSVariableBuiltin = { fg = colors.pink },
+    rustTSTypeBuiltin = { fg = colors.aqua },
+    rustTSType = { fg = colors.aqua },
+    rustTSParameter = { fg = colors.orange, italic = true },
+    rustTSKeywordFunction = { fg = colors.pink },
 
     -- html
     htmlTag = { fg = colors.fg },
@@ -263,38 +282,6 @@ local themes = {
 
     -- bash
     bashTSParameter = { fg = colors.orange, italic = true },
-
-    -- typescript
-    typescriptTSVariableBuiltin = { fg = colors.aqua },
-    typescriptTSNamespace = { fg = colors.aqua },
-    typescriptTSConstructor = { fg = colors.aqua },
-    typescriptTSParameter = { fg = colors.orange, italic = true },
-    typescriptTSKeywordReturn = { fg = colors.pink },
-
-    -- tsx
-    tsxTSConstructor = { fg = colors.aqua },
-    tsxTSKeyWordReturn = { fg = colors.pink },
-    tsxTSType = { fg = colors.aqua },
-    tsxTSVariableBuiltin = { fg = colors.aqua },
-    tsxTSParameter = { fg = colors.orange, italic = true },
-
-    -- javascript
-    javascriptTSConstructor = { fg = colors.aqua },
-    javascriptTSKeyWordReturn = { fg = colors.pink },
-    javascriptTSType = { fg = colors.aqua },
-    javascriptTSVariableBuiltin = { fg = colors.aqua },
-    javascriptTSParameter = { fg = colors.orange, italic = true },
-
-    -- rust
-    rustTSKeyword = { fg = colors.pink },
-    rustTSConstBuiltin = { fg = colors.aqua },
-    rustTSVariableBuiltin = { fg = colors.pink },
-    rustTSTypeBuiltin = { fg = colors.aqua },
-    rustTSType = { fg = colors.aqua },
-    rustTSParameter = { fg = colors.orange, italic = true },
-    rustTSKeywordFunction = { fg = colors.pink },
 }
 
-themes = vim.tbl_deep_extend("force", themes, user_themes)
-
-return themes
+return vim.tbl_deep_extend("force", themes, options.themes(colors))

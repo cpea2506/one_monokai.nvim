@@ -1,11 +1,12 @@
-local M = {}
+local legacy = require "one_monokai.legacy"
 
-local colors = require "one_monokai.colors"
+local M = {}
 
 M.options = {
     transparent = false,
-    colors = colors,
-    themes = function(user_colors)
+    colors = {},
+    ---@diagnostic disable-next-line: unused-local
+    themes = function(colors)
         return {}
     end,
 }
@@ -19,8 +20,12 @@ end
 M.load_theme = function()
     local themes = require "one_monokai.themes"
 
-    for group, setting in pairs(themes) do
-        vim.api.nvim_set_hl(0, group, setting)
+    for group, attrs in pairs(themes) do
+        local ok, err = pcall(vim.api.nvim_set_hl, 0, group, attrs)
+
+        if not ok then
+            legacy.log(err)
+        end
     end
 end
 

@@ -1,3 +1,6 @@
+local options = require("one_monokai.config").options
+local legacy = require "one_monokai.legacy"
+
 local colors = {
     -- main colors
     fg = "#abb2bf",
@@ -33,4 +36,18 @@ local colors = {
     },
 }
 
-return colors
+local function set_colors(user_colors)
+    for name, color in pairs(user_colors) do
+        if type(color) == "table" then
+            return set_colors(color)
+        else
+            if not legacy.check_color(name, color) then
+                return colors
+            end
+        end
+    end
+
+    return vim.tbl_deep_extend("force", colors, user_colors)
+end
+
+return set_colors(options.colors)
