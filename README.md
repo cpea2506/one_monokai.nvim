@@ -31,7 +31,7 @@ require("one_monokai").setup()
 ```lua
 {
     transparent = false
-    colors = require("one_monokai.colors"),
+    colors = {},
     themes = function(colors)
         return {}
     end
@@ -55,7 +55,7 @@ require("one_monokai").setup({
         return {
             Normal = { bg = colors.lmao },
             Comment = { fg = colors.pink, italic = true },
-            ErrorMsg = { fg = "#000000", bg = "#ec6075", standout = true },
+            ErrorMsg = { fg = "black", bg = "#ec6075", standout = true },
         }
     end,
 })
