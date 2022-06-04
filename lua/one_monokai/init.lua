@@ -2,9 +2,12 @@ local M = {}
 
 local set = vim.cmd
 local config = require "one_monokai.config"
+local themes = require "one_monokai.themes"
 
 M.setup = function(user_config)
-    set [[hi clear]]
+    if vim.g.colors_name then
+        set [[hi clear]]
+    end
 
     if vim.fn.exists "syntax_on" then
         set [[syntax reset]]
@@ -16,7 +19,7 @@ M.setup = function(user_config)
 
     -- load user config and themes
     config.extend(user_config)
-    config.load_theme()
+    themes.load()
 
     set [[colorscheme one_monokai]]
 end
