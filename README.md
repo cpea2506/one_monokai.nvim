@@ -1,13 +1,19 @@
-# One Monokai Nvim
-
-Vscode One Monokai theme written in Lua for Neovim.
-
-<img width="1680" alt="One monokai look" src="https://user-images.githubusercontent.com/42694704/139383485-ae0be75e-225f-468a-9ce3-ba8cad20ff4c.png">
+<div align="center">
+  <h1>
+      <img src="./assets/logo.png" width="80px">
+      <br/>
+      One Monokai Nvim
+  </h1>
+  
+  VSCode One Monokai theme written in Lua for Neovim.
+</div>
+  
+![one monokai demo](./assets/demo.png)
 
 ## Installation
 
 ```lua
-use 'cpea2506/one_monokai.nvim'
+use "cpea2506/one_monokai.nvim"
 ```
 
 #### Note
@@ -24,24 +30,24 @@ require("one_monokai").setup()
 
 - `transparent`: enable transparent background.
 - `colors`: override list default colors.
-- `themes`: override list default highlight groups. The function accpet colors as argument
+- `themes`: override list default highlight groups. The function accepts `colors` as argument.
 
 #### Default
 
 ```lua
 {
-    transparent = false
+    transparent = false,
     colors = {},
     themes = function(colors)
         return {}
-    end
+    end,
 }
 ```
 
 ### Customize example
-You can easily custom your highlight group. Override the list of supported values or add more on your own.
-1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/colors.lua)
-2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/main/lua/one_monokai/themes.lua)
+You can easily change highlighting groups. Override the list of supported values or add more on your own.
+1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/colors.lua#L4)
+2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/themes.lua#L6)
 
 ```lua
 require("one_monokai").setup({
@@ -56,13 +62,14 @@ require("one_monokai").setup({
             Normal = { bg = colors.lmao },
             Comment = { fg = colors.pink, italic = true },
             ErrorMsg = { fg = "black", bg = "#ec6075", standout = true },
+            NormalFloat = { link = "Normal" },
         }
     end,
 })
 ```
 
 ## Inspiration
-This is the best theme I've ever seen in my eyes. I tried it written in Vim for a long time and found it's not so easy to do configuration. So I decided to write it in Lua for compatibility with Neovim.
+This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
 
 Thanks for these talented and amazing people:
 

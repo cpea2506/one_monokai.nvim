@@ -54,7 +54,6 @@ local function default_themes(colors)
         CursorColumn = { bg = colors.vulcan },
         CursorLine = { bg = colors.vulcan },
         Nontext = { fg = colors.gray },
-        TermCursor = { fg = colors.pink },
         StatusLine = { fg = colors.light_gray, bg = colors.darker_black },
         StatusLineNC = { fg = colors.light_gray, bg = colors.dark_black },
         Tabline = { fg = colors.fg, bg = colors.dark_black, reverse = true },
