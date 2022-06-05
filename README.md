@@ -44,7 +44,7 @@ require("one_monokai").setup()
 }
 ```
 
-### Customize example
+### Customization example
 You can easily change highlighting groups. Override the list of supported values or add more on your own.
 1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/colors.lua#L4)
 2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/themes.lua#L6)
