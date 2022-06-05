@@ -1,19 +1,19 @@
 <div align="center">
-  <h1> 
+  <h1>
       <img src="./assets/logo.png" width="80px">
       <br/>
       One Monokai Nvim
   </h1>
-    
+  
   VSCode One Monokai theme written in Lua for Neovim.
 </div>
-
+  
 ![one monokai demo](./assets/demo.png)
 
 ## Installation
 
 ```lua
-use 'cpea2506/one_monokai.nvim'
+use "cpea2506/one_monokai.nvim"
 ```
 
 #### Note
