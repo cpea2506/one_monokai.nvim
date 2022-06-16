@@ -3,9 +3,7 @@ local M = {}
 M.options = {
     transparent = false,
     colors = {},
-
-    ---@diagnostic disable-next-line: unused-local
-    themes = function(colors)
+    themes = function(_)
         return {}
     end,
 }
