@@ -1,7 +1,6 @@
 local config = require "one_monokai.config"
-local legacy = require "one_monokai.legacy"
 
-local Colors = {
+local colors = {
     default = {
         -- main colors
         fg = "#abb2bf",
@@ -36,35 +35,39 @@ local Colors = {
             change = "#d7d7ff",
         },
     },
-    check_colors = function(name, value)
-        if value:lower() == "none" then
-            return true
-        end
-
-        if vim.api.nvim_get_color_by_name(value) == -1 then
-            legacy.log(string.format("colors(%s): %q is not a valid color", name, value))
-
-            return false
-        end
-
-        return true
-    end,
-    extend = function(self, user_colors)
-        return vim.tbl_deep_extend("force", self.default, user_colors)
-    end,
-    set = function(self, user_colors)
-        for name, value in pairs(user_colors) do
-            if type(value) == "table" then
-                return self:set(value)
-            else
-                if not self.check_colors(name, value) then
-                    return self.default
-                end
-            end
-        end
-
-        return self:extend(user_colors)
-    end,
 }
 
-return Colors:set(config.options.colors)
+function colors:check_colors(name, value)
+    local legacy = require "one_monokai.legacy"
+    if value:lower() == "none" then
+        return true
+    end
+
+    if vim.api.nvim_get_color_by_name(value) == -1 then
+        legacy.log(string.format("colors(%s): %q is not a valid color", name, value))
+
+        return false
+    end
+
+    return true
+end
+
+function colors:extend(user_colors)
+    return vim.tbl_deep_extend("force", self.default, user_colors)
+end
+
+function colors:set(user_colors)
+    for name, value in pairs(user_colors) do
+        if type(value) == "table" then
+            return self:set(value)
+        else
+            if not self.check_colors(name, value) then
+                return self.default
+            end
+        end
+    end
+
+    return self:extend(user_colors)
+end
+
+return colors:set(config.options.colors)

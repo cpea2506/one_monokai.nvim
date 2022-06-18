@@ -1,17 +1,17 @@
-local M = {}
-
-M.options = {
-    transparent = false,
-    colors = {},
-    themes = function(_)
-        return {}
-    end,
+local config = {
+    options = {
+        transparent = false,
+        colors = {},
+        themes = function(_)
+            return {}
+        end,
+    },
 }
 
-M.extend = function(user_config)
+function config:extend(user_config)
     if user_config then
-        M.options = vim.tbl_deep_extend("force", M.options, user_config)
+        self.options = vim.tbl_deep_extend("force", self.options, user_config)
     end
 end
 
-return M
+return config
