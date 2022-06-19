@@ -72,6 +72,19 @@ function themes:new()
         Title = { fg = colors.yellow },
         Directory = { fg = colors.aqua },
 
+        -- treesitter
+        TSConstructor = { fg = colors.aqua },
+        TSBoolean = { fg = colors.cyan },
+        TSFuncBuiltin = { fg = colors.green },
+        TSKeywordReturn = { fg = colors.pink },
+        TSKeyword = { fg = colors.pink },
+        TSParameter = { fg = colors.orange, italic = true },
+        TSVariableBuiltin = { fg = colors.pink },
+        TSConstBuiltin = { fg = colors.aqua },
+        TSKeywordFunction = { fg = colors.pink },
+        TSTypeBuiltin = { fg = colors.aqua },
+        TSType = { fg = colors.aqua },
+
         -- diff
         DiffAdd = { fg = colors.git.add },
         DiffDelete = { fg = colors.git.del },
@@ -191,11 +204,6 @@ function themes:new()
         jsFuncArgs = { fg = colors.orange, italic = true },
         jsStorageClass = { fg = colors.cyan },
         jsDocTags = { fg = colors.cyan, italic = true },
-        javascriptTSConstructor = { fg = colors.aqua },
-        javascriptTSKeyWordReturn = { fg = colors.pink },
-        javascriptTSType = { fg = colors.aqua },
-        javascriptTSVariableBuiltin = { fg = colors.aqua },
-        javascriptTSParameter = { fg = colors.orange, italic = true },
 
         -- typescript
         typescriptArrowFuncArg = { fg = colors.orange, italic = true },
@@ -226,20 +234,10 @@ function themes:new()
         typescriptMember = { fg = colors.fg },
         typescriptDestructureVariable = { fg = colors.aqua },
         typescriptArrayStaticMethod = { fg = colors.green },
-        typescriptTSVariableBuiltin = { fg = colors.aqua },
-        typescriptTSNamespace = { fg = colors.aqua },
-        typescriptTSConstructor = { fg = colors.aqua },
-        typescriptTSParameter = { fg = colors.orange, italic = true },
-        typescriptTSKeywordReturn = { fg = colors.pink },
 
         -- tsx
         tsxAttrib = { fg = colors.green },
         tsxTagName = { fg = colors.aqua },
-        tsxTSConstructor = { fg = colors.aqua },
-        tsxTSKeyWordReturn = { fg = colors.pink },
-        tsxTSType = { fg = colors.aqua },
-        tsxTSVariableBuiltin = { fg = colors.aqua },
-        tsxTSParameter = { fg = colors.orange, italic = true },
 
         -- rust
         rustIdentifier = { fg = colors.aqua },
@@ -251,13 +249,6 @@ function themes:new()
         rustLet = { fg = colors.cyan },
         rustParamName = { fg = colors.orange, italic = true },
         rustModPath = { fg = colors.aqua },
-        rustTSKeyword = { fg = colors.pink },
-        rustTSConstBuiltin = { fg = colors.aqua },
-        rustTSVariableBuiltin = { fg = colors.pink },
-        rustTSTypeBuiltin = { fg = colors.aqua },
-        rustTSType = { fg = colors.aqua },
-        rustTSParameter = { fg = colors.orange, italic = true },
-        rustTSKeywordFunction = { fg = colors.pink },
 
         -- html
         htmlTag = { fg = colors.fg },
@@ -284,12 +275,6 @@ function themes:new()
         cssBraces = { fg = colors.fg },
         cssClassNameDot = { fg = colors.pink },
         cssURL = { fg = colors.orange, underline = true, italic = true },
-
-        -- docker
-        dockerfileTSKeyword = { fg = colors.pink },
-
-        -- bash
-        bashTSParameter = { fg = colors.orange, italic = true },
     }
 
     self.extends = Highlight:new(vim.tbl_deep_extend("force", self.default.groups, config.options.themes(colors)))

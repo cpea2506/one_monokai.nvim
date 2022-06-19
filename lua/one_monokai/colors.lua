@@ -39,6 +39,7 @@ local colors = {
 
 function colors:check_colors(name, value)
     local legacy = require "one_monokai.legacy"
+
     if value:lower() == "none" then
         return true
     end
