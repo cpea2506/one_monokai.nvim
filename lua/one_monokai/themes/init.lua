@@ -1,10 +1,11 @@
-local legacy = require "one_monokai.legacy"
-local config = require "one_monokai.config"
+local themes = { default = {}, extends = {} }
 
-local M = {}
+function themes:new()
+    local config = require "one_monokai.config"
+    local colors = require "one_monokai.colors"
+    local Highlight = require "one_monokai.themes.highlight"
 
-local function default_themes(colors)
-    return {
+    self.default = Highlight:new {
         Constant = { fg = colors.aqua },
         Number = { fg = colors.purple },
         Float = { fg = colors.purple },
@@ -71,6 +72,19 @@ local function default_themes(colors)
         Title = { fg = colors.yellow },
         Directory = { fg = colors.aqua },
 
+        -- treesitter
+        TSConstructor = { fg = colors.aqua },
+        TSBoolean = { fg = colors.cyan },
+        TSFuncBuiltin = { fg = colors.green },
+        TSKeywordReturn = { fg = colors.pink },
+        TSKeyword = { fg = colors.pink },
+        TSParameter = { fg = colors.orange, italic = true },
+        TSVariableBuiltin = { fg = colors.pink },
+        TSConstBuiltin = { fg = colors.aqua },
+        TSKeywordFunction = { fg = colors.pink },
+        TSTypeBuiltin = { fg = colors.aqua },
+        TSType = { fg = colors.aqua },
+
         -- diff
         DiffAdd = { fg = colors.git.add },
         DiffDelete = { fg = colors.git.del },
@@ -102,6 +116,7 @@ local function default_themes(colors)
         NvimTreeGitDirty = { fg = colors.pink },
 
         -- whichkey
+        WhichKey = { fg = colors.yellow },
         WhichKeySeparator = { fg = colors.pink },
 
         -- nvim-cmp
@@ -189,11 +204,6 @@ local function default_themes(colors)
         jsFuncArgs = { fg = colors.orange, italic = true },
         jsStorageClass = { fg = colors.cyan },
         jsDocTags = { fg = colors.cyan, italic = true },
-        javascriptTSConstructor = { fg = colors.aqua },
-        javascriptTSKeyWordReturn = { fg = colors.pink },
-        javascriptTSType = { fg = colors.aqua },
-        javascriptTSVariableBuiltin = { fg = colors.aqua },
-        javascriptTSParameter = { fg = colors.orange, italic = true },
 
         -- typescript
         typescriptArrowFuncArg = { fg = colors.orange, italic = true },
@@ -224,20 +234,10 @@ local function default_themes(colors)
         typescriptMember = { fg = colors.fg },
         typescriptDestructureVariable = { fg = colors.aqua },
         typescriptArrayStaticMethod = { fg = colors.green },
-        typescriptTSVariableBuiltin = { fg = colors.aqua },
-        typescriptTSNamespace = { fg = colors.aqua },
-        typescriptTSConstructor = { fg = colors.aqua },
-        typescriptTSParameter = { fg = colors.orange, italic = true },
-        typescriptTSKeywordReturn = { fg = colors.pink },
 
         -- tsx
         tsxAttrib = { fg = colors.green },
         tsxTagName = { fg = colors.aqua },
-        tsxTSConstructor = { fg = colors.aqua },
-        tsxTSKeyWordReturn = { fg = colors.pink },
-        tsxTSType = { fg = colors.aqua },
-        tsxTSVariableBuiltin = { fg = colors.aqua },
-        tsxTSParameter = { fg = colors.orange, italic = true },
 
         -- rust
         rustIdentifier = { fg = colors.aqua },
@@ -249,13 +249,6 @@ local function default_themes(colors)
         rustLet = { fg = colors.cyan },
         rustParamName = { fg = colors.orange, italic = true },
         rustModPath = { fg = colors.aqua },
-        rustTSKeyword = { fg = colors.pink },
-        rustTSConstBuiltin = { fg = colors.aqua },
-        rustTSVariableBuiltin = { fg = colors.pink },
-        rustTSTypeBuiltin = { fg = colors.aqua },
-        rustTSType = { fg = colors.aqua },
-        rustTSParameter = { fg = colors.orange, italic = true },
-        rustTSKeywordFunction = { fg = colors.pink },
 
         -- html
         htmlTag = { fg = colors.fg },
@@ -282,39 +275,25 @@ local function default_themes(colors)
         cssBraces = { fg = colors.fg },
         cssClassNameDot = { fg = colors.pink },
         cssURL = { fg = colors.orange, underline = true, italic = true },
-
-        -- docker
-        dockerfileTSKeyword = { fg = colors.pink },
-
-        -- bash
-        bashTSParameter = { fg = colors.orange, italic = true },
     }
+
+    self.extends = Highlight:new(vim.tbl_deep_extend("force", self.default.groups, config.options.themes(colors)))
+
+    return self
 end
 
-local function set_theme(themes)
-    for group, attrs in pairs(themes) do
-        local status_ok, err = pcall(vim.api.nvim_set_hl, 0, group, attrs)
+function themes:load()
+    local legacy = require "one_monokai.legacy"
 
-        if not status_ok then
-            error(string.format("themes(%s): %s", group, err), 0)
-        end
-    end
-end
-
-M.load = function()
-    local colors = require "one_monokai.colors"
-    local default = default_themes(colors)
-    local user_themes = config.options.themes(colors)
-
-    user_themes = vim.tbl_deep_extend("force", default, user_themes)
-
-    local set_theme_ok, err = pcall(set_theme, user_themes)
+    local set_theme_ok, err = pcall(function()
+        self.extends:set()
+    end)
 
     if not set_theme_ok then
         legacy.log(err)
 
-        set_theme(default)
+        self.default:set()
     end
 end
 
-return M
+return themes
