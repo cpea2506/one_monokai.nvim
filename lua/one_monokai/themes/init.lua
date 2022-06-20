@@ -77,7 +77,7 @@ function themes:new()
         TSBoolean = { fg = colors.cyan },
         TSFuncBuiltin = { fg = colors.green },
         TSKeywordReturn = { fg = colors.pink },
-        TSKeyword = { fg = colors.pink },
+        TSKeyword = { fg = colors.cyan },
         TSParameter = { fg = colors.orange, italic = true },
         TSVariableBuiltin = { fg = colors.pink },
         TSConstBuiltin = { fg = colors.aqua },
