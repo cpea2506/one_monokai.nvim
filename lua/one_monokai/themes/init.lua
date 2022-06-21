@@ -9,7 +9,7 @@ function themes:new()
         Constant = { fg = colors.aqua },
         Number = { fg = colors.purple },
         Float = { fg = colors.purple },
-        Boolean = { fg = colors.aqua },
+        Boolean = { fg = colors.cyan },
         Character = { fg = colors.yellow },
         String = { fg = colors.yellow },
 
