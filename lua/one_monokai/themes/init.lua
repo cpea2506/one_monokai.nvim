@@ -26,7 +26,7 @@ function themes:new()
         Label = { fg = colors.pink },
         Keyword = { fg = colors.cyan },
 
-        PreProc = { fg = colors.green },
+        PreProc = { fg = colors.pink },
         Include = { fg = colors.pink },
         Define = { fg = colors.pink },
         Macro = { fg = colors.green },
@@ -80,7 +80,7 @@ function themes:new()
         TSKeyword = { fg = colors.cyan },
         TSParameter = { fg = colors.orange, italic = true },
         TSVariableBuiltin = { fg = colors.pink },
-        TSConstBuiltin = { fg = colors.pink },
+        TSConstBuiltin = { fg = colors.aqua },
         TSKeywordFunction = { fg = colors.pink },
         TSTypeBuiltin = { fg = colors.aqua },
         TSType = { fg = colors.aqua },
