@@ -1,12 +1,12 @@
-local Highlight = { groups = {} }
+local highlight = { groups = {} }
 
-function Highlight:new(groups)
+function highlight:new(groups)
     self.groups = groups
 
     return self
 end
 
-function Highlight:set()
+function highlight:set()
     for group, attrs in pairs(self.groups) do
         local status_ok, err = pcall(vim.api.nvim_set_hl, 0, group, attrs)
 
@@ -16,4 +16,4 @@ function Highlight:set()
     end
 end
 
-return Highlight
+return highlight

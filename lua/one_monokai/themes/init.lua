@@ -3,20 +3,20 @@ local themes = { default = {}, extends = {} }
 function themes:new()
     local config = require "one_monokai.config"
     local colors = require "one_monokai.colors"
-    local Highlight = require "one_monokai.themes.highlight"
+    local highlight = require "one_monokai.themes.highlight"
 
-    self.default = Highlight:new {
+    self.default = highlight:new {
         Constant = { fg = colors.aqua },
         Number = { fg = colors.purple },
         Float = { fg = colors.purple },
-        Boolean = { fg = colors.aqua },
+        Boolean = { fg = colors.cyan },
         Character = { fg = colors.yellow },
         String = { fg = colors.yellow },
 
-        Type = { fg = colors.cyan },
+        Type = { fg = colors.aqua },
         Structure = { fg = colors.cyan },
         StorageClass = { fg = colors.cyan },
-        Typedef = { fg = colors.cyan },
+        Typedef = { fg = colors.aqua },
 
         Identifier = { fg = colors.green },
         Function = { fg = colors.green },
@@ -30,7 +30,7 @@ function themes:new()
         Include = { fg = colors.pink },
         Define = { fg = colors.pink },
         Macro = { fg = colors.green },
-        PreCondit = { fg = colors.green },
+        PreCondit = { fg = colors.pink },
 
         Special = { fg = colors.purple },
         SpecialChar = { fg = colors.pink },
@@ -80,7 +80,7 @@ function themes:new()
         TSKeyword = { fg = colors.cyan },
         TSParameter = { fg = colors.orange, italic = true },
         TSVariableBuiltin = { fg = colors.pink },
-        TSConstBuiltin = { fg = colors.aqua },
+        TSConstBuiltin = { fg = colors.pink },
         TSKeywordFunction = { fg = colors.pink },
         TSTypeBuiltin = { fg = colors.aqua },
         TSType = { fg = colors.aqua },
@@ -120,7 +120,7 @@ function themes:new()
         DashboardCenter = { fg = colors.roman },
         DashboardFooter = { fg = colors.aqua },
 
-        -- nvim tree
+        -- nvimtree
         NvimTreeFolderIcon = { fg = colors.yellow },
         NvimTreeGitStaged = { fg = colors.green },
         NvimTreeGitDirty = { fg = colors.pink },
@@ -129,7 +129,7 @@ function themes:new()
         WhichKey = { fg = colors.yellow },
         WhichKeySeparator = { fg = colors.pink },
 
-        -- nvim-cmp
+        -- nvim cmp
         CmpItemAbbrMatch = { fg = colors.aqua },
         CmpItemKindStruct = { fg = colors.pink },
         CmpItemKindEnum = { fg = colors.pink },
@@ -200,6 +200,7 @@ function themes:new()
         -- vim
         vimCommand = { fg = colors.pink },
 
+        -- javascript
         jsFuncName = { fg = colors.green },
         jsThis = { fg = colors.pink },
         jsFunctionKey = { fg = colors.green },
@@ -287,7 +288,7 @@ function themes:new()
         cssURL = { fg = colors.orange, underline = true, italic = true },
     }
 
-    self.extends = Highlight:new(vim.tbl_deep_extend("force", self.default.groups, config.options.themes(colors)))
+    self.extends = highlight:new(vim.tbl_deep_extend("force", self.default.groups, config.options.themes(colors)))
 
     return self
 end
