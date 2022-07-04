@@ -171,6 +171,7 @@ function themes:new()
         CratesNvimPopupFeature = { fg = colors.aqua },
         CratesNvimPopupEnabled = { fg = colors.green },
         CratesNvimPopupTransitive = { fg = colors.pink },
+        CratesNvimPopupUrl = { fg = colors.aqua },
 
         -- notify
         NotifyERRORBorder = { fg = colors.roman },
