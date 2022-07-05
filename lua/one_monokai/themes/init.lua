@@ -26,7 +26,7 @@ function themes:new()
         Label = { fg = colors.pink },
         Keyword = { fg = colors.cyan },
 
-        PreProc = { fg = colors.pink },
+        PreProc = { fg = colors.green },
         Include = { fg = colors.pink },
         Define = { fg = colors.pink },
         Macro = { fg = colors.green },

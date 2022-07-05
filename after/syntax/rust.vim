@@ -7,7 +7,7 @@ syn region rustFuncParens start="\(fn\s\+.*(\(&self\)\?\)\@<=" end="\().*[{;]\)\
 syn region rustClosureParens start="\([=(]\s*|\)\@<=" end="|\@=" contains=rustParamName, rustType, rustKeyword, rustOperator, rustSigil, rustStorage
 
 " Match all words that start with capital letter as type
-syn match rustType "\u\w*" 
+syn match rustType "\u\w*"
 
 hi def link rustQuestionMark rustOperator
 hi def link rustIdentifier rustType
