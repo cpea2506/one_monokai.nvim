@@ -1,0 +1,22 @@
+name: lint
+
+on:
+  push:
+    branches:
+      - "dev"
+      - "main"
+    paths:
+      - 'lua/**'
+
+jobs:
+  selene-check:
+      name: "linter check with selene"
+      runs-on: macos-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: NTBBloodbath/selene-action@v1.0.0
+        with:
+          # Github secret token
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # selene arguments
+          args: --display-style=quiet lua

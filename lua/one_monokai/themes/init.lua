@@ -5,6 +5,12 @@ function themes:new()
     local colors = require "one_monokai.colors"
     local highlight = require "one_monokai.themes.highlight"
 
+    -- colors can never be nil,
+    -- just put it there to shut linter up
+    if not colors then
+        return
+    end
+
     self.default = highlight:new {
         Constant = { fg = colors.aqua },
         Number = { fg = colors.purple },
