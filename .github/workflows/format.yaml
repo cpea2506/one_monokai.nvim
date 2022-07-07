@@ -10,7 +10,7 @@ on:
 
 jobs:
   stylua-check:
-    name: "Formatting check with Stylua"
+    name: "formatting check with stylua"
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2

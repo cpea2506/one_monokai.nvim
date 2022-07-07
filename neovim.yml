@@ -1,0 +1,5 @@
+---
+base: lua53
+globals:
+  vim:
+    any: true
