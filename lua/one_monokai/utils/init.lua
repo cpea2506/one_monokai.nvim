@@ -4,12 +4,12 @@ local M = {}
 ---@param path string #path to the directory (should not end with '.')
 ---@param list any[] #list of module's name inside that directory
 ---@return table #table
-function M.gen_module_table(path, list)
+function M.gen_module_tbl(path, list)
     local tbl = {}
 
-    for _, name in pairs(list) do
-        local module = require(string.format("%s.%s", path, name))
-        table.insert(tbl, module)
+    for i = 1, #list do
+        local module = path .. "." .. list[i]
+        tbl[#tbl + 1] = require(module)
     end
 
     return tbl

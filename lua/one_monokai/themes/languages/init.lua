@@ -1,4 +1,5 @@
 local utils = require "one_monokai.utils"
+
 local languages = {
     "css",
     "html",
@@ -11,4 +12,4 @@ local languages = {
     "xml",
 }
 
-return utils.gen_module_table("one_monokai.themes.languages", languages)
+return utils.gen_module_tbl("one_monokai.themes.languages", languages)
