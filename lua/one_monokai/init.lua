@@ -1,10 +1,10 @@
 local M = {}
 
-M.setup = function(user_config)
-    local set = vim.cmd
-    local config = require "one_monokai.config"
-    local themes = require "one_monokai.themes"
+local set = vim.api.nvim_command
+local config = require "one_monokai.config"
+local themes = require "one_monokai.themes"
 
+M.setup = function(user_config)
     if vim.g.colors_name then
         set [[hi clear]]
     end
