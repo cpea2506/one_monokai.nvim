@@ -26,25 +26,33 @@ local colors = {
         gray = "#4b5261",
         light_gray = "#9ca3b2",
         dark_gray = "#64645e",
-        error = {
-            fg = "#be5046",
-            bg = "#5f0000",
-        },
-        git = {
-            add = "#d7ffaf",
-            del = "#f75f5f",
-            change = "#d7d7ff",
-        },
+        error_fg = "#be5046",
+        error_bg = "#5f0000",
+        git_add = "#d7ffaf",
+        git_del = "#f75f5f",
+        git_change = "#d7d7ff",
     },
 }
 
-function colors:check_colors(name, value)
-    if value:lower() == "none" then
+function colors:extend(user_colors)
+    return vim.tbl_deep_extend("force", self.default, user_colors)
+end
+
+local function is_valid_color(name, value)
+    local value_type = type(value)
+
+    if value_type ~= "string" then
+        legacy.log("colors(%s): expected string value, got %s", name, value_type)
+
+        return false
+    end
+
+    if value:lower():match "none" then
         return true
     end
 
     if vim.api.nvim_get_color_by_name(value) == -1 then
-        legacy.log(string.format("colors(%s): %q is not a valid color", name, value))
+        legacy.log("colors(%s): %q is not a valid color", name, value)
 
         return false
     end
@@ -52,18 +60,10 @@ function colors:check_colors(name, value)
     return true
 end
 
-function colors:extend(user_colors)
-    return vim.tbl_deep_extend("force", self.default, user_colors)
-end
-
 function colors:set(user_colors)
     for name, value in pairs(user_colors) do
-        if type(value) == "table" then
-            return self:set(value)
-        else
-            if not self.check_colors(name, value) then
-                return self.default
-            end
+        if not is_valid_color(name, value) then
+            return self.default
         end
     end
 
