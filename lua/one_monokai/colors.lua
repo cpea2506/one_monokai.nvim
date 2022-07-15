@@ -26,17 +26,11 @@ local colors = {
         gray = "#4b5261",
         light_gray = "#9ca3b2",
         dark_gray = "#64645e",
-        error_fg = "#be5046",
-        error_bg = "#5f0000",
         git_add = "#d7ffaf",
         git_del = "#f75f5f",
         git_change = "#d7d7ff",
     },
 }
-
-function colors:extend(user_colors)
-    return vim.tbl_deep_extend("force", self.default, user_colors)
-end
 
 local function is_valid_color(name, value)
     local value_type = type(value)
@@ -47,7 +41,7 @@ local function is_valid_color(name, value)
         return false
     end
 
-    if value:lower():match "none" then
+    if value:lower() == "none" then
         return true
     end
 
@@ -67,7 +61,7 @@ function colors:set(user_colors)
         end
     end
 
-    return self:extend(user_colors)
+    return vim.tbl_extend("force", self.default, user_colors)
 end
 
 return colors:set(config.options.colors)

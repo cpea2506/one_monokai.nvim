@@ -4,6 +4,8 @@ local highlight = require "one_monokai.themes.highlight"
 
 local themes = { default = {}, extended = {} }
 
+themes.__index = themes
+
 function themes:new()
     ---@diagnostic disable: need-check-nil
     local colors = require "one_monokai.colors"
@@ -46,7 +48,7 @@ function themes:new()
 
         Underlined = { fg = colors.green, underline = true },
         Ignore = { fg = colors.yellow },
-        Error = { fg = colors.error_fg, bg = colors.error_bg },
+        Error = { fg = colors.roman },
 
         Normal = { fg = colors.fg, bg = config.options.transparent and colors.none or colors.bg },
         FloatTitle = { fg = colors.pink },
@@ -67,7 +69,7 @@ function themes:new()
         Question = { fg = colors.yellow },
         ModeMsg = { fg = colors.yellow },
         MoreMsg = { fg = colors.yellow },
-        ErrorMsg = { fg = colors.bg, bg = colors.error_fg, standout = true },
+        ErrorMsg = { fg = colors.roman },
         WarningMsg = { fg = colors.yellow },
         VertSplit = { fg = colors.fg },
 
@@ -82,6 +84,7 @@ function themes:new()
         TSKeywordReturn = { fg = colors.pink },
         TSKeyword = { fg = colors.cyan },
         TSParameter = { fg = colors.orange, italic = true },
+        TSWarning = { fg = colors.yellow },
         TSVariableBuiltin = { fg = colors.pink },
         TSConstBuiltin = { fg = colors.aqua },
         TSKeywordFunction = { fg = colors.pink },
@@ -161,7 +164,7 @@ function themes:new()
 
         -- crates
         CratesNvimNoMatch = { fg = colors.pink },
-        CratesNvimError = { fg = colors.git_del },
+        CratesNvimError = { fg = colors.roman },
         CratesNvimUpgrade = { fg = colors.yellow },
         CratesNvimVersion = { fg = colors.green },
         CratesNvimPreRelease = { fg = colors.cyan },
