@@ -4,8 +4,6 @@ local highlight = require "one_monokai.themes.highlight"
 
 local themes = { default = {}, extended = {} }
 
-themes.__index = themes
-
 function themes:new()
     ---@diagnostic disable: need-check-nil
     local colors = require "one_monokai.colors"
