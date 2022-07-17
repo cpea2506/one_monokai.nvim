@@ -54,7 +54,9 @@ local function is_valid_color(name, value)
     return true
 end
 
-function colors:set(user_colors)
+local user_colors = config.options.colors
+
+function colors:set()
     for name, value in pairs(user_colors) do
         if not is_valid_color(name, value) then
             return self.default
@@ -64,4 +66,4 @@ function colors:set(user_colors)
     return vim.tbl_extend("force", self.default, user_colors)
 end
 
-return colors:set(config.options.colors)
+return colors:set()
