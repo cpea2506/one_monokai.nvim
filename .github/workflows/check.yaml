@@ -1,0 +1,31 @@
+name: check
+
+on:
+ push:
+   branches:
+     - "dev"
+     - "main"
+   paths:
+     - "lua/**"
+     - "tests/**"
+
+jobs:
+ stylua-check:
+   name: "formatting check with stylua"
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+     - name: Lint with stylua
+       uses: JohnnyMorganz/stylua-action@1.0.0
+       with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+         args: --check lua/ tests/
+ selene-check:
+     name: "linter check with selene"
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v2
+     - uses: NTBBloodbath/selene-action@v1.0.0
+       with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+         args: --display-style=quiet lua/ tests/

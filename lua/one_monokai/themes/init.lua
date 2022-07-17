@@ -5,7 +5,6 @@ local highlight = require "one_monokai.themes.highlight"
 local themes = { default = {}, extended = {} }
 
 function themes:new()
-    ---@diagnostic disable: need-check-nil
     local colors = require "one_monokai.colors"
 
     local default_groups = {

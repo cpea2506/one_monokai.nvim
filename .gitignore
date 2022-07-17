@@ -1,1 +1,2 @@
-.DS_Store
+.luarc.json
+plenary.nvim
