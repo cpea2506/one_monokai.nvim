@@ -1,5 +1,5 @@
 local config = require "one_monokai.config"
-local legacy = require "one_monokai.legacy"
+local utils = require "one_monokai.utils"
 
 local colors = {
     default = {
@@ -36,7 +36,7 @@ local function is_valid_color(name, value)
     local value_type = type(value)
 
     if value_type ~= "string" then
-        legacy.log("colors(%s): expected string value, got %s", name, value_type)
+        utils.log("colors(%s): expected string value, got %s", name, value_type)
 
         return false
     end
@@ -46,7 +46,7 @@ local function is_valid_color(name, value)
     end
 
     if vim.api.nvim_get_color_by_name(value) == -1 then
-        legacy.log("colors(%s): %q is not a valid color", name, value)
+        utils.log("colors(%s): %q is not a valid color", name, value)
 
         return false
     end

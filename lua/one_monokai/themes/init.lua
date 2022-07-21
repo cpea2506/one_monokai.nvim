@@ -1,5 +1,5 @@
 local config = require "one_monokai.config"
-local legacy = require "one_monokai.legacy"
+local utils = require "one_monokai.utils"
 local highlight = require "one_monokai.themes.highlight"
 
 local themes = { default = {}, extended = {} }
@@ -304,7 +304,7 @@ function themes:load()
     end)
 
     if not set_theme_ok then
-        legacy.log(err)
+        utils.log(err)
 
         self.default:set()
     end
