@@ -304,7 +304,7 @@ function themes:load()
     end)
 
     if not set_theme_ok then
-        utils.log(err)
+        utils.log_error(err)
 
         self.default:set()
     end
