@@ -2,16 +2,15 @@ name: check
 
 on:
  push:
-   branches:
-     - "dev"
-     - "main"
    paths:
-     - "lua/**"
-     - "tests/**"
+     - "**.lua"
+ pull_request:
+   paths:
+     - "**.lua"
 
 jobs:
  stylua-check:
-   name: "formatting check with stylua"
+   name: "Formatting check with Stylua"
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@v2
@@ -21,7 +20,7 @@ jobs:
          token: ${{ secrets.GITHUB_TOKEN }}
          args: --check lua/ tests/
  selene-check:
-     name: "linter check with selene"
+     name: "Linter check with Selene"
      runs-on: ubuntu-latest
      steps:
      - uses: actions/checkout@v2

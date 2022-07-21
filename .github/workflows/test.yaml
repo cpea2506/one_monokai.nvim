@@ -1,14 +1,6 @@
 name: test
 
-on:
-  push:
-    branches:
-      - "main"
-      - "ci/test"
-
-  pull_request:
-    branches:
-      - "ci/test"
+on: [push, pull_request]
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:

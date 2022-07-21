@@ -9,6 +9,7 @@ describe("Highlight", function()
     local extended = default:extend {
         Boolean = { fg = colors.aqua },
     }
+
     it("should create new instance", function()
         assert.are_not.same(default, extended)
     end)
