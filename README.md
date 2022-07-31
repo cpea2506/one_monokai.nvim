@@ -17,6 +17,7 @@ use "cpea2506/one_monokai.nvim"
 ```
 
 #### Note
+
 - Require Neovim >= 0.7
 - You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
@@ -66,6 +67,19 @@ require("one_monokai").setup({
         }
     end,
 })
+```
+
+### Other plugins support
+
+- [lualine](https://github.com/nvim-lualine/lualine.nvim):
+
+```lua
+require("lualine").setup {
+  options = {
+    -- ...another setting
+    theme = "one_monokai"
+  }
+}
 ```
 
 ## Inspiration
