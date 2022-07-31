@@ -13,7 +13,6 @@ local colors = {
         aqua = "#61afef",
         yellow = "#e5c07b",
         purple = "#c678dd",
-        roman = "#ee6f73",
         peanut = "#f6d5a4",
         orange = "#d19a66",
         none = "NONE",
@@ -26,9 +25,8 @@ local colors = {
         gray = "#4b5261",
         light_gray = "#9ca3b2",
         dark_gray = "#64645e",
-        git_add = "#d7ffaf",
-        git_del = "#f75f5f",
-        git_change = "#d7d7ff",
+        red = "#f75f5f",
+        white = "#d7d7ff",
     },
 }
 

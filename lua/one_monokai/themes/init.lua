@@ -45,7 +45,7 @@ function themes:new()
 
         Underlined = { fg = colors.green, underline = true },
         Ignore = { fg = colors.yellow },
-        Error = { fg = colors.roman },
+        Error = { fg = colors.red },
 
         Normal = { fg = colors.fg, bg = config.options.transparent and colors.none or colors.bg },
         FloatTitle = { fg = colors.pink },
@@ -62,11 +62,11 @@ function themes:new()
         Tabline = { fg = colors.fg, bg = colors.dark_black, reverse = true },
         Visual = { bg = colors.gray },
         Search = { fg = colors.bg, bg = colors.yellow },
-        MatchParen = { fg = colors.fg, bold = true, underline = true },
+        MatchParen = { bg = colors.gray, bold = true },
         Question = { fg = colors.yellow },
         ModeMsg = { fg = colors.yellow },
         MoreMsg = { fg = colors.yellow },
-        ErrorMsg = { fg = colors.roman },
+        ErrorMsg = { fg = colors.red },
         WarningMsg = { fg = colors.yellow },
         VertSplit = { fg = colors.fg },
 
@@ -89,10 +89,17 @@ function themes:new()
         TSType = { fg = colors.aqua },
 
         -- diff
-        DiffAdd = { fg = colors.git_add },
-        DiffDelete = { fg = colors.git_del },
-        DiffChange = { fg = colors.git_change },
+        DiffAdd = { fg = colors.green },
+        DiffDelete = { fg = colors.red },
+        DiffChange = { fg = colors.white },
         DiffText = { fg = colors.bg, bg = colors.cyan },
+        diffRemoved = { fg = colors.pink },
+        diffLine = { fg = colors.purple },
+        diffAdded = { fg = colors.green },
+        diffSubname = { fg = colors.cyan },
+        diffIndexLine = { fg = colors.cyan },
+        diffChanged = { fg = colors.white },
+        diffFile = { fg = colors.white },
 
         -- fold
         Folded = { fg = colors.warm_gray, bg = colors.dark_black },
@@ -108,6 +115,16 @@ function themes:new()
         LspReferenceText = { bg = colors.vulcan, bold = true },
         LspReferenceWrite = { bg = colors.vulcan, bold = true },
 
+        -- diagnostics
+        DiagnosticError = { fg = colors.red },
+        DiagnosticWarn = { fg = colors.yellow },
+        DiagnosticInfo = { fg = colors.white },
+        DiagnosticHint = { fg = colors.light_gray },
+        DiagnosticUnderlineError = { sp = colors.red, underline = true },
+        DiagnosticUnderlineWarn = { sp = colors.yellow, underline = true },
+        DiagnosticUnderlineInfo = { sp = colors.green, underline = true },
+        DiagnosticUnderlineHint = { sp = colors.light_gray, underline = true },
+
         -- lsp-installer
         LspInstallerGreen = { fg = colors.green },
         LspInstallerHeader = { fg = colors.light_black, bg = colors.cyan, bold = true },
@@ -120,7 +137,7 @@ function themes:new()
 
         -- dashboard
         DashboardHeader = { fg = colors.peanut },
-        DashboardCenter = { fg = colors.roman },
+        DashboardCenter = { fg = colors.pink },
         DashboardFooter = { fg = colors.aqua },
 
         -- nvimtree
@@ -137,18 +154,18 @@ function themes:new()
         CmpItemKindStruct = { fg = colors.pink },
         CmpItemKindEnum = { fg = colors.pink },
         CmpItemKindClass = { fg = colors.pink },
+        CmpItemKindModule = { fg = colors.pink },
         CmpItemKindInterface = { fg = colors.pink },
-        CmpItemKindValue = { fg = colors.git_change },
-        CmpItemKindKeyword = { fg = colors.git_change },
-        CmpItemKindText = { fg = colors.git_change },
+        CmpItemKindValue = { fg = colors.white },
+        CmpItemKindKeyword = { fg = colors.white },
+        CmpItemKindText = { fg = colors.white },
         CmpItemKindProperty = { fg = colors.yellow },
-        CmpItemKindMethod = { fg = colors.yellow },
+        CmpItemKindMethod = { fg = colors.green },
         CmpItemKindField = { fg = colors.yellow },
-        CmpItemKindModule = { fg = colors.yellow },
         CmpItemKindEnumMember = { fg = colors.yellow },
+        CmpItemKindFunction = { fg = colors.green },
         CmpItemKindVariable = { fg = colors.cyan },
         CmpItemKindConstant = { fg = colors.cyan },
-        CmpItemKindFunction = { fg = colors.green },
         CmpItemAbbrDeprecated = { fg = colors.light_gray, strikethrough = true },
 
         -- indent blankline
@@ -161,11 +178,11 @@ function themes:new()
 
         -- crates
         CratesNvimNoMatch = { fg = colors.pink },
-        CratesNvimError = { fg = colors.roman },
+        CratesNvimError = { fg = colors.red },
         CratesNvimUpgrade = { fg = colors.yellow },
         CratesNvimVersion = { fg = colors.green },
         CratesNvimPreRelease = { fg = colors.cyan },
-        CratesNvimYanked = { fg = colors.git_del },
+        CratesNvimYanked = { fg = colors.red },
         CratesNvimLoading = { fg = colors.purple },
         CratesNvimPopupTitle = { fg = colors.purple },
         CratesNvimPopupVersion = { fg = colors.green },
@@ -177,17 +194,17 @@ function themes:new()
         CratesNvimPopupUrl = { fg = colors.aqua },
 
         -- notify
-        NotifyERRORBorder = { fg = colors.roman },
+        NotifyERRORBorder = { fg = colors.red },
         NotifyWARNBorder = { fg = colors.orange },
         NotifyINFOBorder = { fg = colors.green },
         NotifyDEBUGBorder = { fg = colors.purple },
         NotifyTRACEBorder = { fg = colors.purple },
-        NotifyERRORIcon = { fg = colors.roman },
+        NotifyERRORIcon = { fg = colors.red },
         NotifyWARNIcon = { fg = colors.orange },
         NotifyINFOIcon = { fg = colors.green },
         NotifyDEBUGIcon = { fg = colors.purple },
         NotifyTRACEIcon = { fg = colors.purple },
-        NotifyERRORTitle = { fg = colors.roman },
+        NotifyERRORTitle = { fg = colors.red },
         NotifyWARNTitle = { fg = colors.orange },
         NotifyINFOTitle = { fg = colors.green },
         NotifyDEBUGTitle = { fg = colors.purple },
