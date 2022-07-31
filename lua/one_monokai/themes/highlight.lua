@@ -31,7 +31,7 @@ end
 ---@param user_groups any[] #user defined highlight groups.
 ---@return table #highlight instance.
 function highlight:extend(user_groups)
-    local extended_groups = vim.tbl_deep_extend("force", self.groups, user_groups)
+    local extended_groups = vim.tbl_extend("force", self.groups, user_groups)
 
     return highlight:new(extended_groups)
 end
