@@ -145,6 +145,40 @@ function themes:new()
         NvimTreeGitStaged = { fg = colors.green },
         NvimTreeGitDirty = { fg = colors.pink },
 
+        -- bufferline
+        BufferLineModified = { fg = colors.pink },
+        BufferLineModifiedSelected = { fg = colors.pink },
+        BufferLineModifiedVisible = { fg = colors.pink },
+        BufferLineDiagnostic = { fg = colors.dark_gray },
+        BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = true },
+        BufferLineDiagnosticVisible = { fg = colors.dark_gray },
+        BufferLineErrorDiagnostic = { fg = colors.dark_gray, sp = colors.red },
+        BufferLineErrorDiagnosticVisible = { fg = colors.red },
+        BufferLineErrorDiagnosticSelected = { fg = colors.red, sp = colors.red, bold = true, italic = true },
+        BufferLineWarningDiagnostic = { fg = colors.dark_gray, sp = colors.yellow },
+        BufferLineWarningDiagnosticVisible = { fg = colors.yellow },
+        BufferLineWarningDiagnosticSelected = {
+            fg = colors.yellow,
+            sp = colors.yellow,
+            bold = true,
+            italic = true,
+        },
+        BufferLineInfoDiagnostic = { fg = colors.dark_gray, sp = colors.green },
+        BufferLineInfoDiagnosticVisible = { fg = colors.green },
+        BufferLineInfoDiagnosticSelected = { fg = colors.green, sp = colors.green, bold = true, italic = true },
+        BufferLineHintDiagnostic = { fg = colors.dark_gray, sp = colors.light_gray },
+        BufferLineHintDiagnosticVisible = { fg = colors.light_gray },
+        BufferLineHintDiagnosticSelected = {
+            fg = colors.light_gray,
+            sp = colors.light_gray,
+            bold = true,
+            italic = true,
+        },
+        BufferLineIndicatorSelected = { fg = colors.aqua },
+        BufferLineNumbers = { fg = colors.purple },
+        BufferLineNumbersSelected = { fg = colors.purple },
+        BufferLineNumbersVisible = { fg = colors.purple },
+
         -- whichkey
         WhichKey = { fg = colors.yellow },
         WhichKeySeparator = { fg = colors.pink },
@@ -168,7 +202,7 @@ function themes:new()
         CmpItemKindConstant = { fg = colors.cyan },
         CmpItemAbbrDeprecated = { fg = colors.light_gray, strikethrough = true },
 
-        -- indent blankline
+        -- indent-blankline
         IndentBlanklineIndent1 = { fg = colors.pink, nocombine = true },
         IndentBlanklineIndent2 = { fg = colors.yellow, nocombine = true },
         IndentBlanklineIndent3 = { fg = colors.green, nocombine = true },
