@@ -7,21 +7,21 @@ local lualine = {
         c = { fg = colors.fg, bg = colors.bg },
     },
     insert = {
-        a = { fg = colors.dark_black, bg = colors.yellow, gui = "bold" },
+        a = { fg = colors.dark_blue, bg = colors.yellow, gui = "bold" },
     },
     visual = {
-        a = { fg = colors.dark_black, bg = colors.purple, gui = "bold" },
+        a = { fg = colors.dark_blue, bg = colors.purple, gui = "bold" },
     },
     command = {
-        a = { fg = colors.dark_black, bg = colors.aqua, gui = "bold" },
+        a = { fg = colors.dark_blue, bg = colors.aqua, gui = "bold" },
     },
     replace = {
-        a = { fg = colors.dark_black, bg = colors.pink, gui = "bold" },
+        a = { fg = colors.dark_blue, bg = colors.pink, gui = "bold" },
     },
     inactive = {
-        a = { fg = colors.gray, bg = colors.bg, gui = "bold" },
-        b = { fg = colors.gray, bg = colors.bg },
-        c = { fg = colors.gray, bg = colors.bg },
+        a = { fg = colors.dark_gray, bg = colors.bg, gui = "bold" },
+        b = { fg = colors.dark_gray, bg = colors.bg },
+        c = { fg = colors.dark_gray, bg = colors.bg },
     },
 }
 

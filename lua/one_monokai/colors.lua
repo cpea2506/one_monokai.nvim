@@ -6,7 +6,7 @@ local colors = {
         -- main colors
         fg = "#abb2bf",
         bg = "#282c34",
-        warm_gray = "#676e7b",
+        gray = "#676e7b",
         pink = "#e06c75",
         green = "#98c379",
         cyan = "#56b6c2",
@@ -18,15 +18,14 @@ local colors = {
         none = "NONE",
 
         -- support colors
-        light_black = "#2d2e27",
-        vulcan = "#383a3e",
-        dark_black = "#26292f",
-        darker_black = "#1e2024",
-        gray = "#4b5261",
-        light_gray = "#9ca3b2",
-        dark_gray = "#64645e",
         red = "#f75f5f",
         white = "#d7d7ff",
+        light_gray = "#9ca3b2",
+        dark_gray = "#4b5261",
+        vulcan = "#383a3e",
+        dark_green = "#2d2e27",
+        dark_blue = "#26292f",
+        black = "#1e2024",
     },
 }
 
