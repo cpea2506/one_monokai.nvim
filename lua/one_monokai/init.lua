@@ -10,11 +10,10 @@ M.setup = function(user_config)
         return
     end
 
-    if vim.g.colors_name then
-        set "hi clear"
-    end
+    set "hi clear"
 
     vim.o.background = "dark"
+
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
