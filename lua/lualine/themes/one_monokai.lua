@@ -2,9 +2,9 @@ local colors = require "one_monokai.colors"
 
 local lualine = {
     normal = {
-        a = { bg = colors.green, gui = "bold" },
-        b = { fg = colors.fg, bg = colors.bg },
-        c = { fg = colors.fg, bg = colors.bg },
+        a = { fg = colors.dark_blue, bg = colors.green, gui = "bold" },
+        b = { fg = colors.fg, bg = colors.vulcan },
+        c = { fg = colors.fg, bg = colors.black },
     },
     insert = {
         a = { fg = colors.dark_blue, bg = colors.yellow, gui = "bold" },
@@ -19,9 +19,9 @@ local lualine = {
         a = { fg = colors.dark_blue, bg = colors.pink, gui = "bold" },
     },
     inactive = {
-        a = { fg = colors.dark_gray, bg = colors.bg, gui = "bold" },
-        b = { fg = colors.dark_gray, bg = colors.bg },
-        c = { fg = colors.dark_gray, bg = colors.bg },
+        a = { fg = colors.fg, bg = colors.black },
+        b = { fg = colors.fg, bg = colors.black, gui = "bold" },
+        c = { fg = colors.fg, bg = colors.black },
     },
 }
 
