@@ -73,6 +73,8 @@ require("one_monokai").setup({
 
 - [lualine](https://github.com/nvim-lualine/lualine.nvim):
 
+![lualine demo](./assets/lualine.png)
+
 ```lua
 require("lualine").setup {
   options = {
@@ -82,7 +84,6 @@ require("lualine").setup {
 }
 ```
 
-![lualine demo](./assets/lualine.png)
 
 ## Inspiration
 This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
