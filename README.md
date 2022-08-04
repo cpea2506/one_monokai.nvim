@@ -47,8 +47,8 @@ require("one_monokai").setup()
 
 ### Customization example
 You can easily change highlighting groups. Override the list of supported values or add more on your own.
-1. [colors](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/colors.lua#L4)
-2. [themes](https://github.com/cpea2506/one_monokai.nvim/blob/36ce54a2e5a8a6f112beb1f55414e2bb78a10de0/lua/one_monokai/themes.lua#L6)
+1. [colors](lua/one_monokai/colors.lua#L5)
+2. [themes](/lua/one_monokai/themes/init.lua#L10)
 
 ```lua
 require("one_monokai").setup({
@@ -76,11 +76,13 @@ require("one_monokai").setup({
 ```lua
 require("lualine").setup {
   options = {
-    -- ...another setting
+    -- ...other settings
     theme = "one_monokai"
   }
 }
 ```
+
+![lualine demo](./assets/lualine.png)
 
 ## Inspiration
 This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
