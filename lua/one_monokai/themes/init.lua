@@ -86,7 +86,7 @@ function themes:new()
         TSConstBuiltin = { fg = colors.aqua },
         TSKeywordFunction = { fg = colors.pink },
         TSTypeBuiltin = { fg = colors.aqua },
-        TSURI = { fg = colors.aqua },
+        TSURI = { fg = colors.aqua, undercurl = true },
         TSType = { fg = colors.aqua },
         TSConstant = { link = "Constant" },
         TSField = { link = "Identifier" },
