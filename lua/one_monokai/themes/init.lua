@@ -192,6 +192,12 @@ function themes:new()
         LspInstallerHighlighted = { fg = colors.pink },
         LspInstallerLink = { fg = colors.aqua },
 
+        -- nvim-lspconfig
+        LspInfoBorder = { link = "FloatBorder" },
+        LspInfoList = { fg = colors.aqua },
+        LspInfoTitle = { fg = colors.cyan },
+        LspInfoFiletype = { fg = colors.white },
+
         -- mason
         MasonHeading = { fg = colors.white, bold = true },
         MasonHeader = { fg = colors.dark_green, bg = colors.cyan, bold = true },
