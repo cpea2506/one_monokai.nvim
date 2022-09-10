@@ -181,17 +181,6 @@ function themes:new()
         DiagnosticUnderlineInfo = { sp = colors.green, underline = true },
         DiagnosticUnderlineHint = { sp = colors.light_gray, underline = true },
 
-        -- lsp-installer
-        -- TODO: deprecated soon
-        LspInstallerGreen = { fg = colors.green },
-        LspInstallerHeader = { fg = colors.dark_green, bg = colors.cyan, bold = true },
-        LspInstallerHeaderHelp = { fg = colors.dark_green, bg = colors.yellow, bold = true },
-        LspInstallerVaderSaber = { fg = colors.pink, bold = true },
-        LspInstallerVersionCheckLoaderDone = { fg = colors.dark_green, bg = colors.green, bold = true },
-        LspInstallerOrange = { fg = colors.orange },
-        LspInstallerHighlighted = { fg = colors.pink },
-        LspInstallerLink = { fg = colors.aqua },
-
         -- nvim-lspconfig
         LspInfoBorder = { link = "FloatBorder" },
         LspInfoList = { fg = colors.aqua },
