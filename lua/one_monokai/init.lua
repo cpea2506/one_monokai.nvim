@@ -1,6 +1,6 @@
 local M = {}
 
-local set = vim.api.nvim_command
+local set = vim.cmd
 local config = require "one_monokai.config"
 local themes = require "one_monokai.themes"
 local utils = require "one_monokai.utils"
@@ -10,9 +10,14 @@ M.setup = function(user_config)
         return
     end
 
-    set "hi clear"
+    set.hi "clear"
 
     vim.o.background = "dark"
+
+    if vim.fn.exists "syntax_on" then
+        set.syntax "reset"
+    end
+
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
@@ -20,7 +25,9 @@ M.setup = function(user_config)
     config:extend(user_config)
     themes:new():load()
 
-    set "colorscheme one_monokai"
+    set.colorscheme "one_monokai"
 end
+
+M.colors = require "one_monokai.colors"
 
 return M

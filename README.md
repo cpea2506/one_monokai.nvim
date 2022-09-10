@@ -7,21 +7,35 @@
   
   VSCode One Monokai theme written in Lua for Neovim.
 </div>
-  
-![one monokai demo](./assets/demo.png)
 
-## Installation
+![one monokai demo](./assets/demo.png)
+![one monokai transparent demo](./assets/demo_transparent.png)
+
+<!--toc:start-->
+
+- [🚀 Installation](#🚀-installation)
+  - [Note](#note)
+- [⚙️ Setup](#️-setup)
+  - [Options](#options)
+    - [Default](#default)
+  - [Customization example](#customization-example)
+- [🍾 Plugins support](#🍾-plugins-support)
+- [🏭 API](#🏭-api)
+- [👀 Inspiration](#👀-inspiration)
+<!--toc:end-->
+
+## 🚀 Installation
 
 ```lua
 use "cpea2506/one_monokai.nvim"
 ```
 
-#### Note
+### Note
 
-- Require Neovim >= 0.7
+- Require Neovim version >= 0.8
 - You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
-## Setup
+## ⚙️ Setup
 
 ```lua
 require("one_monokai").setup()
@@ -29,26 +43,30 @@ require("one_monokai").setup()
 
 ### Options
 
-- `transparent`: enable transparent background.
-- `colors`: override list default colors.
-- `themes`: override list default highlight groups. The function accepts `colors` as argument.
+| Option        | Description                   | Type       | Note                         |
+| ------------- | ----------------------------- | ---------- | ---------------------------- |
+| `transparent` | enable transparent background | `boolean`  | N/A                          |
+| `colors`      | custom colors                 | `table`    | N/A                          |
+| `themes`      | custom highlighting groups    | `function` | accepts `colors` as argument |
 
 #### Default
 
 ```lua
-{
+require("one_monokai").setup({
     transparent = false,
     colors = {},
     themes = function(colors)
         return {}
     end,
-}
+})
 ```
 
 ### Customization example
+
 You can easily change highlighting groups. Override the list of supported values or add more on your own.
-1. [colors](lua/one_monokai/colors.lua#L5)
-2. [themes](/lua/one_monokai/themes/init.lua#L10)
+
+1. [Colors](lua/one_monokai/colors.lua#L5)
+2. [Themes](/lua/one_monokai/themes/init.lua#L10)
 
 ```lua
 require("one_monokai").setup({
@@ -69,26 +87,47 @@ require("one_monokai").setup({
 })
 ```
 
-### Other plugins support
+## 🍾 Plugins support
 
-- [lualine](https://github.com/nvim-lualine/lualine.nvim):
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [LspConfig](https://github.com/neovim/nvim-lspconfig)
+- [Mason](https://github.com/williamboman/mason.nvim)
+- [DashBoard](https://github.com/glepnir/dashboard-nvim)
+- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [WhichKey](https://github.com/folke/which-key.nvim)
+- [Cmp](https://github.com/hrsh7th/nvim-cmp)
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [Crates](https://github.com/Saecki/crates.nvim)
+- [Notify](https://github.com/rcarriga/nvim-notify)
+- [Bufferline](https://github.com/akinsho/bufferline.nvim)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
-![lualine demo](./assets/lualine.png)
+  ![lualine demo](./assets/lualine.png)
+
+  ```lua
+  require("lualine").setup {
+        options = {
+        -- ...other settings
+        theme = "one_monokai"
+      }
+  }
+  ```
+
+## 🏭 API
+
+- Get a table of colors
 
 ```lua
-require("lualine").setup {
-  options = {
-    -- ...other settings
-    theme = "one_monokai"
-  }
-}
+local colors = require("one_monokai").colors
 ```
 
+## 👀 Inspiration
 
-## Inspiration
 This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
 
 Thanks for these talented and amazing people:
 
 - [one-monokai-vim](https://github.com/fratajczak/one-monokai-vim)
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
+- [tokyonight](https://github.com/folke/tokyonight.nvim)
+- [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
