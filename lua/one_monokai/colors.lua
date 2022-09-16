@@ -18,6 +18,8 @@ local colors = {
         none = "NONE",
 
         -- support colors
+        dark_pink = "#ff008c",
+        dark_cyan = "#2b8db3",
         red = "#f75f5f",
         white = "#d7d7ff",
         light_gray = "#9ca3b2",
@@ -33,7 +35,7 @@ local function is_valid_color(name, value)
     local value_type = type(value)
 
     if value_type ~= "string" then
-        utils.log_error("colors(%s): expected string value, got %s", name, value_type)
+        utils.log_error("colors(%s): expected string, got %s", name, value_type)
 
         return false
     end
@@ -54,6 +56,10 @@ end
 local user_colors = config.options.colors
 
 function colors:set()
+    if vim.tbl_isempty(user_colors) then
+        return self.default
+    end
+
     for name, value in pairs(user_colors) do
         if not is_valid_color(name, value) then
             return self.default

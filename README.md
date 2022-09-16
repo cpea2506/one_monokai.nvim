@@ -33,7 +33,7 @@ use "cpea2506/one_monokai.nvim"
 ### Note
 
 - Require Neovim version >= 0.8
-- You may need [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
+- [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## ⚙️ Setup
 
@@ -96,7 +96,9 @@ require("one_monokai").setup({
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [WhichKey](https://github.com/folke/which-key.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [NvimNavic](https://github.com/SmiteshP/nvim-navic)
+- [Leap](https://github.com/ggandor/leap.nvim)
+- [IndentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Crates](https://github.com/Saecki/crates.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)

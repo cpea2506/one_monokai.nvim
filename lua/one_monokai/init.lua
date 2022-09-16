@@ -5,7 +5,7 @@ local config = require "one_monokai.config"
 local themes = require "one_monokai.themes"
 local utils = require "one_monokai.utils"
 
-M.setup = function(user_config)
+function M.setup(user_config)
     if not utils.meet_minimum_requirements() then
         return
     end
@@ -23,7 +23,7 @@ M.setup = function(user_config)
 
     -- load user config and themes
     config:extend(user_config)
-    themes:new():load()
+    themes.load()
 
     set.colorscheme "one_monokai"
 end
