@@ -15,7 +15,7 @@
 
 - [🚀 Installation](#-installation)
   - [Requirement](#requirement)
-- [⚙️ Setup](#️-%EF%B8%8F-setup)
+- [⚙️ Setup](#%EF%B8%8F-setup)
   - [Options](#options)
     - [Default](#default)
   - [Customization example](#customization-example)
