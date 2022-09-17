@@ -13,15 +13,15 @@
 
 <!--toc:start-->
 
-- [🚀 Installation](#🚀-installation)
-  - [Note](#note)
-- [⚙️ Setup](#️-setup)
+- [🚀 Installation](#-installation)
+  - [Requirement](#requirement)
+- [⚙️ Setup](#️-%EF%B8%8F-setup)
   - [Options](#options)
     - [Default](#default)
   - [Customization example](#customization-example)
-- [🍾 Plugins support](#🍾-plugins-support)
-- [🏭 API](#🏭-api)
-- [👀 Inspiration](#👀-inspiration)
+- [🍾 Plugins support](#-plugins-support)
+- [🏭 API](#-api)
+- [👀 Inspiration](#-inspiration)
 <!--toc:end-->
 
 ## 🚀 Installation
@@ -30,10 +30,10 @@
 use "cpea2506/one_monokai.nvim"
 ```
 
-### Note
+### Requirement
 
-- Require Neovim version >= 0.8
-- [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
+- Neovim version >= 0.8
+- (Optional) [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## ⚙️ Setup
 
@@ -66,7 +66,7 @@ require("one_monokai").setup({
 You can easily change highlighting groups. Override the list of supported values or add more on your own.
 
 1. [Colors](lua/one_monokai/colors.lua#L5)
-2. [Themes](/lua/one_monokai/themes/init.lua#L10)
+2. [Themes](lua/one_monokai/themes/groups.lua#L8)
 
 ```lua
 require("one_monokai").setup({
@@ -91,6 +91,7 @@ require("one_monokai").setup({
 
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LspConfig](https://github.com/neovim/nvim-lspconfig)
+- [Nvim Semantic Token](https://github.com/theHamsta/nvim-semantic-tokens)
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [DashBoard](https://github.com/glepnir/dashboard-nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
@@ -98,7 +99,7 @@ require("one_monokai").setup({
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [NvimNavic](https://github.com/SmiteshP/nvim-navic)
 - [Leap](https://github.com/ggandor/leap.nvim)
-- [IndentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Crates](https://github.com/Saecki/crates.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)

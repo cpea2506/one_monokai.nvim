@@ -18,9 +18,15 @@ local colors = {
         none = "NONE",
 
         -- support colors
+        light_yellow = "#fed701",
         dark_pink = "#ff008c",
         dark_cyan = "#2b8db3",
+        light_blue = "#87cefa",
+        light_purple = "#e492e1",
+        light_orange = "#fe938c",
+        light_green = "#a3f7b5",
         red = "#f75f5f",
+        dark_red = "#d03770",
         white = "#d7d7ff",
         light_gray = "#9ca3b2",
         dark_gray = "#4b5261",
@@ -55,7 +61,7 @@ end
 
 local user_colors = config.options.colors
 
-function colors:set()
+function colors:get()
     if vim.tbl_isempty(user_colors) then
         return self.default
     end
@@ -69,4 +75,4 @@ function colors:set()
     return vim.tbl_extend("force", self.default, user_colors)
 end
 
-return colors:set()
+return colors:get()

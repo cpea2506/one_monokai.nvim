@@ -114,7 +114,7 @@ function groups.get(colors, transparent)
         TSRepeat = { link = "Repeat" },
         TSLabel = { link = "Label" },
         TSOperator = { link = "Operator" },
-        TSKeywordOperator = { link = "TSOperator" },
+        TSKeywordOperator = { link = "Operator" },
         TSException = { link = "Exception" },
         TSDebug = { link = "Debug" },
         TSDefine = { link = "Define" },
@@ -124,7 +124,7 @@ function groups.get(colors, transparent)
         TSTypeQualifier = { link = "Type" },
         TSTypeDefinition = { link = "Typedef" },
         TSInclude = { link = "Include" },
-        TSText = { link = "TSNone" },
+        TSText = { link = "Normal" },
         TSStrong = { bold = true },
         TSEmphasis = { italic = true },
         TSUnderline = { underline = true },
@@ -141,6 +141,15 @@ function groups.get(colors, transparent)
         TSTag = { link = "Label" },
         TSTagDelimiter = { link = "Delimiter" },
         TSTagAttribute = { link = "TSProperty" },
+
+        -- treesitter rainbow
+        rainbowcol1 = { fg = colors.dark_red },
+        rainbowcol2 = { fg = colors.light_blue },
+        rainbowcol3 = { fg = colors.light_yellow },
+        rainbowcol4 = { fg = colors.light_purple },
+        rainbowcol5 = { fg = colors.dark_cyan },
+        rainbowcol6 = { fg = colors.light_orange },
+        rainbowcol7 = { fg = colors.light_green },
 
         -- diff
         DiffAdd = { fg = colors.green },
@@ -258,11 +267,12 @@ function groups.get(colors, transparent)
         -- nvim-cmp
         CmpItemAbbrMatch = { fg = colors.aqua },
         CmpItemKindStruct = { fg = colors.pink },
-        CmpItemKindEnum = { fg = colors.pink },
+        CmpItemKindEnum = { fg = colors.cyan },
         CmpItemKindClass = { fg = colors.pink },
         CmpItemKindModule = { fg = colors.pink },
         CmpItemKindInterface = { fg = colors.pink },
         CmpItemKindValue = { fg = colors.white },
+        CmpItemKindFile = { fg = colors.white },
         CmpItemKindKeyword = { fg = colors.white },
         CmpItemKindText = { fg = colors.white },
         CmpItemKindProperty = { fg = colors.yellow },
@@ -273,6 +283,19 @@ function groups.get(colors, transparent)
         CmpItemKindVariable = { fg = colors.cyan },
         CmpItemKindConstant = { fg = colors.cyan },
         CmpItemAbbrDeprecated = { fg = colors.light_gray, strikethrough = true },
+
+        -- nvim-semantic-token
+        LspTypeParameter = { link = "TSParameter" },
+        LspParameter = { link = "TSParameter" },
+        LspFunction = { link = "Function" },
+        LspMethod = { link = "Function" },
+        LspType = { link = "Type" },
+        LspComment = { link = "Comment" },
+        LspString = { link = "String" },
+        LspNumber = { link = "Number" },
+        LspOperator = { link = "Operator" },
+        LspMacro = { link = "Macro" },
+        LspDeprecated = { fg = colors.light_gray, strikethrough = true },
 
         -- nvim-navic
         NavicText = { link = "Normal" },
