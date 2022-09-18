@@ -194,6 +194,11 @@ function groups.get(colors, transparent)
         LspInfoTitle = { fg = colors.cyan },
         LspInfoFiletype = { fg = colors.white },
 
+        -- telescope
+        TelescopeNormal = { link = "Normal" },
+        TelescopeBorder = { link = "FloatBorder" },
+        TelescopeTitle = { fg = colors.aqua },
+
         -- leap
         LeapMatch = { fg = colors.dark_pink, underline = true },
         LeapLabelPrimary = { fg = colors.dark_pink },
