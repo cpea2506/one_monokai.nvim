@@ -3,7 +3,6 @@ local utils = require "one_monokai.utils"
 
 local colors = {
     default = {
-        -- main colors
         fg = "#abb2bf",
         bg = "#282c34",
         gray = "#676e7b",
@@ -15,16 +14,8 @@ local colors = {
         purple = "#c678dd",
         peanut = "#f6d5a4",
         orange = "#d19a66",
-        none = "NONE",
-
-        -- support colors
-        light_yellow = "#fed701",
         dark_pink = "#ff008c",
         dark_cyan = "#2b8db3",
-        light_blue = "#87cefa",
-        light_purple = "#e492e1",
-        light_orange = "#fe938c",
-        light_green = "#a3f7b5",
         red = "#f75f5f",
         dark_red = "#d03770",
         white = "#d7d7ff",
@@ -34,6 +25,7 @@ local colors = {
         dark_green = "#2d2e27",
         dark_blue = "#26292f",
         black = "#1e2024",
+        none = "NONE",
     },
 }
 

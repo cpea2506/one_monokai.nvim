@@ -144,12 +144,12 @@ function groups.get(colors, transparent)
 
         -- treesitter rainbow
         rainbowcol1 = { fg = colors.dark_red },
-        rainbowcol2 = { fg = colors.light_blue },
-        rainbowcol3 = { fg = colors.light_yellow },
-        rainbowcol4 = { fg = colors.light_purple },
+        rainbowcol2 = { fg = colors.aqua },
+        rainbowcol3 = { fg = colors.yellow },
+        rainbowcol4 = { fg = colors.purple },
         rainbowcol5 = { fg = colors.dark_cyan },
-        rainbowcol6 = { fg = colors.light_orange },
-        rainbowcol7 = { fg = colors.light_green },
+        rainbowcol6 = { fg = colors.orange },
+        rainbowcol7 = { fg = colors.green },
 
         -- diff
         DiffAdd = { fg = colors.green },
