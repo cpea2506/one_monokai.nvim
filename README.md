@@ -52,13 +52,13 @@ require("one_monokai").setup()
 #### Default
 
 ```lua
-require("one_monokai").setup({
+{
     transparent = false,
     colors = {},
     themes = function(colors)
         return {}
     end,
-})
+}
 ```
 
 ### Customization example
@@ -94,8 +94,8 @@ require("one_monokai").setup({
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Nvim Semantic Token](https://github.com/theHamsta/nvim-semantic-tokens)
 - [Mason](https://github.com/williamboman/mason.nvim)
-- [DashBoard](https://github.com/glepnir/dashboard-nvim)
-- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [Dashboard](https://github.com/glepnir/dashboard-nvim)
+- [Nvimtree](https://github.com/kyazdani42/nvim-tree.lua)
 - [WhichKey](https://github.com/folke/which-key.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [NvimNavic](https://github.com/SmiteshP/nvim-navic)
@@ -111,7 +111,7 @@ require("one_monokai").setup({
   ```lua
   require("lualine").setup {
         options = {
-        -- ...other settings
+        -- ...other options
         theme = "one_monokai"
       }
   }

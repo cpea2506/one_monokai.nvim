@@ -12,12 +12,11 @@ function M.setup(user_config)
 
     set.hi "clear"
 
-    vim.o.background = "dark"
-
     if vim.fn.exists "syntax_on" then
         set.syntax "reset"
     end
 
+    vim.o.background = "dark"
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
