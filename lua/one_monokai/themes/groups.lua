@@ -188,6 +188,11 @@ function groups.get(colors, transparent)
         DiagnosticUnderlineInfo = { sp = colors.green, underline = true },
         DiagnosticUnderlineHint = { sp = colors.light_gray, underline = true },
 
+        -- vim-illuminate
+        IlluminatedWordRead = { link = "LspReferenceRead" },
+        IlluminatedWordText = { link = "LspReferenceText" },
+        IlluminatedWordWrite = { link = "LspReferenceWrite" },
+
         -- nvim-lspconfig
         LspInfoBorder = { link = "FloatBorder" },
         LspInfoList = { fg = colors.aqua },

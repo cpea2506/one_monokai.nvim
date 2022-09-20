@@ -99,6 +99,7 @@ require("one_monokai").setup({
 - [WhichKey](https://github.com/folke/which-key.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [NvimNavic](https://github.com/SmiteshP/nvim-navic)
+- [Illuminate](https://github.com/RRethy/vim-illuminate)
 - [Leap](https://github.com/ggandor/leap.nvim)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Crates](https://github.com/Saecki/crates.nvim)
