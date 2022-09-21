@@ -203,6 +203,7 @@ function groups.get(colors, transparent)
         TelescopeNormal = { link = "Normal" },
         TelescopeBorder = { link = "FloatBorder" },
         TelescopeTitle = { fg = colors.aqua },
+        TelescopePromptCounter = { fg = colors.aqua },
 
         -- leap
         LeapMatch = { fg = colors.dark_pink, underline = true },
