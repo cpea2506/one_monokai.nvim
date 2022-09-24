@@ -32,7 +32,7 @@ use "cpea2506/one_monokai.nvim"
 
 ### Requirement
 
-- Neovim version >= 0.8
+- Neovim version >= 0.7
 - (Optional) [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
 ## ⚙️ Setup
@@ -43,16 +43,18 @@ require("one_monokai").setup()
 
 ### Options
 
-| Option        | Description                   | Type       | Note                         |
-| ------------- | ----------------------------- | ---------- | ---------------------------- |
-| `transparent` | enable transparent background | `boolean`  | N/A                          |
-| `colors`      | custom colors                 | `table`    | N/A                          |
-| `themes`      | custom highlighting groups    | `function` | accepts `colors` as argument |
+| Option        | Description                                  | Type       | Note                         |
+| ------------- | -------------------------------------------- | ---------- | ---------------------------- |
+| `use_cmd`     | whether to call vim.cmd.colorscheme on setup | `boolean`  | N/A                          |
+| `transparent` | enable transparent background                | `boolean`  | N/A                          |
+| `colors`      | custom colors                                | `table`    | N/A                          |
+| `themes`      | custom highlighting groups                   | `function` | accepts `colors` as argument |
 
 #### Default
 
 ```lua
 {
+    use_cmd = false,
     transparent = false,
     colors = {},
     themes = function(colors)

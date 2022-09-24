@@ -10,10 +10,10 @@ function M.setup(user_config)
         return
     end
 
-    set.hi "clear"
+    set "hi clear"
 
     if vim.fn.exists "syntax_on" then
-        set.syntax "reset"
+        set "syntax reset"
     end
 
     vim.o.background = "dark"
@@ -24,7 +24,9 @@ function M.setup(user_config)
     config:extend(user_config)
     themes.load()
 
-    set.colorscheme "one_monokai"
+    if config.options.use_cmd then
+        set "colorscheme one_monokai"
+    end
 end
 
 M.colors = require "one_monokai.colors"
