@@ -20,7 +20,6 @@
     - [Default](#default)
   - [Customization example](#customization-example)
 - [🍾 Plugins support](#-plugins-support)
-- [🏭 API](#-api)
 - [👀 Inspiration](#-inspiration)
 <!--toc:end-->
 
@@ -129,14 +128,6 @@ require("one_monokai").setup({
       }
   }
   ```
-
-## 🏭 API
-
-- Get a table of colors
-
-```lua
-local colors = require("one_monokai").colors
-```
 
 ## 👀 Inspiration
 

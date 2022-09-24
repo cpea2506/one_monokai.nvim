@@ -29,6 +29,4 @@ function M.setup(user_config)
     end
 end
 
-M.colors = require "one_monokai.colors"
-
 return M
