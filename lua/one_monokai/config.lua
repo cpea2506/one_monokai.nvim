@@ -1,6 +1,6 @@
 local config = {
     options = {
-        -- whether to call vim.cmd.colorscheme on setup
+        -- whether to set colorscheme on setup
         use_cmd = false,
         -- enable transparent background
         transparent = false,

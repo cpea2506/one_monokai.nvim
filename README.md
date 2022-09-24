@@ -43,12 +43,12 @@ require("one_monokai").setup()
 
 ### Options
 
-| Option        | Description                                  | Type       | Note                         |
-| ------------- | -------------------------------------------- | ---------- | ---------------------------- |
-| `use_cmd`     | whether to call vim.cmd.colorscheme on setup | `boolean`  | N/A                          |
-| `transparent` | enable transparent background                | `boolean`  | N/A                          |
-| `colors`      | custom colors                                | `table`    | N/A                          |
-| `themes`      | custom highlighting groups                   | `function` | accepts `colors` as argument |
+| Option        | Description                         | Type       | Note                         |
+| ------------- | ----------------------------------- | ---------- | ---------------------------- |
+| `use_cmd`     | whether to set colorscheme on setup | `boolean`  | N/A                          |
+| `transparent` | enable transparent background       | `boolean`  | N/A                          |
+| `colors`      | custom colors                       | `table`    | N/A                          |
+| `themes`      | custom highlighting groups          | `function` | accepts `colors` as argument |
 
 #### Default
 
