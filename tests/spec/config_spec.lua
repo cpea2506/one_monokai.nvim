@@ -1,15 +1,13 @@
 describe("Override config", function()
     local expected = {
+        use_cmd = true,
         colors = {
             pink = "#61afef",
             lmao = "#e06c75",
         },
         themes = function(c)
             return {
-                Normal = {
-                    fg = c.lmao,
-                    italic = true,
-                },
+                Normal = { fg = c.lmao, italic = true },
             }
         end,
     }
