@@ -38,17 +38,26 @@ use "cpea2506/one_monokai.nvim"
 ## ⚙️ Setup
 
 ```lua
-require("one_monokai").setup()
+vim.cmd("colorscheme one_monokai")
+```
+
+Or prefer below if you have your custom options
+
+```lua
+require("one_monokai").setup({
+    use_cmd = true
+    --... other options
+})
 ```
 
 ### Options
 
-| Option        | Description                         | Type       | Note                         |
-| ------------- | ----------------------------------- | ---------- | ---------------------------- |
-| `use_cmd`     | whether to set colorscheme on setup | `boolean`  | N/A                          |
-| `transparent` | enable transparent background       | `boolean`  | N/A                          |
-| `colors`      | custom colors                       | `table`    | N/A                          |
-| `themes`      | custom highlighting groups          | `function` | accepts `colors` as argument |
+| Option        | Description                            | Type       | Note                         |
+| ------------- | -------------------------------------- | ---------- | ---------------------------- |
+| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | N/A                          |
+| `transparent` | enable transparent background          | `boolean`  | N/A                          |
+| `colors`      | custom colors                          | `table`    | N/A                          |
+| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument |
 
 #### Default
 
@@ -72,6 +81,7 @@ You can easily change highlighting groups. Override the list of supported values
 
 ```lua
 require("one_monokai").setup({
+    use_cmd = true,
     colors = {
         green = "#00ff00",
         blue = "#0000ff",
