@@ -13,17 +13,17 @@
 
 <!--toc:start-->
 
-- [🚀 Installation](#-installation)
+- [:rocket: Installation](#rocket-installation)
   - [Requirement](#requirement)
-- [⚙️ Setup](#%EF%B8%8F-setup)
+- [:gear: Setup](#gear-setup)
   - [Options](#options)
     - [Default](#default)
   - [Customization example](#customization-example)
-- [🍾 Plugins support](#-plugins-support)
-- [👀 Inspiration](#-inspiration)
+- [:champagne: Plugins support](#champagne-plugins-support)
+- [:eyes: Inspiration](#eyes-inspiration)
 <!--toc:end-->
 
-## 🚀 Installation
+## :rocket: Installation
 
 ```lua
 use "cpea2506/one_monokai.nvim"
@@ -31,10 +31,10 @@ use "cpea2506/one_monokai.nvim"
 
 ### Requirement
 
-- Neovim version >= 0.7
+- Neovim version >= 0.8.0
 - (Optional) [Nvim Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting. 😇
 
-## ⚙️ Setup
+## :gear: Setup
 
 ```lua
 vim.cmd("colorscheme one_monokai")
@@ -51,12 +51,12 @@ require("one_monokai").setup({
 
 ### Options
 
-| Option        | Description                            | Type       | Note                         |
-| ------------- | -------------------------------------- | ---------- | ---------------------------- |
-| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | N/A                          |
-| `transparent` | enable transparent background          | `boolean`  | N/A                          |
-| `colors`      | custom colors                          | `table`    | N/A                          |
-| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument |
+| Option        | Description                            | Type       | Note                                                 |
+| ------------- | -------------------------------------- | ---------- | ---------------------------------------------------- |
+| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | same as calling `vim.cmd("colorscheme one_monokai")` |
+| `transparent` | enable transparent background          | `boolean`  | N/A                                                  |
+| `colors`      | custom colors                          | `table`    | N/A                                                  |
+| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument                         |
 
 #### Default
 
@@ -98,7 +98,7 @@ require("one_monokai").setup({
 })
 ```
 
-## 🍾 Plugins support
+## :champagne: Plugins support
 
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LspConfig](https://github.com/neovim/nvim-lspconfig)
@@ -129,7 +129,7 @@ require("one_monokai").setup({
   }
   ```
 
-## 👀 Inspiration
+## :eyes: Inspiration
 
 This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
 

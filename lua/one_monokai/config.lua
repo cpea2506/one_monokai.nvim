@@ -15,6 +15,7 @@ local config = {
     },
 }
 
+---Extend default with user config
 function config:extend(user_config)
     if not user_config then
         return

@@ -1,19 +1,19 @@
 local M = {}
 
 local set = vim.cmd
+local utils = require "one_monokai.utils"
 local config = require "one_monokai.config"
 local themes = require "one_monokai.themes"
-local utils = require "one_monokai.utils"
 
 function M.setup(user_config)
     if not utils.meet_minimum_requirements() then
         return
     end
 
-    set "hi clear"
+    set.hi "clear"
 
     if vim.fn.exists "syntax_on" then
-        set "syntax reset"
+        set.syntax "reset"
     end
 
     vim.o.background = "dark"
@@ -25,7 +25,7 @@ function M.setup(user_config)
     themes.load()
 
     if config.options.use_cmd then
-        set "colorscheme one_monokai"
+        set.colorscheme "one_monokai"
     end
 end
 

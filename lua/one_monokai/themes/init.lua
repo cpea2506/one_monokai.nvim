@@ -1,7 +1,7 @@
 local utils = require "one_monokai.utils"
-local highlight = require "one_monokai.themes.highlight"
-local groups = require "one_monokai.themes.groups"
 local config = require "one_monokai.config"
+local groups = require "one_monokai.themes.groups"
+local highlight = require "one_monokai.themes.highlight"
 
 local themes = {}
 
