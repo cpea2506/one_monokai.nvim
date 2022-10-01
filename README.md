@@ -118,16 +118,16 @@ require("one_monokai").setup({
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
-  ![lualine demo](./assets/lualine.png)
+![lualine demo](./assets/lualine.png)
 
-  ```lua
-  require("lualine").setup {
-        options = {
-        -- ...other options
-        theme = "one_monokai"
-      }
+```lua
+require("lualine").setup {
+    options = {
+    -- ...other options
+    theme = "one_monokai"
   }
-  ```
+}
+```
 
 ## :eyes: Inspiration
 
