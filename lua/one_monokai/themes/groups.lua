@@ -3,7 +3,7 @@ local groups = {}
 ---Get default highlight groups
 ---@param colors table #table of colors
 ---@param transparent boolean #whether background is transparent or not
----@return table #list of configured groups
+---@return table #list of configured highlighting groups
 function groups.get(colors, transparent)
     return {
         Constant = { fg = colors.aqua },

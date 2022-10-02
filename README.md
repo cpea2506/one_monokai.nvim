@@ -37,7 +37,7 @@ use "cpea2506/one_monokai.nvim"
 ## :gear: Setup
 
 ```lua
-vim.cmd("colorscheme one_monokai")
+vim.cmd.colorscheme "one_monokai"
 ```
 
 Or prefer below if you have your custom options
@@ -51,12 +51,12 @@ require("one_monokai").setup({
 
 ### Options
 
-| Option        | Description                            | Type       | Note                                                 |
-| ------------- | -------------------------------------- | ---------- | ---------------------------------------------------- |
-| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | same as calling `vim.cmd("colorscheme one_monokai")` |
-| `transparent` | enable transparent background          | `boolean`  | N/A                                                  |
-| `colors`      | custom colors                          | `table`    | N/A                                                  |
-| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument                         |
+| Option        | Description                            | Type       | Note                         |
+| ------------- | -------------------------------------- | ---------- | ---------------------------- |
+| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | N/A                          |
+| `transparent` | enable transparent background          | `boolean`  | N/A                          |
+| `colors`      | custom colors                          | `table`    | N/A                          |
+| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument |
 
 #### Default
 

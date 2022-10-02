@@ -1,3 +1,11 @@
+local config = require "one_monokai.config"
+
+describe("Config options", function()
+    it("could be indexed without options field", function()
+        assert.equals(config.options.use_cmd, config.use_cmd)
+    end)
+end)
+
 describe("Override config", function()
     local expected = {
         use_cmd = true,
@@ -14,13 +22,12 @@ describe("Override config", function()
 
     require("one_monokai").setup(expected)
 
-    local config = require "one_monokai.config"
     local colors = require "one_monokai.colors"
 
     it("should change the default config", function()
-        assert.equals(false, config.options.transparent)
-        assert.are.same(expected.colors, config.options.colors)
-        assert.are.same(expected.themes(colors), config.options.themes(colors))
+        assert.equals(false, config.transparent)
+        assert.are.same(expected.colors, config.colors)
+        assert.are.same(expected.themes(colors), config.themes(colors))
     end)
 
     it("should change default colors", function()

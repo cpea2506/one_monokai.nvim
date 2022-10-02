@@ -24,7 +24,7 @@ function M.setup(user_config)
     config:extend(user_config)
     themes.load()
 
-    if config.options.use_cmd then
+    if config.use_cmd then
         set.colorscheme "one_monokai"
     end
 end

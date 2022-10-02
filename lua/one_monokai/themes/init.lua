@@ -7,8 +7,9 @@ local themes = {}
 
 function themes.load()
     local colors = require "one_monokai.colors"
-    local default = highlight:new(groups.get(colors, config.options.transparent))
-    local user_themes = config.options.themes(colors)
+
+    local default = highlight:new(groups.get(colors, config.transparent))
+    local user_themes = config.themes(colors)
 
     -- set default if user has no custom themes
     if vim.tbl_isempty(user_themes) then
@@ -24,9 +25,9 @@ function themes.load()
     end)
 
     if not set_theme_ok then
-        utils.log_error(err)
-
         default:set()
+
+        utils.log_err(err)
     end
 end
 
