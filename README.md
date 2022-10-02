@@ -113,6 +113,7 @@ require("one_monokai").setup({
 - [Illuminate](https://github.com/RRethy/vim-illuminate)
 - [Leap](https://github.com/ggandor/leap.nvim)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [Sj](https://github.com/woosaaahh/sj.nvim)
 - [Crates](https://github.com/Saecki/crates.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)

@@ -211,6 +211,13 @@ function groups.get(colors, transparent)
         LeapLabelSecondary = { fg = colors.dark_cyan },
         LeapBackdrop = { fg = colors.gray },
 
+        -- sj
+        SjLabel = { fg = colors.dark_pink },
+        SjOverlay = { link = "Comment" },
+        SjSearch = { link = "IncSearch" },
+        SjWarning = { link = "WarningMsg" },
+        SjLimit = { link = "ErrorMsg" },
+
         -- mason
         MasonHeading = { fg = colors.white, bold = true },
         MasonHeader = { fg = colors.dark_green, bg = colors.cyan, bold = true },
