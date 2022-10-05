@@ -5,7 +5,7 @@ local M = {}
 ---NOTE: This function receives params that will be passed to `string.format`.
 ---@param s any
 ---@param ... any
-M.log_error = function(s, ...)
+M.log_err = function(s, ...)
     local message = string.format(s, ...)
 
     vim.schedule(function()
@@ -17,10 +17,10 @@ end
 
 ---Check if user has met requirements before setting up colorscheme.
 M.meet_minimum_requirements = function()
-    local nvim_version = "0.7.0"
+    local nvim_version = "0.8"
 
     if vim.fn.has("nvim-" .. nvim_version) ~= 1 then
-        M.log_error("Require minimum Neovim version: " .. nvim_version)
+        M.log_err("Require minimum Neovim version: " .. nvim_version)
 
         return false
     end
