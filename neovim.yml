@@ -3,20 +3,26 @@ base: lua53
 globals:
   vim:
     any: true
+  assert.True:
+    args:
+      - type: boolean
+  assert.False:
+    args:
+      - type: boolean
   assert.are_not.same:
-      args:
-        - type: any
-        - type: any
+    args:
+      - type: any
+      - type: any
   assert.equals:
-      args:
-        - type: any
-        - type: any
-        - type: any
-          required: false
+    args:
+      - type: any
+      - type: any
+      - type: any
+        required: false
   assert.are.same:
-      args:
-        - type: any
-        - type: any
+    args:
+      - type: any
+      - type: any
   describe:
     args:
       - type: string
