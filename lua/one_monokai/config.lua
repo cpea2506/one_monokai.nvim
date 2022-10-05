@@ -1,14 +1,14 @@
 local config = {}
 
 config.options = {
-    ---whether to set colorscheme on setup
+    ---automatically set colorscheme on setup
     use_cmd = false,
     ---enable transparent background
     transparent = false,
     ---@type table<string, string> #custom colors
     colors = {},
     ---custom highlighting groups
-    ---@param _ table|nil #colors table
+    ---@param _ table<string, string>|nil #colors table
     ---@return table #list of configured highlighting groups
     themes = function(_)
         return {}
