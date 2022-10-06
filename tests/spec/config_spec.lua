@@ -2,7 +2,7 @@ local config = require "one_monokai.config"
 
 describe("Config options", function()
     it("could be indexed without options field", function()
-        assert.False(config.use_cmd)
+        assert.are.same(false, config.use_cmd)
         assert.are.same({}, config.colors)
     end)
 end)
@@ -26,8 +26,8 @@ describe("Override config", function()
     local colors = require "one_monokai.colors"
 
     it("should change the default config", function()
-        assert.True(config.use_cmd)
-        assert.False(config.transparent)
+        assert.are.same(true, config.use_cmd)
+        assert.are.same(false, config.transparent)
         assert.are.same(expected.colors, config.colors)
         assert.are.same(expected.themes(colors), config.themes(colors))
     end)
@@ -41,6 +41,6 @@ describe("Override config", function()
         local hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
         assert.equals(expected.colors.lmao, string.format("#%06x", hl.foreground))
-        assert.True(hl.italic)
+        assert.are.same(true, hl.italic)
     end)
 end)
