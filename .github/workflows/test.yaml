@@ -11,6 +11,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    name: Run commitlint on commit $GITHUB_REF_NAME/$GITHUB_SHA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Validate all commits from PR
+        run: npx commitlint --from=HEAD~1 --verbose
   unit_tests:
     name: Run tests on ${{ matrix.os }} with Neovim ${{ matrix.neovim }}
     strategy:
