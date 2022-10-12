@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   commitlint:
-    name: Run commitlint on commit $GITHUB_REF_NAME/$GITHUB_SHA
+    name: Run commitlint on commit ${{ github.ref_name }}/${{ github.sha }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
