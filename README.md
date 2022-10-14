@@ -21,6 +21,7 @@
   - [Customization example](#customization-example)
 - [:champagne: Plugins support](#champagne-plugins-support)
 - [:eyes: Inspiration](#eyes-inspiration)
+- [:star: Cool One Monokai projects](#star-cool-one-monokai-projects)
 <!--toc:end-->
 
 ## :rocket: Installation
@@ -132,7 +133,7 @@ require("lualine").setup {
 
 ## :eyes: Inspiration
 
-This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, make it easy to change some settings.
+This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, and make it easy to do some custom changes.
 
 Thanks for these talented and amazing people:
 
@@ -140,3 +141,7 @@ Thanks for these talented and amazing people:
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
 - [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
+
+## :star: Cool One Monokai projects
+
+- [Hitesh-Aggarwal - One Monokai Feline](https://github.com/Hitesh-Aggarwal/feline_one_monokai.nvim)
