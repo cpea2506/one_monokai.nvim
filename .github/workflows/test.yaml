@@ -4,17 +4,17 @@ on:
   push:
     paths:
       - "lua/**"
-      - "colors/"
+      - "colors/*"
       - "tests/**"
-      - ".github/workflows/"
+      - ".github/workflows/*"
   pull_request:
     branches:
       - main
     paths:
       - "lua/**"
-      - "colors/"
+      - "colors/*"
       - "tests/**"
-      - ".github/workflows/"
+      - ".github/workflows/*"
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:
