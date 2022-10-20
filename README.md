@@ -1,7 +1,10 @@
 <div align="center">
   <h1>
       <img
-      src="https://user-images.githubusercontent.com/42694704/196934503-eda02d64-6845-439e-94f0-9083b2e9c20d.svg">
+          src="https://user-images.githubusercontent.com/42694704/196938815-ea5d1bdd-a2b8-4327-9b43-46d84920d381.png"
+          width="200"
+          alt="logo"
+      />
       <br/>
       One Monokai Nvim
   </h1>
