@@ -1,7 +1,7 @@
 <div align="center">
   <h1>
       <img
-      src="https://user-images.githubusercontent.com/42694704/196934503-eda02d64-6845-439e-94f0-9083b2e9c20d.svg" width="80px">
+      src="https://user-images.githubusercontent.com/42694704/196934503-eda02d64-6845-439e-94f0-9083b2e9c20d.svg">
       <br/>
       One Monokai Nvim
   </h1>
