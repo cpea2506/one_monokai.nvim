@@ -1,6 +1,7 @@
 <div align="center">
   <h1>
-      <img src="./assets/logo.png" width="80px">
+      <img
+      src="https://user-images.githubusercontent.com/42694704/196934503-eda02d64-6845-439e-94f0-9083b2e9c20d.svg" width="80px">
       <br/>
       One Monokai Nvim
   </h1>
@@ -8,8 +9,8 @@
   VSCode One Monokai theme written in Lua for Neovim.
 </div>
 
-![one monokai demo](./assets/demo.png)
-![one monokai transparent demo](./assets/demo_transparent.png)
+![demo](https://user-images.githubusercontent.com/42694704/196934131-0c7134ec-7266-4200-bf5a-901cf5d28e12.png)
+![transparent demo](https://user-images.githubusercontent.com/42694704/196934147-0704f7ec-456f-4a07-b44f-ac99896c7b22.png)
 
 <!--toc:start-->
 
@@ -120,7 +121,7 @@ require("one_monokai").setup({
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
-![lualine demo](./assets/lualine.png)
+![lualine demo](https://user-images.githubusercontent.com/42694704/196934170-84a1f32c-f97b-4f00-859b-e822f4d14479.png)
 
 ```lua
 require("lualine").setup {
