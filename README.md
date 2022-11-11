@@ -49,8 +49,7 @@ Or prefer below if you have your custom options
 
 ```lua
 require("one_monokai").setup({
-    use_cmd = true
-    --... other options
+    -- your options
 })
 ```
 
@@ -58,7 +57,6 @@ require("one_monokai").setup({
 
 | Option        | Description                            | Type       | Note                         |
 | ------------- | -------------------------------------- | ---------- | ---------------------------- |
-| `use_cmd`     | automatically set colorscheme on setup | `boolean`  | N/A                          |
 | `transparent` | enable transparent background          | `boolean`  | N/A                          |
 | `colors`      | custom colors                          | `table`    | N/A                          |
 | `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument |
@@ -67,7 +65,6 @@ require("one_monokai").setup({
 
 ```lua
 {
-    use_cmd = false,
     transparent = false,
     colors = {},
     themes = function(colors)
@@ -85,7 +82,6 @@ You can easily change highlighting groups. Override the list of supported values
 
 ```lua
 require("one_monokai").setup({
-    use_cmd = true,
     colors = {
         green = "#00ff00",
         blue = "#0000ff",
@@ -143,8 +139,8 @@ Thanks for these talented and amazing people:
 
 - [one-monokai-vim](https://github.com/fratajczak/one-monokai-vim)
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
-- [tokyonight](https://github.com/folke/tokyonight.nvim)
-- [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+- [onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
 
 ## :star: Cool One Monokai projects
 

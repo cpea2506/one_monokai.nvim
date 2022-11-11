@@ -1,8 +1,6 @@
 local config = {}
 
 config.options = {
-    ---automatically set colorscheme on setup
-    use_cmd = false,
     ---enable transparent background
     transparent = false,
     ---@type table<string, string> #custom colors
@@ -24,6 +22,7 @@ function config:extend(user_config)
     self.options = vim.tbl_deep_extend("force", self.options, user_config)
 end
 
+-- allow index options without options field
 return setmetatable(config, {
     __index = function(table, key)
         return table.options[key]
