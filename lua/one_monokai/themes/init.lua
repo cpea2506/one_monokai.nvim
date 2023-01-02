@@ -8,7 +8,7 @@ local themes = {}
 function themes.load()
     local colors = require "one_monokai.colors"
 
-    local default = highlight:new(groups.get(colors, config.transparent))
+    local default = highlight:new(groups(colors, config.transparent))
     local user_themes = config.themes(colors)
 
     -- set default if user has no custom themes
