@@ -55,11 +55,11 @@ require("one_monokai").setup({
 
 ### Options
 
-| Option        | Description                            | Type       | Note                         |
-| ------------- | -------------------------------------- | ---------- | ---------------------------- |
-| `transparent` | enable transparent background          | `boolean`  | N/A                          |
-| `colors`      | custom colors                          | `table`    | N/A                          |
-| `themes`      | custom highlighting groups             | `function` | accepts `colors` as argument |
+| Option        | Description                   | Type       | Note                         |
+| ------------- | ----------------------------- | ---------- | ---------------------------- |
+| `transparent` | enable transparent background | `boolean`  | N/A                          |
+| `colors`      | custom colors                 | `table`    | N/A                          |
+| `themes`      | custom highlighting groups    | `function` | accepts `colors` as argument |
 
 #### Default
 
@@ -104,7 +104,6 @@ require("one_monokai").setup({
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LspConfig](https://github.com/neovim/nvim-lspconfig)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Nvim Semantic Token](https://github.com/theHamsta/nvim-semantic-tokens)
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Nvimtree](https://github.com/kyazdani42/nvim-tree.lua)

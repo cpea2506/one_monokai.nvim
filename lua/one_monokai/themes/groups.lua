@@ -146,6 +146,18 @@ function groups.get(colors, transparent)
         ["@variable"] = { fg = colors.fg },
         ["@variable.builtin"] = { fg = colors.pink },
 
+        -- semantic token
+        ["@class"] = { link = "@constructor" },
+        ["@decorator"] = { link = "Identifier" },
+        ["@enum"] = { link = "@constructor" },
+        ["@enumMember"] = { link = "Constant" },
+        ["@event"] = { link = "Identifier" },
+        ["@interface"] = { link = "Identifier" },
+        ["@modifier"] = { link = "Identifier" },
+        ["@regexp"] = { link = "SpecialChar" },
+        ["@struct"] = { link = "@constructor" },
+        ["@typeParameter"] = { link = "Type" },
+
         -- treesitter rainbow
         rainbowcol1 = { fg = colors.dark_red },
         rainbowcol2 = { fg = colors.aqua },
@@ -326,23 +338,6 @@ function groups.get(colors, transparent)
         CmpItemKindValue = { fg = colors.white },
         CmpItemKindVariable = { fg = colors.cyan },
 
-        -- nvim-semantic-token
-        LspClass = { link = "@constructor" },
-        LspComment = { link = "@comment" },
-        LspDeprecated = { fg = colors.light_gray, strikethrough = true },
-        LspFunction = { link = "@function" },
-        LspMacro = { link = "@macro" },
-        LspMethod = { link = "@method" },
-        LspNamespace = { link = "@namespace" },
-        LspNumber = { link = "@number" },
-        LspOperator = { link = "@operator" },
-        LspParameter = { link = "@parameter" },
-        LspProperty = { link = "@property" },
-        LspRegexp = { link = "@string.regex" },
-        LspString = { link = "@string" },
-        LspType = { link = "@type" },
-        LspTypeParameter = { link = "@type" },
-
         -- nvim-navic
         NavicIconsArray = { link = "Type" },
         NavicIconsBoolean = { link = "Boolean" },
@@ -515,4 +510,4 @@ function groups.get(colors, transparent)
     }
 end
 
-return groups
+return groups.get
