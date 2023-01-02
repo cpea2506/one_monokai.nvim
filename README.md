@@ -14,11 +14,13 @@
 
 ![demo](https://user-images.githubusercontent.com/42694704/196934147-0704f7ec-456f-4a07-b44f-ac99896c7b22.png)
 
-<p align = "center">Normal background</p>
+<p align = "center"><b>Normal background</b></p>
+
+<br />
 
 ![transparent demo](https://user-images.githubusercontent.com/42694704/196934131-0c7134ec-7266-4200-bf5a-901cf5d28e12.png)
 
-<p align = "center">Transparent background</p>
+<p align = "center"><b>Transparent background</b></p>
 
 <!--toc:start-->
 
