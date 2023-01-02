@@ -12,8 +12,13 @@
   VSCode One Monokai theme written in Lua for Neovim.
 </div>
 
-![transparent demo](https://user-images.githubusercontent.com/42694704/196934147-0704f7ec-456f-4a07-b44f-ac99896c7b22.png)
-![demo](https://user-images.githubusercontent.com/42694704/196934131-0c7134ec-7266-4200-bf5a-901cf5d28e12.png)
+![demo](https://user-images.githubusercontent.com/42694704/196934147-0704f7ec-456f-4a07-b44f-ac99896c7b22.png)
+
+<p align = "center">Normal background</p>
+
+![transparent demo](https://user-images.githubusercontent.com/42694704/196934131-0c7134ec-7266-4200-bf5a-901cf5d28e12.png)
+
+<p align = "center">Transparent background</p>
 
 <!--toc:start-->
 
