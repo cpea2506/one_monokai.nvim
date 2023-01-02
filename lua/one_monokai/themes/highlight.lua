@@ -1,7 +1,8 @@
-local set_hl = vim.api.nvim_set_hl
-
 ---@class highlight
-local highlight = { groups = {} }
+---@field groups table #list of highlight groups
+local highlight = {
+    groups = {},
+}
 
 highlight.__index = highlight
 
@@ -12,10 +13,13 @@ function highlight:new(groups)
     local object = {}
 
     setmetatable(object, self)
+
     object.groups = groups
 
     return object
 end
+
+local set_hl = vim.api.nvim_set_hl
 
 ---Set highlight.
 function highlight:set()
@@ -23,7 +27,7 @@ function highlight:set()
         local status_ok, err = pcall(set_hl, 0, name, attrs)
 
         if not status_ok then
-            error(string.format("themes(%s): %s", name, err), 0)
+            error(("themes(%s): %s"):format(name, err), 0)
         end
     end
 end

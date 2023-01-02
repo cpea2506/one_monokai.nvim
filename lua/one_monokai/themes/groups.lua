@@ -146,6 +146,18 @@ function groups.get(colors, transparent)
         ["@variable"] = { fg = colors.fg },
         ["@variable.builtin"] = { fg = colors.pink },
 
+        -- semantic token
+        ["@class"] = { link = "@constructor" },
+        ["@decorator"] = { link = "Identifier" },
+        ["@enum"] = { link = "@constructor" },
+        ["@enumMember"] = { link = "Constant" },
+        ["@event"] = { link = "Identifier" },
+        ["@interface"] = { link = "Identifier" },
+        ["@modifier"] = { link = "Identifier" },
+        ["@regexp"] = { link = "SpecialChar" },
+        ["@struct"] = { link = "@constructor" },
+        ["@typeParameter"] = { link = "Type" },
+
         -- treesitter rainbow
         rainbowcol1 = { fg = colors.dark_red },
         rainbowcol2 = { fg = colors.aqua },
@@ -515,4 +527,4 @@ function groups.get(colors, transparent)
     }
 end
 
-return groups
+return groups.get

@@ -10,7 +10,9 @@ function M.setup(user_config)
         return
     end
 
-    set.hi "clear"
+    if vim.g.colors_name then
+        set.hi "clear"
+    end
 
     if vim.fn.exists "syntax_on" then
         set.syntax "reset"
