@@ -1,12 +1,9 @@
 name: check
 
 on:
-  push:
-    paths:
-      - "**.lua"
   pull_request:
-    paths:
-      - "**.lua"
+    branches:
+      - main
 
 jobs:
   stylua-check:
