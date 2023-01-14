@@ -1,20 +1,9 @@
 name: test
 
 on:
-  push:
-    paths:
-      - "lua/**"
-      - "colors/*"
-      - "tests/**"
-      - ".github/workflows/*"
   pull_request:
     branches:
       - main
-    paths:
-      - "lua/**"
-      - "colors/*"
-      - "tests/**"
-      - ".github/workflows/*"
 
 # Cancel any in-progress CI runs for a PR if it is updated
 concurrency:
