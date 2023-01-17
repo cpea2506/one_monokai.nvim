@@ -32,7 +32,7 @@
   - [Customization example](#customization-example)
 - [:champagne: Plugins support](#champagne-plugins-support)
 - [:eyes: Inspiration](#eyes-inspiration)
-- [:star: Cool One Monokai projects](#star-cool-one-monokai-projects)
+
 <!--toc:end-->
 
 ## :rocket: Installation
@@ -121,7 +121,7 @@ require("one_monokai").setup({
 - [Illuminate](https://github.com/RRethy/vim-illuminate)
 - [Leap](https://github.com/ggandor/leap.nvim)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [Lazy](https:/github.com/folke/lazy.nvim)
+- [Lazy](https://github.com/folke/lazy.nvim)
 - [Sj](https://github.com/woosaaahh/sj.nvim)
 - [Crates](https://github.com/Saecki/crates.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
@@ -149,7 +149,3 @@ Thanks for these talented and amazing people:
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
-
-## :star: Cool One Monokai projects
-
-- [Hitesh-Aggarwal - One Monokai Feline](https://github.com/Hitesh-Aggarwal/feline_one_monokai.nvim)
