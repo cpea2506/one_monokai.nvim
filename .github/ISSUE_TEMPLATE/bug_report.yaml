@@ -1,0 +1,48 @@
+---
+name: Bug report
+description: File a bug report to help us improve our color scheme
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is. Please include Neovim's related errors if there are any.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Screenshots
+      description: If applicable, could you add screenshots to help explain your problem clearly?
+  - type: input
+    attributes:
+      label: Operating System + version
+      placeholder: macOS 13.2 Beta (22D5038i)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Neovim version
+      description: "Output from `nvim -v`"
+      placeholder: NVIM v0.9.0-dev-1909+gc752c8536-dirty
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Reproduce steps
+      description: Steps to reproduce the behavior
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Please feel free to add any other context about the problem here.
