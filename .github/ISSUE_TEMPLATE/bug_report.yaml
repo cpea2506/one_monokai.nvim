@@ -1,22 +1,22 @@
 ---
 name: Bug report
 description: Create a bug report to help us improve our color scheme
-title: 'bug: '
-labels: 
+title: "bug: "
+labels:
   - bug
 body:
   - type: input
     attributes:
       label: Describe the bug
       description: A clear and concise description of what the bug is. Please include Neovim's related errors if there are any.
-    validations: 
+    validations:
       required: true
   - type: input
     attributes:
       label: Screenshots
       description: If applicable, could you add screenshots to help explain your problem clearly?
   - type: input
-    attributes: 
+    attributes:
       label: Operating System + version
       placeholder: macOS 13.1.2 beta
     validations:
@@ -32,7 +32,7 @@ body:
     attributes:
       label: Reproduce steps
       description: Steps to reproduce the behavior
-      value: | 
+      value: |
         1.
         2.
         3.
