@@ -18,7 +18,7 @@ body:
   - type: input
     attributes:
       label: Operating System + version
-      placeholder: macOS 13.1.2 beta
+      placeholder: macOS 13.2 Beta (22D5038i)
     validations:
       required: true
   - type: input
