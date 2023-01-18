@@ -32,7 +32,7 @@
   - [Customization example](#customization-example)
 - [:champagne: Plugins support](#champagne-plugins-support)
 - [:eyes: Inspiration](#eyes-inspiration)
-
+- [:scroll: Contribution](#scroll-contribution)
 <!--toc:end-->
 
 ## :rocket: Installation
@@ -149,3 +149,8 @@ Thanks for these talented and amazing people:
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
+
+## :scroll: Contribution
+
+Please see [the contributing guidelines](CONTRIBUTING.md) for detailed
+instructions on how to contribute to this project.
