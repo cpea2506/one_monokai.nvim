@@ -153,4 +153,4 @@ Thanks for these talented and amazing people:
 ## :scroll: Contribution
 
 Please see [the contributing guidelines](CONTRIBUTING.md) for detailed
-instructions on how to contribute this project. 😁
+instructions on how to contribute to this project. 😁
