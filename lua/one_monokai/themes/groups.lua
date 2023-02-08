@@ -72,6 +72,14 @@ function groups.get(colors, transparent)
         SpecialKey = { fg = colors.pink },
         Title = { fg = colors.yellow },
 
+        -- checkhealth
+        healthSuccess = { fg = colors.green },
+        healthWarning = { fg = colors.yellow },
+        helpCommand = { fg = colors.orange },
+        helpHyperTextJump = { fg = colors.aqua },
+        helpHeader = { fg = colors.white },
+        helpSectionDelim = { fg = colors.green },
+
         -- treesitter
         ["@annotation"] = { link = "PreProc" },
         ["@attribute"] = { link = "PreProc" },
