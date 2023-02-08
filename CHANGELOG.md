@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.0.0...v1.1.0) (2023-02-08)
+
+
+### Features
+
+* **checkhealth:** update checkhealth's colors ([#36](https://github.com/cpea2506/one_monokai.nvim/issues/36)) ([2789499](https://github.com/cpea2506/one_monokai.nvim/commit/27894999b25423ab341a6de5b5c445bce7e6d949))
+
 ## 1.0.0 (2023-01-14)
 
 
