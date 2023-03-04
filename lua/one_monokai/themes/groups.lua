@@ -354,7 +354,7 @@ function groups.get(colors, transparent)
         LazyCommit = { fg = colors.green },
         LazyDimmed = { link = "Comment" },
         LazyCommitIssue = { link = "Number" },
-        LazyCommitScope = { fg = colors.orange, italic = true },
+        LazyCommitScope = { italic = true },
         LazyCommitType = { fg = colors.yellow, bold = true },
         LazyDir = { fg = colors.yellow },
         LazyH1 = { fg = colors.black, bg = colors.white },
