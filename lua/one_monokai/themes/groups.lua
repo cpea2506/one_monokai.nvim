@@ -31,6 +31,7 @@ function groups.get(colors, transparent)
         Macro = { fg = colors.green },
         PreCondit = { fg = colors.pink },
         PreProc = { fg = colors.green },
+        Conceal = { fg = colors.light_gray },
 
         Delimiter = { fg = colors.pink },
         Special = { fg = colors.purple },
@@ -351,6 +352,7 @@ function groups.get(colors, transparent)
         LazyButtonActive = { fg = colors.black, bg = colors.white },
         LazyComment = { link = "Comment" },
         LazyCommit = { fg = colors.green },
+        LazyDimmed = { link = "Comment" },
         LazyCommitIssue = { link = "Number" },
         LazyCommitScope = { fg = colors.orange, italic = true },
         LazyCommitType = { fg = colors.yellow, bold = true },
