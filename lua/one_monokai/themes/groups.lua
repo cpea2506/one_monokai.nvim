@@ -5,7 +5,7 @@ local groups = {}
 ---@param transparent boolean #whether background is transparent or not
 ---@return table #list of configured highlighting groups
 function groups.get(colors, transparent)
-    return {
+    local default_groups = {
         Boolean = { fg = colors.cyan },
         Character = { fg = colors.yellow },
         Constant = { fg = colors.aqua },
@@ -156,16 +156,8 @@ function groups.get(colors, transparent)
         ["@variable.builtin"] = { fg = colors.pink },
 
         -- semantic token
-        ["@class"] = { link = "@constructor" },
-        ["@decorator"] = { link = "Identifier" },
-        ["@enum"] = { link = "@constructor" },
-        ["@enumMember"] = { link = "Constant" },
-        ["@event"] = { link = "Identifier" },
-        ["@interface"] = { link = "Identifier" },
-        ["@modifier"] = { link = "Identifier" },
-        ["@regexp"] = { link = "SpecialChar" },
-        ["@struct"] = { link = "@constructor" },
-        ["@typeParameter"] = { link = "Type" },
+        ["@lsp.type.parameter"] = { link = "@parameter" },
+        ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
 
         -- nvim-ts-rainbow 2
         TSRainbowRed = { fg = colors.dark_red },
@@ -566,6 +558,16 @@ function groups.get(colors, transparent)
         cssURL = { fg = colors.orange, underline = true, italic = true },
         cssValueLength = { fg = colors.purple },
     }
+
+    -- hide all semantic highlights by default,
+    -- only enable those from the default table
+    for _, semantic_group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        if not default_groups[semantic_group] then
+            default_groups[semantic_group] = {}
+        end
+    end
+
+    return default_groups
 end
 
 return groups.get
