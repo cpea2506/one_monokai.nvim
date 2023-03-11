@@ -112,6 +112,7 @@ require("one_monokai").setup({
 - [LspConfig](https://github.com/neovim/nvim-lspconfig)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Nvim Semantic Token](https://github.com/theHamsta/nvim-semantic-tokens)
+- [Nvim TSRainbow 2](https://github.com/HiPhish/nvim-ts-rainbow2)
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Nvimtree](https://github.com/kyazdani42/nvim-tree.lua)

@@ -167,14 +167,14 @@ function groups.get(colors, transparent)
         ["@struct"] = { link = "@constructor" },
         ["@typeParameter"] = { link = "Type" },
 
-        -- treesitter rainbow
-        rainbowcol1 = { fg = colors.dark_red },
-        rainbowcol2 = { fg = colors.aqua },
-        rainbowcol3 = { fg = colors.yellow },
-        rainbowcol4 = { fg = colors.purple },
-        rainbowcol5 = { fg = colors.dark_cyan },
-        rainbowcol6 = { fg = colors.orange },
-        rainbowcol7 = { fg = colors.green },
+        -- nvim-ts-rainbow 2
+        TSRainbowRed = { fg = colors.dark_red },
+        TSRainbowOrange = { fg = colors.orange },
+        TSRainbowYellow = { fg = colors.yellow },
+        TSRainbowGreen = { fg = colors.green },
+        TSRainbowBlue = { fg = colors.aqua },
+        TSRainbowViolet = { fg = colors.purple },
+        TSRainbowCyan = { fg = colors.cyan },
 
         -- diff
         DiffAdd = { fg = colors.green },
