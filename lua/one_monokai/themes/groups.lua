@@ -155,9 +155,16 @@ function groups.get(colors, transparent)
         ["@variable"] = { fg = colors.fg },
         ["@variable.builtin"] = { fg = colors.pink },
 
-        -- semantic token
-        ["@lsp.type.parameter"] = { link = "@parameter" },
+        -- semantic tokens
         ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
+        ["@lsp.type.comment"] = { link = "@comment" },
+        ["@lsp.type.function"] = { link = "@function" },
+        ["@lsp.type.macro"] = { link = "@function" },
+        ["@lsp.type.method"] = { link = "@function" },
+        ["@lsp.type.namespace"] = { link = "@namespace" },
+        ["@lsp.type.number"] = { link = "@number" },
+        ["@lsp.type.parameter"] = { link = "@parameter" },
+        ["@lsp.type.typeParameter"] = { link = "@type" },
 
         -- nvim-ts-rainbow 2
         TSRainbowRed = { fg = colors.dark_red },
