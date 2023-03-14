@@ -1,15 +1,10 @@
 local M = {}
 
 local set = vim.cmd
-local utils = require "one_monokai.utils"
 local config = require "one_monokai.config"
 local themes = require "one_monokai.themes"
 
 function M.setup(user_config)
-    if not utils.meet_minimum_requirements() then
-        return
-    end
-
     if vim.g.colors_name then
         set.hi "clear"
     end

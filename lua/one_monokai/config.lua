@@ -1,13 +1,13 @@
 local config = {}
 
 config.options = {
-    ---enable transparent background
+    ---@type boolean #whether to enable transparent background
     transparent = false,
     ---@type table<string, string> #custom colors
     colors = {},
-    ---custom highlighting groups
+    ---custom highlight groups
     ---@param _ table<string, string>|nil #colors table
-    ---@return table #list of configured highlighting groups
+    ---@return table #list of configured highlight groups
     themes = function(_)
         return {}
     end,
