@@ -1,9 +1,9 @@
-local utils = require "one_monokai.utils"
+local themes = {}
+
+local logs = require "one_monokai.logs"
 local config = require "one_monokai.config"
 local groups = require "one_monokai.themes.groups"
 local highlight = require "one_monokai.themes.highlight"
-
-local themes = {}
 
 function themes.load()
     local colors = require "one_monokai.colors"
@@ -27,7 +27,7 @@ function themes.load()
     if not set_theme_ok then
         default:set()
 
-        utils.log_err(err)
+        logs.error.notify(err)
     end
 end
 

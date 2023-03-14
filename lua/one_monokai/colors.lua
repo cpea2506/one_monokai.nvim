@@ -1,4 +1,4 @@
-local utils = require "one_monokai.utils"
+local logs = require "one_monokai.logs"
 local config = require "one_monokai.config"
 
 local colors = {}
@@ -30,11 +30,15 @@ colors.default = {
 }
 
 ---Check if color is valid before setting it
+---@param name string #name of the color
+---@param value any # value of the color
 local function is_valid_color(name, value)
-    local value_type = type(value)
+    local type_ok, err = pcall(vim.validate, {
+        ["colors(" .. name .. ")"] = { value, "string" },
+    })
 
-    if value_type ~= "string" then
-        utils.log_err("colors(%s): expected string, got %s", name, value_type)
+    if not type_ok then
+        logs.error.notify(err)
 
         return false
     end
@@ -44,7 +48,7 @@ local function is_valid_color(name, value)
     end
 
     if vim.api.nvim_get_color_by_name(value) == -1 then
-        utils.log_err("colors(%s): %q is not a valid color", name, value)
+        logs.error.notify("colors(%s): %q is not a valid color", name, value)
 
         return false
     end

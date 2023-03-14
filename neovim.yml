@@ -7,12 +7,17 @@ globals:
     args:
       - type: any
       - type: any
-  assert.equals:
+  before_each:
+    args:
+      - type: function
+  assert.equal:
     args:
       - type: any
+      - type: ...
+  assert.is_not.equal:
+    args:
       - type: any
-      - type: any
-        required: false
+      - type: ...
   assert.are.same:
     args:
       - type: any

@@ -7,6 +7,8 @@ describe("Config options", function()
 end)
 
 describe("Override config", function()
+    local logs = require "one_monokai.logs"
+
     local expected = {
         colors = {
             pink = "#61afef",
@@ -24,20 +26,50 @@ describe("Override config", function()
     local colors = require "one_monokai.colors"
 
     it("should change the default config", function()
-        assert.are.same(false, config.transparent)
+        assert.equal(false, config.transparent)
         assert.are.same(expected.colors, config.colors)
         assert.are.same(expected.themes(colors), config.themes(colors))
     end)
 
     it("should change default colors", function()
-        assert.equals(expected.colors.pink, colors.pink)
-        assert.equals(expected.colors.lmao, colors.lmao)
+        assert.equal(expected.colors.pink, colors.pink)
+        assert.equal(expected.colors.lmao, colors.lmao)
     end)
 
     it("should change default themes", function()
         local hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
-        assert.equals(expected.colors.lmao, string.format("#%06x", hl.foreground))
-        assert.are.same(true, hl.italic)
+        assert.equal(expected.colors.lmao, ("#%06x"):format(hl.foreground))
+        assert.equal(true, hl.italic)
+    end)
+
+    before_each(function()
+        logs.error.msg = ""
+    end)
+
+    it("should log error on wrong colors", function()
+        local wrong_config = {
+            colors = {
+                lmao = true,
+            },
+        }
+
+        require("one_monokai").setup(wrong_config)
+
+        assert.is_not.equal("", logs.error.msg)
+    end)
+
+    it("should log error on wrong highlight groups", function()
+        local wrong_config = {
+            themes = function()
+                return {
+                    lmao = true,
+                }
+            end,
+        }
+
+        require("one_monokai").setup(wrong_config)
+
+        assert.is_not.equal("", logs.error.msg)
     end)
 end)

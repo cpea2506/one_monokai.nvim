@@ -13,7 +13,6 @@ function highlight:new(groups)
     local object = {}
 
     setmetatable(object, self)
-
     object.groups = groups
 
     return object
@@ -21,7 +20,7 @@ end
 
 local set_hl = vim.api.nvim_set_hl
 
----Set highlight.
+---Set highlight
 function highlight:set()
     for name, attrs in pairs(self.groups) do
         local status_ok, err = pcall(set_hl, 0, name, attrs)

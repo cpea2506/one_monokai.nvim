@@ -3,7 +3,7 @@ local groups = {}
 ---Get default highlight groups
 ---@param colors table<string, string> #table of colors
 ---@param transparent boolean #whether background is transparent or not
----@return table #list of configured highlighting groups
+---@return table #list of configured highlight groups
 function groups.get(colors, transparent)
     local default_groups = {
         Boolean = { fg = colors.cyan },
