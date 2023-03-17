@@ -157,13 +157,17 @@ function groups.get(colors, transparent)
 
         -- semantic tokens
         ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
+        ["@lsp.type.class"] = { link = "@type" },
         ["@lsp.type.comment"] = { link = "@comment" },
         ["@lsp.type.function"] = { link = "@function" },
         ["@lsp.type.macro"] = { link = "@function" },
         ["@lsp.type.method"] = { link = "@function" },
         ["@lsp.type.namespace"] = { link = "@namespace" },
         ["@lsp.type.number"] = { link = "@number" },
+        ["@lsp.type.operator"] = { link = "@operator" },
         ["@lsp.type.parameter"] = { link = "@parameter" },
+        ["@lsp.type.property"] = { link = "@property" },
+        ["@lsp.type.string"] = { link = "@string" },
         ["@lsp.type.typeParameter"] = { link = "@type" },
 
         -- nvim-ts-rainbow 2
