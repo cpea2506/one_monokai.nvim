@@ -168,6 +168,7 @@ function groups.get(colors, transparent)
         ["@lsp.type.parameter"] = { link = "@parameter" },
         ["@lsp.type.property"] = { link = "@property" },
         ["@lsp.type.string"] = { link = "@string" },
+        ["@lsp.type.struct"] = { link = "@type" },
         ["@lsp.type.typeParameter"] = { link = "@type" },
 
         -- nvim-ts-rainbow 2
