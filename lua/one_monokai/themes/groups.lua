@@ -383,23 +383,6 @@ function groups.get(colors, transparent)
         LazyUrl = { fg = colors.aqua, undercurl = true },
         LazyValue = { fg = colors.fg },
 
-        -- nvim-semantic-token
-        LspClass = { link = "@constructor" },
-        LspComment = { link = "@comment" },
-        LspDeprecated = { fg = colors.light_gray, strikethrough = true },
-        LspFunction = { link = "@function" },
-        LspMacro = { link = "@macro" },
-        LspMethod = { link = "@method" },
-        LspNamespace = { link = "@namespace" },
-        LspNumber = { link = "@number" },
-        LspOperator = { link = "@operator" },
-        LspParameter = { link = "@parameter" },
-        LspProperty = { link = "@property" },
-        LspRegexp = { link = "@string.regex" },
-        LspString = { link = "@string" },
-        LspType = { link = "@type" },
-        LspTypeParameter = { link = "@type" },
-
         -- nvim-navic
         NavicIconsArray = { link = "Type" },
         NavicIconsBoolean = { link = "Boolean" },
