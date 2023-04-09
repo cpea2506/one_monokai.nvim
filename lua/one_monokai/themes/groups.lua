@@ -157,6 +157,7 @@ function groups.get(colors, transparent)
 
         -- semantic tokens
         ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
+        ["@lsp.mod.documentation"] = { link = "@constant" },
         ["@lsp.type.class"] = { link = "@type" },
         ["@lsp.type.comment"] = { link = "@comment" },
         ["@lsp.type.function"] = { link = "@function" },
