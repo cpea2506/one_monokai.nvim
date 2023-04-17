@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.1.0...v1.2.0) (2023-04-17)
+
+
+### Features
+
+* add support for `nvim-ts-rainbow2` ([#40](https://github.com/cpea2506/one_monokai.nvim/issues/40)) ([eece553](https://github.com/cpea2506/one_monokai.nvim/commit/eece55368da1fb35d85e26ed091aa42432d4273d))
+* **lsp:** add more semantic token groups ([#43](https://github.com/cpea2506/one_monokai.nvim/issues/43)) ([1a2cd98](https://github.com/cpea2506/one_monokai.nvim/commit/1a2cd98c9766def65105444a4a9db08c8cce44b9))
+* **lsp:** use new semantic token modifiers ([#42](https://github.com/cpea2506/one_monokai.nvim/issues/42)) ([a4b5a2c](https://github.com/cpea2506/one_monokai.nvim/commit/a4b5a2c31969b3f093dae6100ebbd0db047565f2))
+* **sem-tokens:** add `class`, `operator`, `property`, `string` ([#46](https://github.com/cpea2506/one_monokai.nvim/issues/46)) ([4c66158](https://github.com/cpea2506/one_monokai.nvim/commit/4c66158b687c14d5eb500eebe3e55605471b1f00))
+* **semantic-tokens:** add `enum` types ([#50](https://github.com/cpea2506/one_monokai.nvim/issues/50)) ([d6e1bec](https://github.com/cpea2506/one_monokai.nvim/commit/d6e1beca6de5dbcd07bae850734b819cef019930))
+* **semantic-tokens:** add `struct` type ([#48](https://github.com/cpea2506/one_monokai.nvim/issues/48)) ([97f17f5](https://github.com/cpea2506/one_monokai.nvim/commit/97f17f5beff1734f13d043fe442d9192a5d64a36))
+* **semantic-tokens:** treat `documentation` keyword as constant ([#49](https://github.com/cpea2506/one_monokai.nvim/issues/49)) ([057fc34](https://github.com/cpea2506/one_monokai.nvim/commit/057fc3488a3be1a978315c746ee2ed94592fef84))
+
 ## [1.1.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.0.0...v1.1.0) (2023-02-08)
 
 
