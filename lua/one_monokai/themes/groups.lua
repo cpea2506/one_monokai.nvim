@@ -159,6 +159,8 @@ function groups.get(colors, transparent)
         ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
         ["@lsp.type.class"] = { link = "@type" },
         ["@lsp.type.comment"] = { link = "@comment" },
+        ["@lsp.type.enum"] = { link = "@type" },
+        ["@lsp.type.enumMember"] = { link = "@constant" },
         ["@lsp.type.function"] = { link = "@function" },
         ["@lsp.type.macro"] = { link = "@function" },
         ["@lsp.type.method"] = { link = "@function" },
