@@ -184,10 +184,10 @@ function groups.get(colors, transparent)
         TSRainbowCyan = { fg = colors.cyan },
 
         -- diff
-        DiffAdd = { fg = colors.green },
-        DiffChange = { fg = colors.white },
-        DiffDelete = { fg = colors.red },
-        DiffText = { fg = colors.bg, bg = colors.cyan },
+        DiffAdd = { fg = colors.dark_green, bg = colors.green },
+        DiffChange = { fg = colors.dark_green, bg = colors.white },
+        DiffDelete = { fg = colors.dark_green, bg = colors.red },
+        DiffText = { fg = colors.dark_green, bg = colors.cyan },
         diffAdded = { fg = colors.green },
         diffChanged = { fg = colors.white },
         diffFile = { fg = colors.white },
