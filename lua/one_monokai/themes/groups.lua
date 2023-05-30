@@ -184,9 +184,9 @@ function groups.get(colors, transparent)
         TSRainbowCyan = { fg = colors.cyan },
 
         -- diff
-        DiffAdd = { fg = colors.dark_green, bg = colors.green },
-        DiffChange = { fg = colors.dark_green, bg = colors.white },
-        DiffDelete = { fg = colors.dark_green, bg = colors.red },
+        DiffAdd = { fg = colors.green },
+        DiffChange = { fg = colors.white },
+        DiffDelete = { fg = colors.red },
         DiffText = { fg = colors.dark_green, bg = colors.cyan },
         diffAdded = { fg = colors.green },
         diffChanged = { fg = colors.white },
@@ -353,6 +353,12 @@ function groups.get(colors, transparent)
         CmpItemKindUnit = { fg = colors.light_orange },
         CmpItemKindValue = { fg = colors.white },
         CmpItemKindVariable = { fg = colors.cyan },
+
+        -- git-conflict
+        GitConflictCurrent = { fg = colors.dark_green, bg = colors.cyan },
+        GitConflictIncoming = { fg = colors.dark_green, bg = colors.green },
+        GitConflictCurrentLabel = { fg = colors.dark_green },
+        GitConflictIncomingLabel = { fg = colors.dark_green },
 
         -- lazy
         LazyButton = { fg = colors.white, bg = colors.vulcan },
