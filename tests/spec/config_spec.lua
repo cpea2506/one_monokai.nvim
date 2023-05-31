@@ -37,9 +37,9 @@ describe("Override config", function()
     end)
 
     it("should change default themes", function()
-        local hl = vim.api.nvim_get_hl_by_name("Normal", true)
+        local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
-        assert.equal(expected.colors.lmao, ("#%06x"):format(hl.foreground))
+        assert.equal(expected.colors.lmao, ("#%06x"):format(hl.fg))
         assert.equal(true, hl.italic)
     end)
 

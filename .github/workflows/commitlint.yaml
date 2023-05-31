@@ -25,7 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # When the previous steps fails, the workflow would stop. By adding this
-      # condition you can continue the execution with the populated error message.
+      # condition we can continue the execution with the populated error message.
       - uses: marocchino/sticky-pull-request-comment@v2
         if: always() && (steps.lint_pr_title.outputs.error_message != null)
         with:

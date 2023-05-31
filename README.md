@@ -30,7 +30,7 @@ use "cpea2506/one_monokai.nvim"
 
 ### Requirement
 
-- Neovim >= 0.8.0
+- Neovim >= 0.9.1
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting (optional) 😇
 
 ## :gear: Setup
