@@ -19,6 +19,7 @@ describe("Override config", function()
                 Normal = { fg = c.lmao, italic = true },
             }
         end,
+        italics = false,
     }
 
     require("one_monokai").setup(expected)
@@ -26,7 +27,7 @@ describe("Override config", function()
     local colors = require "one_monokai.colors"
 
     it("should change the default config", function()
-        assert.equal(false, config.transparent)
+        assert.is_false(config.transparent)
         assert.are.same(expected.colors, config.colors)
         assert.are.same(expected.themes(colors), config.themes(colors))
     end)
@@ -40,7 +41,15 @@ describe("Override config", function()
         local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
         assert.equal(expected.colors.lmao, ("#%06x"):format(hl.fg))
-        assert.equal(true, hl.italic)
+        assert.is_true(hl.italic)
+    end)
+
+    it("should disable all italics", function()
+        local comment_hl = vim.api.nvim_get_hl(0, { name = "Comment" })
+        local paremeter_hl = vim.api.nvim_get_hl(0, { name = "@parameter" })
+
+        assert.is_nil(comment_hl.italic)
+        assert.is_nil(paremeter_hl.italic)
     end)
 
     before_each(function()

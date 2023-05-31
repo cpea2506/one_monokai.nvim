@@ -11,6 +11,8 @@ config.options = {
     themes = function(_)
         return {}
     end,
+    ---@type boolean #whether to italicize some highlight groups
+    italics = true,
 }
 
 ---Extend default with user config

@@ -54,6 +54,7 @@ require("one_monokai").setup({
 | `transparent` | enable transparent background | `boolean`                  | N/A              |
 | `colors`      | custom colors                 | `table<string, string>`    | N/A              |
 | `themes`      | custom highlight groups       | `function(colors): tables` | `:h nvim_set_hl` |
+| `italics`     | enable italics                | `boolean`                  | N/A              |
 
 #### Default
 
@@ -64,6 +65,7 @@ require("one_monokai").setup({
     themes = function(colors)
         return {}
     end,
+    italics = true,
 }
 ```
 
@@ -88,6 +90,7 @@ require("one_monokai").setup({
             ["@lsp.type.keyword"] = { link = "@keyword" }
         }
     end,
+    italics = false, -- disable italics
 })
 ```
 
