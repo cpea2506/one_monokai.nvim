@@ -7,6 +7,15 @@ globals:
     args:
       - type: any
       - type: any
+  assert.is_nil:
+    args:
+      - type: any
+  assert.is_true:
+    args:
+      - type: any
+  assert.is_false:
+    args:
+      - type: any
   before_each:
     args:
       - type: function

@@ -1,14 +1,14 @@
 local themes = {}
 
-local logs = require "one_monokai.logs"
 local config = require "one_monokai.config"
-local groups = require "one_monokai.themes.groups"
 local highlight = require "one_monokai.themes.highlight"
+local logs = require "one_monokai.logs"
 
 function themes.load()
     local colors = require "one_monokai.colors"
+    local groups = require "one_monokai.themes.groups"
 
-    local default = highlight:new(groups(colors, config.transparent))
+    local default = highlight:new(groups)
     local user_themes = config.themes(colors)
 
     -- set default if user has no custom themes

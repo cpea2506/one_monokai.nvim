@@ -1,5 +1,5 @@
-local logs = require "one_monokai.logs"
 local config = require "one_monokai.config"
+local logs = require "one_monokai.logs"
 
 local colors = {}
 
@@ -56,20 +56,18 @@ local function is_valid_color(name, value)
     return true
 end
 
-function colors:get()
-    local user_colors = config.colors
+local user_colors = config.colors
 
-    if vim.tbl_isempty(user_colors) then
-        return self.default
-    end
-
-    for name, value in pairs(user_colors) do
-        if not is_valid_color(name, value) then
-            return self.default
-        end
-    end
-
-    return vim.tbl_extend("force", self.default, user_colors)
+if vim.tbl_isempty(user_colors) then
+    return colors.default
 end
 
-return colors:get()
+for name, value in pairs(user_colors) do
+    if not is_valid_color(name, value) then
+        return colors.default
+    end
+end
+
+colors.extended = vim.tbl_extend("force", colors.default, user_colors)
+
+return colors.extended
