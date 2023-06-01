@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.2.0...v1.3.0) (2023-06-01)
+
+
+### Features
+
+* add `italics` option ([#57](https://github.com/cpea2506/one_monokai.nvim/issues/57)) ([9d4d11e](https://github.com/cpea2506/one_monokai.nvim/commit/9d4d11ed833df56f2661f896c88e2c89b98dfac3))
+* add highlight groups for `git-conflict.nvim` ([#54](https://github.com/cpea2506/one_monokai.nvim/issues/54)) ([9e84f9e](https://github.com/cpea2506/one_monokai.nvim/commit/9e84f9ed7d1fae2c1e81cd9227d74d250f9b04da))
+
+
+### Bug Fixes
+
+* `Diff*` should have background ([#51](https://github.com/cpea2506/one_monokai.nvim/issues/51)) ([0de4acf](https://github.com/cpea2506/one_monokai.nvim/commit/0de4acf888d63824a25aa1e9af3fec67b49f47d7))
+* `NvimTreeGit*` should have their own colors ([#53](https://github.com/cpea2506/one_monokai.nvim/issues/53)) ([b5389a9](https://github.com/cpea2506/one_monokai.nvim/commit/b5389a9d03b4fdd77fdbe63f1b2f63f28a46b2fa))
+
 ## [1.2.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.1.0...v1.2.0) (2023-04-17)
 
 
