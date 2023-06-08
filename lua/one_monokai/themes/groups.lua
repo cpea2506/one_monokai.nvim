@@ -365,8 +365,8 @@ groups.default = {
     -- git-conflict
     GitConflictCurrent = { fg = colors.dark_green, bg = colors.cyan },
     GitConflictIncoming = { fg = colors.dark_green, bg = colors.green },
-    GitConflictCurrentLabel = { fg = colors.dark_green },
-    GitConflictIncomingLabel = { fg = colors.dark_green },
+    GitConflictCurrentLabel = { fg = colors.red },
+    GitConflictIncomingLabel = { fg = colors.red },
 
     -- lazy
     LazyButton = { fg = colors.white, bg = colors.vulcan },
