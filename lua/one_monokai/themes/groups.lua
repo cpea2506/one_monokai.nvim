@@ -203,11 +203,6 @@ groups.default = {
     PmenuSel = { fg = colors.bg, bg = colors.pink },
     PmenuThumb = { fg = colors.dark_green, bg = colors.dark_gray },
 
-    -- lsp document highlight
-    LspReferenceRead = { bg = colors.vulcan, bold = true },
-    LspReferenceText = { bg = colors.vulcan, bold = true },
-    LspReferenceWrite = { bg = colors.vulcan, bold = true },
-
     -- diagnostics
     DiagnosticError = { fg = colors.red },
     DiagnosticHint = { fg = colors.light_gray },
@@ -218,10 +213,17 @@ groups.default = {
     DiagnosticUnderlineWarn = { sp = colors.yellow, underline = true },
     DiagnosticWarn = { fg = colors.yellow },
 
+    -- lsp document highlight
+    LspReferenceRead = { bg = colors.vulcan, bold = true },
+    LspReferenceText = { bg = colors.vulcan, bold = true },
+    LspReferenceWrite = { bg = colors.vulcan, bold = true },
+
     -- vim-illuminate
     IlluminatedWordRead = { link = "LspReferenceRead" },
     IlluminatedWordText = { link = "LspReferenceText" },
     IlluminatedWordWrite = { link = "LspReferenceWrite" },
+
+    LspInlayHint = { link = "Comment" },
 
     -- nvim-lspconfig
     LspInfoBorder = { link = "FloatBorder" },
