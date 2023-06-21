@@ -360,7 +360,7 @@ groups.default = {
     CmpItemKindProperty = { fg = colors.yellow },
     CmpItemKindStruct = { fg = colors.pink },
     CmpItemKindText = { fg = colors.white },
-    CmpItemKindUnit = { fg = colors.light_orange },
+    CmpItemKindUnit = { fg = colors.orange },
     CmpItemKindValue = { fg = colors.white },
     CmpItemKindVariable = { fg = colors.cyan },
 
