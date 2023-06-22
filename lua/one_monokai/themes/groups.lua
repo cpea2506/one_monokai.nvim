@@ -183,10 +183,11 @@ groups.default = {
     TSRainbowCyan = { fg = colors.cyan },
 
     -- diff
-    DiffAdd = { fg = colors.green },
-    DiffChange = { fg = colors.white },
-    DiffDelete = { fg = colors.red },
-    DiffText = { fg = colors.dark_green, bg = colors.cyan },
+    DiffAdd = { bg = colors.green:darken(0.3) },
+    DiffChange = { fg = colors.white:darken(0.3) },
+    DiffDelete = { bg = colors.red:darken(0.3) },
+    DiffText = { bg = colors.cyan:darken(0.3) },
+
     diffAdded = { fg = colors.green },
     diffChanged = { fg = colors.white },
     diffFile = { fg = colors.white },
@@ -351,7 +352,7 @@ groups.default = {
     CmpItemKindEvent = { fg = colors.yellow },
     CmpItemKindField = { fg = colors.yellow },
     CmpItemKindFile = { fg = colors.white },
-    CmpItemKindFolder = { link = "NvimTreeFolderIcon" },
+    CmpItemKindFolder = { fg = colors.yellow },
     CmpItemKindFunction = { link = "Function" },
     CmpItemKindInterface = { fg = colors.pink },
     CmpItemKindKeyword = { fg = colors.white },
@@ -366,10 +367,10 @@ groups.default = {
     CmpItemKindVariable = { fg = colors.cyan },
 
     -- git-conflict
-    GitConflictCurrent = { fg = colors.dark_green, bg = colors.cyan },
-    GitConflictIncoming = { fg = colors.dark_green, bg = colors.green },
-    GitConflictCurrentLabel = { fg = colors.red },
-    GitConflictIncomingLabel = { fg = colors.red },
+    GitConflictCurrent = { bg = colors.cyan:darken(0.4) },
+    GitConflictIncoming = { bg = colors.green:darken(0.4) },
+    GitConflictCurrentLabel = { fg = colors.white },
+    GitConflictIncomingLabel = { fg = colors.white },
 
     -- lazy
     LazyButton = { fg = colors.white, bg = colors.vulcan },
