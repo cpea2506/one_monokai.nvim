@@ -1,14 +1,15 @@
 local config = {}
 
+---@alias colors table<string,string> #colors table
+---
 ---@class config
 ---@field transparent boolean #whether to enable transparent background
----@field colors table<string, string> #custom colors
----@field themes function<table> #custom highlight groups
+---@field colors colors #custom colors
+---@field themes fun(colors:colors):table #custom highlight groups
 ---@field italics boolean #whether to italicize some highlight groups
 config.default = {
     transparent = false,
     colors = {},
-    ---@param _ table<string, string>? #colors table
     themes = function(_)
         return {}
     end,
