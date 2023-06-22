@@ -252,6 +252,12 @@ groups.default = {
     SjSearch = { link = "IncSearch" },
     SjWarning = { link = "WarningMsg" },
 
+    -- flash
+    FlashMatch = { link = "Search" },
+    FlashCurrent = { link = "IncSearch" },
+    FlashBackdrop = { link = "Comment" },
+    FlashLabel = { fg = colors.dark_pink },
+
     -- mason
     MasonError = { fg = colors.red },
     MasonHeader = { fg = colors.dark_green, bg = colors.cyan, bold = true },
