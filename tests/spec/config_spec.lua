@@ -1,4 +1,5 @@
 local config = require "one_monokai.config"
+local one_monokai = require "one_monokai"
 
 describe("Config options", function()
     it("could be indexed without options field", function()
@@ -7,8 +8,6 @@ describe("Config options", function()
 end)
 
 describe("Override config", function()
-    local logs = require "one_monokai.logs"
-
     local expected = {
         colors = {
             pink = "#61afef",
@@ -22,7 +21,7 @@ describe("Override config", function()
         italics = false,
     }
 
-    require("one_monokai").setup(expected)
+    one_monokai.setup(expected)
 
     local colors = require "one_monokai.colors"
 
@@ -34,6 +33,7 @@ describe("Override config", function()
 
     it("should change default colors", function()
         assert.equal(expected.colors.pink, colors.pink)
+        ---@diagnostic disable-next-line: undefined-field
         assert.equal(expected.colors.lmao, colors.lmao)
     end)
 
@@ -52,33 +52,37 @@ describe("Override config", function()
         assert.is_nil(paremeter_hl.italic)
     end)
 
-    before_each(function()
-        logs.error.msg = ""
-    end)
+    describe("with errors", function()
+        local logs = require "one_monokai.logs"
 
-    it("should log error on wrong colors", function()
-        local wrong_config = {
-            colors = {
-                lmao = true,
-            },
-        }
+        before_each(function()
+            logs.error.msg = ""
+        end)
 
-        require("one_monokai").setup(wrong_config)
-
-        assert.is_not.equal("", logs.error.msg)
-    end)
-
-    it("should log error on wrong highlight groups", function()
-        local wrong_config = {
-            themes = function()
-                return {
+        it("should log error on wrong colors", function()
+            local wrong_config = {
+                colors = {
                     lmao = true,
-                }
-            end,
-        }
+                },
+            }
 
-        require("one_monokai").setup(wrong_config)
+            one_monokai.setup(wrong_config)
 
-        assert.is_not.equal("", logs.error.msg)
+            assert.is_not.equal("", logs.error.msg)
+        end)
+
+        it("should log error on wrong highlight groups", function()
+            local wrong_config = {
+                themes = function()
+                    return {
+                        lmao = true,
+                    }
+                end,
+            }
+
+            one_monokai.setup(wrong_config)
+
+            assert.is_not.equal("", logs.error.msg)
+        end)
     end)
 end)
