@@ -3,7 +3,7 @@ local colors = {}
 local config = require "one_monokai.config"
 local logs = require "one_monokai.logs"
 
----@class Palette
+---@class palette
 colors.default = {
     fg = "#abb2bf",
     bg = "#282c34",
@@ -99,7 +99,7 @@ local function get_hex_value(name, value)
     return ("#%06x"):format(rgb)
 end
 
----@type Palette
+---@type palette
 colors.extended = vim.deepcopy(colors.default)
 
 for name, value in pairs(config.colors) do

@@ -1,6 +1,6 @@
-local M = {}
+local logs = {}
 
-M.error = {
+logs.error = {
     msg = "",
     msg_displayed = false,
     ---Display error message.
@@ -11,14 +11,14 @@ M.error = {
     notify = function(s, ...)
         local message = string.format(s, ...)
 
-        M.error.msg = message
+        logs.error.msg = message
 
         vim.schedule(function()
-            M.error.msg_displayed = vim.notify_once(message, vim.log.levels.ERROR, {
+            logs.error.msg_displayed = vim.notify_once(message, vim.log.levels.ERROR, {
                 title = "One Monokai",
             })
         end)
     end,
 }
 
-return M
+return logs
