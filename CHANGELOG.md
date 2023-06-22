@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.0.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.3.0...v2.0.0) (2023-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **theme:** drop support for language highlight ([#61](https://github.com/cpea2506/one_monokai.nvim/issues/61))
+
+### Features
+
+* **colors:** add new `lighten` and `darken` color utilities ([#64](https://github.com/cpea2506/one_monokai.nvim/issues/64)) ([db8bb78](https://github.com/cpea2506/one_monokai.nvim/commit/db8bb78132aaee75bad14e1523186317aedeb532))
+* **theme:** add `LspInlayHint` ([#62](https://github.com/cpea2506/one_monokai.nvim/issues/62)) ([7454262](https://github.com/cpea2506/one_monokai.nvim/commit/7454262adf083e1d3f2e89d9735072ef8bb66990))
+* **themes:** add support for `flash.nvim` ([#67](https://github.com/cpea2506/one_monokai.nvim/issues/67)) ([c3e8597](https://github.com/cpea2506/one_monokai.nvim/commit/c3e8597543ceaca33d3cd14c07e2e694a1a1a269))
+* **themes:** preserve fg colors for `diff` and `GitConflict*` ([#66](https://github.com/cpea2506/one_monokai.nvim/issues/66)) ([20abd07](https://github.com/cpea2506/one_monokai.nvim/commit/20abd077c2bf936af1d3260c7dce14ddafb6fcf1))
+
+
+### Bug Fixes
+
+* **git-conflict:** `GitConflict*Label` cannot be seen clearly ([#58](https://github.com/cpea2506/one_monokai.nvim/issues/58)) ([9f9d4ed](https://github.com/cpea2506/one_monokai.nvim/commit/9f9d4ed77ec2bbebb81093932c3f42b7916e3f01))
+* **theme:** use available default color ([#63](https://github.com/cpea2506/one_monokai.nvim/issues/63)) ([51e3374](https://github.com/cpea2506/one_monokai.nvim/commit/51e3374a4d9018ec26865cbe5063649e67222857))
+
+
+### Miscellaneous Chores
+
+* **theme:** drop support for language highlight ([#61](https://github.com/cpea2506/one_monokai.nvim/issues/61)) ([6f07e38](https://github.com/cpea2506/one_monokai.nvim/commit/6f07e38e7ed2326411cfbc17546d7c741048d17a))
+
 ## [1.3.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.2.0...v1.3.0) (2023-06-01)
 
 
