@@ -1,8 +1,9 @@
+local colors = {}
+
 local config = require "one_monokai.config"
 local logs = require "one_monokai.logs"
 
-local colors = {}
-
+---@class Palette
 colors.default = {
     fg = "#abb2bf",
     bg = "#282c34",
@@ -29,10 +30,50 @@ colors.default = {
     none = "NONE",
 }
 
----Check if color is valid before setting it
+---Convert hex value to rgb
+---@param color string
+local function hex2rgb(color)
+    color = string.lower(color)
+
+    return {
+        tonumber(color:sub(2, 3), 16),
+        tonumber(color:sub(4, 5), 16),
+        tonumber(color:sub(6, 7), 16),
+    }
+end
+
+---@param fg string #foreground color
+---@param bg string #background color
+---@param alpha number #number between 0 and 1.
+---@source: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua#L9-L37
+local function blend(fg, bg, alpha)
+    local bg_rgb = hex2rgb(bg)
+    local fg_rgb = hex2rgb(fg)
+
+    local blend_channel = function(i)
+        local ret = (alpha * fg_rgb[i] + ((1 - alpha) * bg_rgb[i]))
+
+        return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+    end
+
+    return ("#%02x%02x%02x"):format(blend_channel(1), blend_channel(2), blend_channel(3))
+end
+
+---@param alpha number #number between 0 and 1
+function string:darken(alpha)
+    return blend(self, "#000000", alpha)
+end
+
+---@param alpha number #number between 0 and 1
+function string:lighten(alpha)
+    return blend(self, "#ffffff", alpha)
+end
+
+---Get the hex value of a color
 ---@param name string #name of the color
----@param value any # value of the color
-local function is_valid_color(name, value)
+---@param value any #value of the color
+---@return string? #hex string or `nil` if invalid
+local function get_hex_value(name, value)
     local type_ok, err = pcall(vim.validate, {
         ["colors(" .. name .. ")"] = { value, "string" },
     })
@@ -40,34 +81,29 @@ local function is_valid_color(name, value)
     if not type_ok then
         logs.error.notify(err)
 
-        return false
+        return nil
     end
 
     if value:lower() == "none" then
-        return true
+        return value
     end
 
-    if vim.api.nvim_get_color_by_name(value) == -1 then
+    local rgb = vim.api.nvim_get_color_by_name(value)
+
+    if rgb == -1 then
         logs.error.notify("colors(%s): %q is not a valid color", name, value)
 
-        return false
+        return nil
     end
 
-    return true
+    return ("#%06x"):format(rgb)
 end
 
-local user_colors = config.colors
+---@type Palette
+colors.extended = vim.deepcopy(colors.default)
 
-if vim.tbl_isempty(user_colors) then
-    return colors.default
+for name, value in pairs(config.colors) do
+    colors.extended[name] = get_hex_value(name, value)
 end
-
-for name, value in pairs(user_colors) do
-    if not is_valid_color(name, value) then
-        return colors.default
-    end
-end
-
-colors.extended = vim.tbl_extend("force", colors.default, user_colors)
 
 return colors.extended

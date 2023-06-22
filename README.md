@@ -25,7 +25,9 @@
 ## :rocket: Installation
 
 ```lua
-use "cpea2506/one_monokai.nvim"
+{
+  "cpea2506/one_monokai.nvim",
+}
 ```
 
 ### Requirement
@@ -39,7 +41,7 @@ use "cpea2506/one_monokai.nvim"
 vim.cmd.colorscheme "one_monokai"
 ```
 
-Or prefer below if you want to custom some options
+Or prefer below if you want to customize some options
 
 ```lua
 require("one_monokai").setup({
@@ -56,23 +58,35 @@ require("one_monokai").setup({
 | `themes`      | custom highlight groups       | `function(colors): tables` | `:h nvim_set_hl` |
 | `italics`     | enable italics                | `boolean`                  | N/A              |
 
-#### Default
+### Default
 
 ```lua
-{
+require("one_monokai").setup({
     transparent = false,
     colors = {},
     themes = function(colors)
         return {}
     end,
     italics = true,
-}
+})
 ```
 
 ### Customization example
 
-1. [Colors](lua/one_monokai/colors.lua#L7)
-2. [Themes](lua/one_monokai/themes/groups.lua#L9)
+#### Available colors and themes
+
+1. [colors](lua/one_monokai/colors.lua#L7)
+2. [themes](lua/one_monokai/themes/groups.lua#L6)
+
+Color provides two method, `darken` and `lighten` to blend color based on provided
+alpha value. You can access them via:
+
+```lua
+colors["<color-name>"]:darken(alpha)
+colors["<color-name>"]:lighten(alpha)
+```
+
+#### Example
 
 ```lua
 require("one_monokai").setup({
@@ -86,7 +100,8 @@ require("one_monokai").setup({
         -- the key and value will be passed respectively to "nvim_set_hl"
         return {
             Normal = { bg = colors.lmao },
-            ErrorMsg = { fg = colors.pink, bg = "#ec6075", standout = true },
+            DiffChange = { fg = colors.white:darken(0.3) },
+            ErrorMsg = { fg = colors.pink, standout = true },
             ["@lsp.type.keyword"] = { link = "@keyword" }
         }
     end,
