@@ -1,32 +1,31 @@
 local config = {}
 
-config.options = {
-    ---@type boolean #whether to enable transparent background
+---@class config
+---@field transparent boolean #whether to enable transparent background
+---@field colors table<string, string> #custom colors
+---@field themes function<table> #custom highlight groups
+---@field italics boolean #whether to italicize some highlight groups
+config.default = {
     transparent = false,
-    ---@type table<string, string> #custom colors
     colors = {},
-    ---custom highlight groups
-    ---@param _ table<string, string>|nil #colors table
-    ---@return table #list of configured highlight groups
+    ---@param _ table<string, string>? #colors table
     themes = function(_)
         return {}
     end,
-    ---@type boolean #whether to italicize some highlight groups
     italics = true,
 }
 
----Extend default with user config
-function config:extend(user_config)
-    if not user_config or vim.tbl_isempty(user_config) then
-        return
-    end
+---@type config
+config.extended = vim.deepcopy(config.default)
 
-    self.options = vim.tbl_deep_extend("force", self.options, user_config)
+---Extend default with user config
+---@param user_config config
+function config:extend(user_config)
+    self.extended = vim.tbl_deep_extend("force", self.extended, user_config or {})
 end
 
--- allow index options without options field
 return setmetatable(config, {
-    __index = function(table, key)
-        return table.options[key]
+    __index = function(_, key)
+        return config.extended[key]
     end,
 })
