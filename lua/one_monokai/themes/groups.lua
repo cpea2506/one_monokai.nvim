@@ -3,6 +3,7 @@ local groups = {}
 local colors = require "one_monokai.colors"
 local config = require "one_monokai.config"
 
+---@class group
 groups.default = {
     Boolean = { fg = colors.cyan },
     Character = { fg = colors.yellow },

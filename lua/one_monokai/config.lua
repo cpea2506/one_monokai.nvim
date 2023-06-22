@@ -1,18 +1,17 @@
 local config = {}
 
 ---@class config
+---@field transparent boolean #whether to enable transparent background
+---@field colors table<string, string> #custom colors
+---@field themes function<table> #custom highlight groups
+---@field italics boolean #whether to italicize some highlight groups
 config.default = {
-    ---@type boolean #whether to enable transparent background
     transparent = false,
-    ---@type table<string, string> #custom colors
     colors = {},
-    ---custom highlight groups
-    ---@param _ table<string, string>|nil #colors table
-    ---@return table #list of configured highlight groups
+    ---@param _ table<string, string>? #colors table
     themes = function(_)
         return {}
     end,
-    ---@type boolean #whether to italicize some highlight groups
     italics = true,
 }
 
