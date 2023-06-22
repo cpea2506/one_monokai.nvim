@@ -42,9 +42,9 @@ local function hex2rgb(color)
     }
 end
 
----@param fg string foreground color
----@param bg string background color
----@param alpha number number between 0 and 1.
+---@param fg string #foreground color
+---@param bg string #background color
+---@param alpha number #number between 0 and 1.
 ---@source: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua#L9-L37
 local function blend(fg, bg, alpha)
     local bg_rgb = hex2rgb(bg)
@@ -59,20 +59,21 @@ local function blend(fg, bg, alpha)
     return ("#%02x%02x%02x"):format(blend_channel(1), blend_channel(2), blend_channel(3))
 end
 
----@param alpha number number between 0 and 1
+---@param alpha number #number between 0 and 1
 function string:darken(alpha)
     return blend(self, "#000000", alpha)
 end
 
----@param alpha number number between 0 and 1
+---@param alpha number #number between 0 and 1
 function string:lighten(alpha)
     return blend(self, "#ffffff", alpha)
 end
 
----Check if color is valid before setting it
+---Get the hex value of a color
 ---@param name string #name of the color
----@param value any # value of the color
-local function is_valid_color(name, value)
+---@param value any #value of the color
+---@return string? #hex string or `nil` if invalid
+local function get_hex_value(name, value)
     local type_ok, err = pcall(vim.validate, {
         ["colors(" .. name .. ")"] = { value, "string" },
     })
@@ -80,29 +81,29 @@ local function is_valid_color(name, value)
     if not type_ok then
         logs.error.notify(err)
 
-        return false
+        return nil
     end
 
     if value:lower() == "none" then
-        return true
+        return value
     end
 
-    if vim.api.nvim_get_color_by_name(value) == -1 then
+    local rgb = vim.api.nvim_get_color_by_name(value)
+
+    if rgb == -1 then
         logs.error.notify("colors(%s): %q is not a valid color", name, value)
 
-        return false
+        return nil
     end
 
-    return true
+    return ("#%06x"):format(rgb)
 end
 
 ---@type Palette
 colors.extended = vim.deepcopy(colors.default)
 
 for name, value in pairs(config.colors) do
-    if is_valid_color(name, value) then
-        colors.extended[name] = value
-    end
+    colors.extended[name] = get_hex_value(name, value)
 end
 
 return colors.extended
