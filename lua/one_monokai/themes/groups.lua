@@ -182,6 +182,15 @@ groups.default = {
     TSRainbowViolet = { fg = colors.purple },
     TSRainbowCyan = { fg = colors.cyan },
 
+    -- rainbow-delimiters
+    RainbowDelimiterRed = { fg = colors.dark_red },
+    RainbowDelimiterOrange = { fg = colors.orange },
+    RainbowDelimiterYellow = { fg = colors.yellow },
+    RainbowDelimiterGreen = { fg = colors.green },
+    RainbowDelimiterBlue = { fg = colors.aqua },
+    RainbowDelimiterViolet = { fg = colors.purple },
+    RainbowDelimiterCyan = { fg = colors.cyan },
+
     -- diff
     DiffAdd = { bg = colors.green:darken(0.3) },
     DiffChange = { fg = colors.white:darken(0.3) },
