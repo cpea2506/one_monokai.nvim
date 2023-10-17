@@ -172,6 +172,9 @@ groups.default = {
     ["@lsp.type.string"] = { link = "@string" },
     ["@lsp.type.struct"] = { link = "@type" },
     ["@lsp.type.typeParameter"] = { link = "@type" },
+    ["@lsp.type.xmlDocCommentName"] = { fg = colors.pink },
+    ["@lsp.type.xmlDocCommentAttributeQuotes"] = { fg = colors.yellow },
+    ["@lsp.type.xmlDocCommentAttributeName"] = { fg = colors.green },
 
     -- nvim-ts-rainbow 2
     TSRainbowRed = { fg = colors.dark_red },
