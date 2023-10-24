@@ -19,4 +19,23 @@ describe("Override config with color utility", function()
 
         assert.equal("#41143a", ("#%06x"):format(hl.fg))
     end)
+
+    it("could use lighten utility", function()
+        local expected = {
+            colors = {
+                lmao = "#812873",
+            },
+            themes = function(c)
+                return {
+                    Normal = { fg = c.lmao:lighten(0.5) },
+                }
+            end,
+        }
+
+        one_monokai.setup(expected)
+
+        local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+
+        assert.equal("#c094b9", ("#%06x"):format(hl.fg))
+    end)
 end)
