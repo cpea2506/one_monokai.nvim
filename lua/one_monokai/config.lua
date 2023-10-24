@@ -1,13 +1,11 @@
 local config = {}
 
----@alias colors table<string,string> #colors table
----
----@class config
----@field transparent boolean #whether to enable transparent background
----@field colors colors #custom colors
----@field themes fun(colors:colors):table #custom highlight groups
----@field italics boolean #whether to italicize some highlight groups
-config.default = {
+---@class options
+---@field transparent boolean #Whether to enable transparent background
+---@field colors colors #Custom colors
+---@field themes fun(colors:colors):groups #Custom highlight groups
+---@field italics boolean #Whether to italicize some highlight groups
+local defaults = {
     transparent = false,
     colors = {},
     themes = function(_)
@@ -16,17 +14,16 @@ config.default = {
     italics = true,
 }
 
----@type config
-config.extended = vim.deepcopy(config.default)
+config.options = vim.deepcopy(defaults)
 
----Extend default with user config
----@param user_config config
-function config:extend(user_config)
-    self.extended = vim.tbl_deep_extend("force", self.extended, user_config or {})
+---Extend default with user's config
+---@param opts options
+function config:extend(opts)
+    self.options = vim.tbl_deep_extend("force", self.options, opts or {})
 end
 
 return setmetatable(config, {
     __index = function(_, key)
-        return config.extended[key]
+        return config.options[key]
     end,
 })

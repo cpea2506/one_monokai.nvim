@@ -1,7 +1,7 @@
----@class palette
+---@class colors
 local colors = {}
 
----@type palette
+---@type colors
 local defaults = {
     fg = "#abb2bf",
     bg = "#282c34",

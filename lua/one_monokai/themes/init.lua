@@ -1,34 +1,27 @@
 local themes = {}
 
-local config = require "one_monokai.config"
-local highlight = require "one_monokai.themes.highlight"
-local logs = require "one_monokai.logs"
+---Set highlight groups
+---@param groups groups
+local function set_highlight(groups)
+    local logs = require "one_monokai.logs"
+    local set_hl = vim.api.nvim_set_hl
+
+    for name, attrs in pairs(groups) do
+        local status_ok, err = pcall(set_hl, 0, name, attrs)
+
+        if not status_ok then
+            logs.error.notify(("themes(%s): %s"):format(name, err), 0)
+        end
+    end
+end
 
 function themes.load()
+    local config = require "one_monokai.config"
     local colors = require "one_monokai.colors"
-    local groups = require "one_monokai.themes.groups"
+    local default = require "one_monokai.themes.groups"
 
-    local default = highlight:new(groups)
-    local user_themes = config.themes(colors)
-
-    -- set default if user has no custom themes
-    if vim.tbl_isempty(user_themes) then
-        default:set()
-
-        return
-    end
-
-    -- extend default with user config
-    local extended = default:extend(user_themes)
-    local set_theme_ok, err = pcall(function()
-        extended:set()
-    end)
-
-    if not set_theme_ok then
-        default:set()
-
-        logs.error.notify(err)
-    end
+    set_highlight(default)
+    set_highlight(config.themes(colors))
 end
 
 return themes

@@ -1,10 +1,10 @@
 local M = {}
 
-local set = vim.cmd
-local config = require "one_monokai.config"
-local themes = require "one_monokai.themes"
+function M.setup(opts)
+    local set = vim.cmd
+    local config = require "one_monokai.config"
+    local themes = require "one_monokai.themes"
 
-function M.setup(user_config)
     if vim.g.colors_name then
         set.hi "clear"
     end
@@ -17,11 +17,10 @@ function M.setup(user_config)
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
-    -- load user config and themes
-    config:extend(user_config)
+    config:extend(opts)
     themes.load()
 
-    if user_config then
+    if opts then
         set.colorscheme "one_monokai"
     end
 end
