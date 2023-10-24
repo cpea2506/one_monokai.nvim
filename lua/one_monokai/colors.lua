@@ -1,10 +1,8 @@
+---@class palette
 local colors = {}
 
-local config = require "one_monokai.config"
-local logs = require "one_monokai.logs"
-
----@class palette
-colors.default = {
+---@type palette
+local defaults = {
     fg = "#abb2bf",
     bg = "#282c34",
     gray = "#676e7b",
@@ -29,6 +27,8 @@ colors.default = {
     black = "#1e2024",
     none = "NONE",
 }
+
+colors = vim.deepcopy(defaults)
 
 ---Convert hex value to rgb
 ---@param color string
@@ -74,6 +74,8 @@ end
 ---@param value any #value of the color
 ---@return string? #hex string or `nil` if invalid
 local function get_hex_value(name, value)
+    local logs = require "one_monokai.logs"
+
     local type_ok, err = pcall(vim.validate, {
         ["colors(" .. name .. ")"] = { value, "string" },
     })
@@ -81,7 +83,7 @@ local function get_hex_value(name, value)
     if not type_ok then
         logs.error.notify(err)
 
-        return nil
+        return defaults[name]
     end
 
     if value:lower() == "none" then
@@ -93,17 +95,16 @@ local function get_hex_value(name, value)
     if rgb == -1 then
         logs.error.notify("colors(%s): %q is not a valid color", name, value)
 
-        return nil
+        return defaults[name]
     end
 
     return ("#%06x"):format(rgb)
 end
 
----@type palette
-colors.extended = vim.deepcopy(colors.default)
+local config = require "one_monokai.config"
 
 for name, value in pairs(config.colors) do
-    colors.extended[name] = get_hex_value(name, value)
+    colors[name] = get_hex_value(name, value)
 end
 
-return colors.extended
+return colors
