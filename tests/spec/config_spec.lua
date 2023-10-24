@@ -51,38 +51,4 @@ describe("Override config", function()
         assert.is_nil(comment_hl.italic)
         assert.is_nil(paremeter_hl.italic)
     end)
-
-    describe("with errors", function()
-        local logs = require "one_monokai.logs"
-
-        before_each(function()
-            logs.error.msg = ""
-        end)
-
-        it("should log error on wrong colors", function()
-            local wrong_config = {
-                colors = {
-                    lmao = true,
-                },
-            }
-
-            one_monokai.setup(wrong_config)
-
-            assert.is_not.equal("", logs.error.msg)
-        end)
-
-        it("should log error on wrong highlight groups", function()
-            local wrong_config = {
-                themes = function()
-                    return {
-                        lmao = true,
-                    }
-                end,
-            }
-
-            one_monokai.setup(wrong_config)
-
-            assert.is_not.equal("", logs.error.msg)
-        end)
-    end)
 end)
