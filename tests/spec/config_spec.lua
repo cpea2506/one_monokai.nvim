@@ -52,3 +52,36 @@ describe("Override config", function()
         assert.is_nil(paremeter_hl.italic)
     end)
 end)
+
+describe("Override wrong config", function()
+    local wrong_opts = {
+        colors = {
+            aqua = true,
+        },
+        themes = function()
+            return {
+                Normal = { fg = "lmao", italic = true },
+            }
+        end,
+    }
+
+    local colors_pre = require "one_monokai.colors"
+
+    one_monokai.setup(wrong_opts)
+
+    package.loaded["one_monokai.colors"] = nil
+
+    it("should fallback to default colors", function()
+        local colors_post = require "one_monokai.colors"
+
+        assert.are.same(colors_pre.aqua, colors_post.aqua)
+    end)
+
+    it("should fallback to default highlights", function()
+        local default = require "one_monokai.themes.groups"
+        local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+
+        assert.equal(default.Normal.fg, ("#%06x"):format(hl.fg))
+        assert.is_nil(hl.italic)
+    end)
+end)
