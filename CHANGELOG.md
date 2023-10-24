@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.1.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.0.0...v2.1.0) (2023-10-24)
+
+
+### Features
+
+* **semantic-tokens:** add highlight for xml doccomments type ([#71](https://github.com/cpea2506/one_monokai.nvim/issues/71)) ([801e051](https://github.com/cpea2506/one_monokai.nvim/commit/801e0515d192b98017c4ec48fd4c1fbaac2e01eb))
+* **themes:** add support for `rainbow-delimiters.nvim` ([#69](https://github.com/cpea2506/one_monokai.nvim/issues/69)) ([cb45ecb](https://github.com/cpea2506/one_monokai.nvim/commit/cb45ecb019be679e32373896bb42545818b6d884))
+* **themes:** link `[@boolean](https://github.com/boolean)` to `Boolean` ([#73](https://github.com/cpea2506/one_monokai.nvim/issues/73)) ([bd19abd](https://github.com/cpea2506/one_monokai.nvim/commit/bd19abd6290807f21b8055efe7af917f7b67517b))
+
+
+### Bug Fixes
+
+* **colors:** fallback to default colors on wrong config ([#72](https://github.com/cpea2506/one_monokai.nvim/issues/72)) ([c633659](https://github.com/cpea2506/one_monokai.nvim/commit/c63365950a3f800f59ef553f706220fb2c8465ec))
+
 ## [2.0.0](https://github.com/cpea2506/one_monokai.nvim/compare/v1.3.0...v2.0.0) (2023-06-22)
 
 
