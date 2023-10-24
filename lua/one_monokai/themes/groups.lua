@@ -1,10 +1,11 @@
+---@class groups
 local groups = {}
 
 local colors = require "one_monokai.colors"
 local config = require "one_monokai.config"
 
----@class group
-groups.default = {
+---@type groups
+local defaults = {
     Boolean = { fg = colors.cyan },
     Character = { fg = colors.yellow },
     Constant = { fg = colors.aqua },
@@ -83,7 +84,7 @@ groups.default = {
     -- treesitter
     ["@annotation"] = { link = "PreProc" },
     ["@attribute"] = { link = "PreProc" },
-    ["@boolean"] = { fg = colors.cyan },
+    ["@boolean"] = { link = "Boolean" },
     ["@character"] = { link = "Character" },
     ["@character.special"] = { link = "SpecialChar" },
     ["@comment"] = { link = "Comment" },
@@ -503,9 +504,11 @@ groups.default = {
 -- hide all semantic highlights by default,
 -- only enable those from the default table
 for _, semantic_group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-    if not groups.default[semantic_group] then
-        groups.default[semantic_group] = {}
+    if not defaults[semantic_group] then
+        defaults[semantic_group] = {}
     end
 end
 
-return groups.default
+groups = vim.deepcopy(defaults)
+
+return groups
