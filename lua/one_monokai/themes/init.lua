@@ -10,7 +10,7 @@ local function set_highlight(groups)
         local status_ok, err = pcall(set_hl, 0, name, attrs)
 
         if not status_ok then
-            logs.error.notify(("themes(%s): %s"):format(name, err), 0)
+            logs.error.notify("themes(%s): %s", name, err)
         end
     end
 end
