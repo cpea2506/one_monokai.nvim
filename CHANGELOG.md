@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.1.0...v2.2.0) (2023-12-12)
+
+
+### Features
+
+* **themes:** link `NormalFloat` to `Normal` ([#77](https://github.com/cpea2506/one_monokai.nvim/issues/77)) ([2476d0a](https://github.com/cpea2506/one_monokai.nvim/commit/2476d0ada04cc5e3e38b3832243e6cf87ef8e598))
+
 ## [2.1.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.0.0...v2.1.0) (2023-10-24)
 
 ### Features
