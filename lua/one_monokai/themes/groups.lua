@@ -59,6 +59,7 @@ local defaults = {
     MoreMsg = { fg = colors.yellow },
     Nontext = { fg = colors.dark_gray },
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
+    NormalFloat = { link = "Normal" },
     Question = { fg = colors.yellow },
     Search = { fg = colors.bg, bg = colors.yellow },
     SignColumn = {},
