@@ -60,6 +60,7 @@ local defaults = {
     Nontext = { fg = colors.dark_gray },
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
     NormalFloat = { link = "Normal" },
+    WinBarNC = { link = "NormalNC" },
     Question = { fg = colors.yellow },
     Search = { fg = colors.bg, bg = colors.yellow },
     SignColumn = {},
