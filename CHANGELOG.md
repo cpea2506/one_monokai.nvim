@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.2.0...v2.3.0) (2024-05-27)
+
+
+### Features
+
+* **semantic-tokens:** remove `namespace` type highlight ([#86](https://github.com/cpea2506/one_monokai.nvim/issues/86)) ([f8a963e](https://github.com/cpea2506/one_monokai.nvim/commit/f8a963ee30ac9b37c80c1c9b18cb32fcfbe8eace))
+* **themes:** add support for new treesitter capture groups ([#82](https://github.com/cpea2506/one_monokai.nvim/issues/82)) ([e744b08](https://github.com/cpea2506/one_monokai.nvim/commit/e744b080ec91a6d458d5fff0a925510e7093dbec))
+* **themes:** link `WinBarNC` with `NormalNC` ([#80](https://github.com/cpea2506/one_monokai.nvim/issues/80)) ([3f5ad8b](https://github.com/cpea2506/one_monokai.nvim/commit/3f5ad8b74bb54c8df924173eb05da86f7e99135e))
+* **tree-sitter:** update `@type.builtin` and `@keyword.modifier` colors ([#87](https://github.com/cpea2506/one_monokai.nvim/issues/87)) ([9a7d94b](https://github.com/cpea2506/one_monokai.nvim/commit/9a7d94b8ff974b229aee86f1143881bbb8fd37e2))
+
+
+### Bug Fixes
+
+* **semantic-tokens:** link to existent highlight groups ([#84](https://github.com/cpea2506/one_monokai.nvim/issues/84)) ([de4f4c6](https://github.com/cpea2506/one_monokai.nvim/commit/de4f4c64d85ff319f2409001d3f28099b3408fc6))
+
 ## [2.2.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.1.0...v2.2.0) (2023-12-12)
 
 
