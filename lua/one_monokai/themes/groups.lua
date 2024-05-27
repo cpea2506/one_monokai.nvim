@@ -196,7 +196,6 @@ local defaults = {
     ["@lsp.type.function"] = { link = "Function" },
     ["@lsp.type.macro"] = { link = "Function" },
     ["@lsp.type.method"] = { link = "Function" },
-    ["@lsp.type.namespace"] = { link = "Include" },
     ["@lsp.type.number"] = { link = "Number" },
     ["@lsp.type.operator"] = { link = "Operator" },
     ["@lsp.type.parameter"] = { fg = colors.orange, italic = config.italics },
