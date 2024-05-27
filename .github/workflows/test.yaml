@@ -20,7 +20,7 @@ jobs:
             url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
           - os: macos-14
             neovim: stable
-            url: https://github.com/neovim/neovim/releases/download/stable/nvim-macos.tar.gz
+            url: https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz
           - os: macos-14
             neovim: nightly
             url: https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-arm64.tar.gz
