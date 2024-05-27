@@ -8,7 +8,7 @@
 * **semantic-tokens:** remove `namespace` type highlight ([#86](https://github.com/cpea2506/one_monokai.nvim/issues/86)) ([f8a963e](https://github.com/cpea2506/one_monokai.nvim/commit/f8a963ee30ac9b37c80c1c9b18cb32fcfbe8eace))
 * **themes:** add support for new treesitter capture groups ([#82](https://github.com/cpea2506/one_monokai.nvim/issues/82)) ([e744b08](https://github.com/cpea2506/one_monokai.nvim/commit/e744b080ec91a6d458d5fff0a925510e7093dbec))
 * **themes:** link `WinBarNC` with `NormalNC` ([#80](https://github.com/cpea2506/one_monokai.nvim/issues/80)) ([3f5ad8b](https://github.com/cpea2506/one_monokai.nvim/commit/3f5ad8b74bb54c8df924173eb05da86f7e99135e))
-* **tree-sitter:** update `[@type](https://github.com/type).builtin` and `[@keyword](https://github.com/keyword).modifier` colors ([#87](https://github.com/cpea2506/one_monokai.nvim/issues/87)) ([9a7d94b](https://github.com/cpea2506/one_monokai.nvim/commit/9a7d94b8ff974b229aee86f1143881bbb8fd37e2))
+* **tree-sitter:** update `@type.builtin` and `@keyword.modifier` colors ([#87](https://github.com/cpea2506/one_monokai.nvim/issues/87)) ([9a7d94b](https://github.com/cpea2506/one_monokai.nvim/commit/9a7d94b8ff974b229aee86f1143881bbb8fd37e2))
 
 
 ### Bug Fixes
