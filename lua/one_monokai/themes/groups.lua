@@ -115,7 +115,7 @@ local defaults = {
     ["@number.float"] = { link = "Float" },
 
     ["@type"] = { link = "Type" },
-    ["@type.builtin"] = { link = "Type" },
+    ["@type.builtin"] = { fg = colors.pink },
     ["@type.definition"] = { link = "Typedef" },
 
     ["@attribute"] = { link = "Type" },
@@ -139,7 +139,7 @@ local defaults = {
     ["@keyword.operator"] = { link = "Operator" },
     ["@keyword.import"] = { link = "Include" },
     ["@keyword.type"] = { link = "Type" },
-    ["@keyword.modifier"] = { link = "Type" },
+    ["@keyword.modifier"] = { fg = colors.pink },
     ["@keyword.repeat"] = { link = "Repeat" },
     ["@keyword.return"] = { fg = colors.pink },
     ["@keyword.debug"] = { link = "Debug" },
