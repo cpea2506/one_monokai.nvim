@@ -252,10 +252,10 @@ local defaults = {
     DiagnosticError = { fg = colors.red },
     DiagnosticHint = { fg = colors.light_gray },
     DiagnosticInfo = { fg = colors.white },
-    DiagnosticUnderlineError = { sp = colors.red, underline = true },
-    DiagnosticUnderlineHint = { sp = colors.light_gray, underline = true },
-    DiagnosticUnderlineInfo = { sp = colors.green, underline = true },
-    DiagnosticUnderlineWarn = { sp = colors.yellow, underline = true },
+    DiagnosticUnderlineError = { sp = colors.red, undercurl = true },
+    DiagnosticUnderlineHint = { sp = colors.light_gray, undercurl = true },
+    DiagnosticUnderlineInfo = { sp = colors.green, undercurl = true },
+    DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true },
     DiagnosticWarn = { fg = colors.yellow },
 
     -- lsp document highlight
