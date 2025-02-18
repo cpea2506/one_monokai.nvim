@@ -207,6 +207,9 @@ local defaults = {
     ["@lsp.type.xmlDocCommentAttributeQuotes"] = { fg = colors.yellow },
     ["@lsp.type.xmlDocCommentAttributeName"] = { fg = colors.green },
 
+    -- nvim-treesitter-context
+    TreesitterContext = { bg = config.transparent and colors.bg:lighten(0.85) or colors.bg:darken(0.8) },
+
     -- nvim-ts-rainbow 2
     TSRainbowRed = { fg = colors.dark_red },
     TSRainbowOrange = { fg = colors.orange },
