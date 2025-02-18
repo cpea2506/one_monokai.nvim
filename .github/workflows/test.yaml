@@ -14,10 +14,10 @@ jobs:
         include:
           - os: ubuntu-latest
             neovim: stable
-            url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+            url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
           - os: ubuntu-latest
             neovim: nightly
-            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
           - os: macos-14
             neovim: stable
             url: https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz
