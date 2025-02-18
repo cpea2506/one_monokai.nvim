@@ -14,10 +14,10 @@ jobs:
         include:
           - os: ubuntu-latest
             neovim: stable
-            url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+            url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
           - os: ubuntu-latest
             neovim: nightly
-            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
           - os: macos-14
             neovim: stable
             url: https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz
@@ -26,10 +26,10 @@ jobs:
             url: https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-arm64.tar.gz
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: date +%F > todays-date
       - name: Restore cache for today's nightly.
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: _neovim
           key: ${{ runner.os }}-${{ matrix.url }}-${{ hashFiles('todays-date') }}
