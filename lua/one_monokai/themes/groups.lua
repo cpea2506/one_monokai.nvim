@@ -66,7 +66,7 @@ local defaults = {
     SignColumn = {},
     StatusLine = { fg = colors.light_gray, bg = colors.black },
     StatusLineNC = { fg = colors.light_gray, bg = colors.dark_blue },
-    TabLine = { fg = colors.fg, bg = colors.dark_blue },
+    TabLine = { fg = colors.fg, bg = config.transparent and colors.none or colors.dark_blue },
     VertSplit = { fg = colors.fg },
     Visual = { bg = colors.dark_gray },
     WarningMsg = { fg = colors.yellow },
