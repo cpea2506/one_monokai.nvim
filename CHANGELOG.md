@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.3.0...v2.4.0) (2025-02-19)
+
+
+### Features
+
+* **themes/diagnostics:** replace underline with `undercurl` for `DiagnosticUnderline*` groups ([#90](https://github.com/cpea2506/one_monokai.nvim/issues/90)) ([e6fc362](https://github.com/cpea2506/one_monokai.nvim/commit/e6fc36204a9a4491a96cea6503dd2d8b96df3f39))
+* **themes:** add support for `nvim-treesitter-context` ([#96](https://github.com/cpea2506/one_monokai.nvim/issues/96)) ([4d9b7be](https://github.com/cpea2506/one_monokai.nvim/commit/4d9b7be6b51d2d15efa6b1c3810ee13cd48411bf))
+
+
+### Bug Fixes
+
+* **themes/`TabLine`:** conform to transparent background config ([#94](https://github.com/cpea2506/one_monokai.nvim/issues/94)) ([424a137](https://github.com/cpea2506/one_monokai.nvim/commit/424a137da0e95f269e0920ada3eb7fe58006d3e3))
+* **themes/`TabLine`:** remove `reverse` cterm ([#92](https://github.com/cpea2506/one_monokai.nvim/issues/92)) ([5f3a1f1](https://github.com/cpea2506/one_monokai.nvim/commit/5f3a1f107765d8158fbe98dc0894b41cf5f8196a))
+
 ## [2.3.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.2.0...v2.3.0) (2024-05-27)
 
 
