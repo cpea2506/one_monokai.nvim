@@ -57,7 +57,7 @@ local defaults = {
     MatchParen = { bg = colors.dark_gray, bold = true },
     ModeMsg = { fg = colors.yellow },
     MoreMsg = { fg = colors.yellow },
-    Nontext = { fg = colors.dark_gray },
+    Nontext = { fg = colors.dark_gray:lighten(0.8) },
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
     NormalFloat = { link = "Normal" },
     WinBarNC = { link = "NormalNC" },
@@ -247,8 +247,8 @@ local defaults = {
     Folded = { fg = colors.gray, bg = colors.dark_blue },
 
     -- popup menu
-    Pmenu = { fg = colors.fg },
-    PmenuSel = { fg = colors.bg, bg = colors.pink },
+    Pmenu = { link = "NormalFloat" },
+    PmenuSel = { link = "Visual" },
     PmenuThumb = { fg = colors.dark_green, bg = colors.dark_gray },
 
     -- diagnostics
@@ -417,6 +417,36 @@ local defaults = {
     CmpItemKindUnit = { fg = colors.orange },
     CmpItemKindValue = { fg = colors.white },
     CmpItemKindVariable = { fg = colors.cyan },
+
+    -- blink-cmp
+    BlinkCmpDocCursorLine = { link = "PmenuSel" },
+    BlinkCmpDocBorder = { link = "FloatBorder" },
+    BlinkCmpFloatBorder = { link = "FloatBorder" },
+    BlinkCmpLabelDeprecated = { fg = colors.light_gray, strikethrough = true },
+    BlinkCmpLabelMatch = { fg = colors.aqua },
+    BlinkCmpDocSeparator = { fg = colors.pink },
+
+    BlinkCmpKindClass = { fg = colors.pink },
+    BlinkCmpKindConstant = { fg = colors.cyan },
+    BlinkCmpKindConstructor = { link = "@constructor" },
+    BlinkCmpKindEnum = { fg = colors.cyan },
+    BlinkCmpKindEnumMember = { fg = colors.yellow },
+    BlinkCmpKindEvent = { fg = colors.yellow },
+    BlinkCmpKindField = { fg = colors.yellow },
+    BlinkCmpKindFile = { fg = colors.white },
+    BlinkCmpKindFolder = { fg = colors.yellow },
+    BlinkCmpKindFunction = { link = "Function" },
+    BlinkCmpKindInterface = { fg = colors.pink },
+    BlinkCmpKindKeyword = { fg = colors.white },
+    BlinkCmpKindMethod = { link = "Function" },
+    BlinkCmpKindModule = { fg = colors.pink },
+    BlinkCmpKindOperator = { link = "Operator" },
+    BlinkCmpKindProperty = { fg = colors.yellow },
+    BlinkCmpKindStruct = { fg = colors.pink },
+    BlinkCmpKindText = { fg = colors.white },
+    BlinkCmpKindUnit = { fg = colors.orange },
+    BlinkCmpKindValue = { fg = colors.white },
+    BlinkCmpKindVariable = { fg = colors.cyan },
 
     -- git-conflict
     GitConflictCurrent = { bg = colors.cyan:darken(0.4) },
