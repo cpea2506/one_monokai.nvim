@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.4.0...v2.5.0) (2025-02-22)
+
+
+### Features
+
+* **themes:** add support for `blink.cmp` ([#97](https://github.com/cpea2506/one_monokai.nvim/issues/97)) ([33ada48](https://github.com/cpea2506/one_monokai.nvim/commit/33ada482edaba502e5654d7bc40dab01d828f36d))
+
 ## [2.4.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.3.0...v2.4.0) (2025-02-19)
 
 
