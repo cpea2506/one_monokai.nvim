@@ -1,1 +1,1 @@
-require("one_monokai").setup()
+require("one_monokai").load()

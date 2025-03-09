@@ -78,7 +78,7 @@ describe("Override wrong config", function()
     end)
 
     it("should fallback to default highlights", function()
-        local default = require "one_monokai.themes.groups"
+        local default = require "lua.one_monokai.themes"
         local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
         assert.equal(default.Normal.fg, ("#%06x"):format(hl.fg))

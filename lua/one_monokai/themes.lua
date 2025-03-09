@@ -1,10 +1,9 @@
----@class groups
-local groups = {}
+---@class themes
+local themes = {}
 
 local colors = require "one_monokai.colors"
 local config = require "one_monokai.config"
 
----@type groups
 local defaults = {
     Boolean = { fg = colors.cyan },
     Character = { fg = colors.yellow },
@@ -572,6 +571,10 @@ for _, semantic_group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     end
 end
 
-groups = vim.deepcopy(defaults)
+themes.groups = vim.deepcopy(defaults)
 
-return groups
+for name, attrs in pairs(config.themes(colors)) do
+    themes.groups[name] = attrs
+end
+
+return themes

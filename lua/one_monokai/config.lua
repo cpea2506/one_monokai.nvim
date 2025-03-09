@@ -5,6 +5,7 @@ local config = {}
 ---@field colors colors #Custom colors
 ---@field themes fun(colors:colors):groups #Custom highlight groups
 ---@field italics boolean #Whether to italicize some highlight groups
+---@field compile_path string #Path to store compiled result.
 local defaults = {
     transparent = false,
     colors = {},
@@ -12,6 +13,7 @@ local defaults = {
         return {}
     end,
     italics = true,
+    compile_path = vim.fn.stdpath "cache" .. "/one_monokai",
 }
 
 config.options = vim.deepcopy(defaults)

@@ -3,6 +3,10 @@ base: lua53
 globals:
   vim:
     any: true
+  bit:
+    any: true
+  jit:
+    any: true
   assert.are_not.same:
     args:
       - type: any
