@@ -9,18 +9,18 @@
       One Monokai Nvim
   </h1>
   
-  VSCode One Monokai colorscheme written in Lua for Neovim.
+  A VSCode One Monokai-inspired colorscheme, rewritten in Lua for seamless Neovim integration.
 </div>
 
 ![demo](https://user-images.githubusercontent.com/42694704/196934147-0704f7ec-456f-4a07-b44f-ac99896c7b22.png)
 
-<p align = "center"><b>Normal background</b></p>
+<p align="center"><b>Normal background</b></p>
 
 <br />
 
 ![transparent demo](https://user-images.githubusercontent.com/42694704/196934131-0c7134ec-7266-4200-bf5a-901cf5d28e12.png)
 
-<p align = "center"><b>Transparent background</b></p>
+<p align="center"><b>Transparent background</b></p>
 
 ## :rocket: Installation
 
@@ -30,10 +30,10 @@
 }
 ```
 
-### Requirement
+### Requirements
 
 - Neovim >= 0.9.1
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for better syntax highlighting (optional) 😇
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for enhanced syntax highlighting (optional) 😇
 
 ## :gear: Setup
 
@@ -41,24 +41,24 @@
 vim.cmd.colorscheme "one_monokai"
 ```
 
-Or prefer below if you want to customize some options
+Or use the following approach if you wish to customize options:
 
 ```lua
 require("one_monokai").setup({
-    -- your options
+    -- your custom options here
 })
 ```
 
-### Options
+### Available Options
 
-| Option        | Description                   | Type                       | Note             |
-| ------------- | ----------------------------- | -------------------------- | ---------------- |
-| `transparent` | enable transparent background | `boolean`                  | N/A              |
-| `colors`      | custom colors                 | `table<string, string>`    | N/A              |
-| `themes`      | custom highlight groups       | `function(colors): tables` | `:h nvim_set_hl` |
-| `italics`     | enable italics                | `boolean`                  | N/A              |
+| Option        | Description                      | Type                       | Note             |
+| ------------- | -------------------------------- | -------------------------- | ---------------- |
+| `transparent` | Enables a transparent background | `boolean`                  | N/A              |
+| `colors`      | Custom color definitions         | `table<string, string>`    | N/A              |
+| `themes`      | Custom highlight groups          | `function(colors): tables` | `:h nvim_set_hl` |
+| `italics`     | Enables italic                   | `boolean`                  | N/A              |
 
-### Default
+### Default Configuration
 
 ```lua
 require("one_monokai").setup({
@@ -71,33 +71,32 @@ require("one_monokai").setup({
 })
 ```
 
-### Customization example
+### Customization Examples
 
-#### Available colors and themes
+#### Available Colors and Themes
 
-1. [colors](lua/one_monokai/colors.lua#L7)
-2. [themes](lua/one_monokai/themes/groups.lua#L6)
+1. [Colors](lua/one_monokai/colors.lua)
+2. [Themes](lua/one_monokai/themes/groups.lua)
 
-Color provides two method, `darken` and `lighten` to blend color based on provided
-alpha value. You can access them via:
+The color module provides two methods, `darken` and `lighten`, to blend colors based on an alpha value (between 0 and 1). You can use them as follows:
 
 ```lua
 colors["<color-name>"]:darken(alpha)
 colors["<color-name>"]:lighten(alpha)
 ```
 
-#### Example
+#### Example Configuration
 
 ```lua
 require("one_monokai").setup({
-    transparent = true,  -- enable transparent window
+    transparent = true,  -- Enable transparent background
     colors = {
-        lmao = "#ffffff", -- add new color
-        pink = "#ec6075", -- replace default color
+        lmao = "#ffffff", -- Define a new color
+        pink = "#ec6075", -- Override a default color
     },
     themes = function(colors)
-        -- change highlight of some groups,
-        -- the key and value will be passed respectively to "nvim_set_hl"
+        -- Customize highlight groups
+        -- The key-value pairs are passed to "nvim_set_hl"
         return {
             Normal = { bg = colors.lmao },
             DiffChange = { fg = colors.white:darken(0.3) },
@@ -105,11 +104,14 @@ require("one_monokai").setup({
             ["@lsp.type.keyword"] = { link = "@keyword" }
         }
     end,
-    italics = false, -- disable italics
+    italics = false, -- Disable italic
 })
 ```
 
-## :champagne: Plugins support
+> [!TIP]
+> To find the highlight group for an item, place the cursor inside it and run `:Inspect`. Refer to `:h :Inspect` for more information.
+
+## :champagne: Plugin Support
 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
@@ -126,9 +128,9 @@ require("lualine").setup {
 
 ## :eyes: Inspiration
 
-This is the best theme I’ve ever seen in my eyes. I’ve tried it written in Vim for a long time and decided to write it in Lua for compatibility with Neovim, and make it easy to do some custom changes.
+This is, in my opinion, the best theme I’ve ever used. After using it in Vim for a long time, I rewrote it in Lua to ensure better compatibility with Neovim and to allow for easier customization.
 
-Thanks for these talented and amazing people:
+A huge thanks to these talented and inspiring creators:
 
 - [one-monokai-vim](https://github.com/fratajczak/one-monokai-vim)
 - [vscode one-monokai](https://github.com/azemoh/vscode-one-monokai)
@@ -137,5 +139,4 @@ Thanks for these talented and amazing people:
 
 ## :scroll: Contribution
 
-Please see [the contributing guidelines](CONTRIBUTING.md) for detailed
-instructions on how to contribute to this colorscheme.
+For detailed instructions on how to contribute to this colorscheme, please see [the contributing guidelines](CONTRIBUTING.md).
