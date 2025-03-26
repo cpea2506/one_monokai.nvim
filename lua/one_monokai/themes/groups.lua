@@ -285,6 +285,16 @@ local defaults = {
     TelescopePromptCounter = { fg = colors.aqua },
     TelescopeTitle = { fg = colors.aqua },
 
+    -- fzf-lua
+    FzfLuaNormal = { link = "NormalFloat" },
+    FzfLuaBorder = { link = "FloatBorder" },
+    FzfLuaTitle = { fg = colors.aqua },
+    FzfLuaFzfPointer = { fg = colors.fg, bg = colors.dark_gray },
+    FzfLuaFzfCursorLine = { link = "Visual" },
+    FzfLuaFzfGutter = { link = "Visual" },
+    FzfLuaFzfInfo = { fg = colors.green },
+    FzfLuaFzfPrompt = { fg = colors.pink },
+
     -- leap
     LeapBackdrop = { fg = colors.gray },
     LeapLabelPrimary = { fg = colors.dark_pink },
