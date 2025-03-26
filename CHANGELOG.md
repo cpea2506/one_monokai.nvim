@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.4.0...v2.5.0) (2025-03-26)
+
+
+### Features
+
+* **themes:** add support for `blink.cmp` ([#97](https://github.com/cpea2506/one_monokai.nvim/issues/97)) ([33ada48](https://github.com/cpea2506/one_monokai.nvim/commit/33ada482edaba502e5654d7bc40dab01d828f36d))
+* **themes:** add support for `fzf-lua` ([#100](https://github.com/cpea2506/one_monokai.nvim/issues/100)) ([1d3f4c5](https://github.com/cpea2506/one_monokai.nvim/commit/1d3f4c51d770e94b1a7b2ddbe7565ce39bd4a063))
+
 ## [2.4.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.3.0...v2.4.0) (2025-02-19)
 
 
