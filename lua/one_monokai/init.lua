@@ -19,10 +19,6 @@ function M.setup(opts)
 
     config:extend(opts)
     themes.load()
-
-    if opts then
-        set.colorscheme "one_monokai"
-    end
 end
 
 return M
