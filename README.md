@@ -76,7 +76,7 @@ require("one_monokai").setup({
 #### Available Colors and Highlights
 
 1. [Colors](lua/one_monokai/colors.lua)
-2. [highlights](lua/one_monokai/highlights/groups.lua)
+2. [Highlights](lua/one_monokai/highlights/groups.lua)
 
 The color module provides two methods, `darken` and `lighten`, to blend colors based on an alpha value (between 0 and 1). You can use them as follows:
 
