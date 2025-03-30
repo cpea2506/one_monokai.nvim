@@ -1,7 +1,6 @@
----@class colors
 local colors = {}
 
----@type colors
+---@class colors
 local defaults = {
     fg = "#abb2bf",
     bg = "#282c34",
@@ -28,6 +27,7 @@ local defaults = {
     none = "NONE",
 }
 
+---@type colors
 colors = vim.deepcopy(defaults)
 
 ---Convert hex value to rgb
