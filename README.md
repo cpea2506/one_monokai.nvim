@@ -55,7 +55,7 @@ require("one_monokai").setup({
 | ------------- | -------------------------------- | -------------------------- | ---------------- |
 | `transparent` | Enables a transparent background | `boolean`                  | N/A              |
 | `colors`      | Custom color definitions         | `table<string, string>`    | N/A              |
-| `themes`      | Custom highlight groups          | `function(colors): tables` | `:h nvim_set_hl` |
+| `highlights`      | Custom highlight groups          | `function(colors): table` | `:h nvim_set_hl` |
 | `italics`     | Enables italic                   | `boolean`                  | N/A              |
 
 ### Default Configuration
@@ -64,7 +64,7 @@ require("one_monokai").setup({
 require("one_monokai").setup({
     transparent = false,
     colors = {},
-    themes = function(colors)
+    highlights = function(colors)
         return {}
     end,
     italics = true,
@@ -73,10 +73,10 @@ require("one_monokai").setup({
 
 ### Customization Examples
 
-#### Available Colors and Themes
+#### Available Colors and Highlights
 
 1. [Colors](lua/one_monokai/colors.lua)
-2. [Themes](lua/one_monokai/themes/groups.lua)
+2. [Highlights](lua/one_monokai/highlights/groups.lua)
 
 The color module provides two methods, `darken` and `lighten`, to blend colors based on an alpha value (between 0 and 1). You can use them as follows:
 
@@ -94,7 +94,7 @@ require("one_monokai").setup({
         lmao = "#ffffff", -- Define a new color
         pink = "#ec6075", -- Override a default color
     },
-    themes = function(colors)
+    highlights = function(colors)
         -- Customize highlight groups
         -- The key-value pairs are passed to "nvim_set_hl"
         return {

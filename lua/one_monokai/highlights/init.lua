@@ -1,7 +1,7 @@
-local themes = {}
+local highlights = {}
 
 ---Set highlight groups
----@param groups groups
+---@param groups groups Highlight groups
 local function set_highlight(groups)
     local logs = require "one_monokai.logs"
     local set_hl = vim.api.nvim_set_hl
@@ -10,18 +10,22 @@ local function set_highlight(groups)
         local status_ok, err = pcall(set_hl, 0, name, attrs)
 
         if not status_ok then
-            logs.error.notify("themes(%s): %s", name, err)
+            logs.notify.error("highlights(%s): %s", name, err)
         end
     end
 end
 
-function themes.load()
+---Load all highlight groups
+function highlights.load()
     local config = require "one_monokai.config"
     local colors = require "one_monokai.colors"
-    local default = require "one_monokai.themes.groups"
+    local default = require "one_monokai.highlights.groups"
 
     set_highlight(default)
-    set_highlight(config.themes(colors))
+
+    if config.highlights then
+        set_highlight(config.highlights(colors))
+    end
 end
 
-return themes
+return highlights

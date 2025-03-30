@@ -3,7 +3,7 @@ local M = {}
 function M.setup(opts)
     local set = vim.cmd
     local config = require "one_monokai.config"
-    local themes = require "one_monokai.themes"
+    local highlights = require "one_monokai.highlights"
 
     if vim.g.colors_name then
         set.hi "clear"
@@ -17,8 +17,8 @@ function M.setup(opts)
     vim.o.termguicolors = true
     vim.g.colors_name = "one_monokai"
 
-    config:extend(opts)
-    themes.load()
+    config.extend(opts)
+    highlights.load()
 end
 
 return M
