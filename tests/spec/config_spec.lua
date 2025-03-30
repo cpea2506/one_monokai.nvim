@@ -13,7 +13,7 @@ describe("Override config", function()
             pink = "#61afef",
             lmao = "#dedeff",
         },
-        themes = function(c)
+        highlights = function(c)
             return {
                 Normal = { fg = c.lmao, italic = true },
             }
@@ -28,7 +28,7 @@ describe("Override config", function()
     it("should change the default config", function()
         assert.is_false(config.transparent)
         assert.are.same(expected.colors, config.colors)
-        assert.are.same(expected.themes(colors), config.themes(colors))
+        assert.are.same(expected.highlights(colors), config.highlights(colors))
     end)
 
     it("should change default colors", function()
@@ -37,7 +37,7 @@ describe("Override config", function()
         assert.equal(expected.colors.lmao, colors.lmao)
     end)
 
-    it("should change default themes", function()
+    it("should change default highlights", function()
         local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
         assert.equal(expected.colors.lmao, ("#%06x"):format(hl.fg))
@@ -58,7 +58,7 @@ describe("Override wrong config", function()
         colors = {
             aqua = true,
         },
-        themes = function()
+        highlights = function()
             return {
                 Normal = { fg = "lmao", italic = true },
             }
@@ -78,7 +78,7 @@ describe("Override wrong config", function()
     end)
 
     it("should fallback to default highlights", function()
-        local default = require "one_monokai.themes.groups"
+        local default = require "one_monokai.highlights.groups"
         local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
         assert.equal(default.Normal.fg, ("#%06x"):format(hl.fg))
