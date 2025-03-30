@@ -81,7 +81,7 @@ local function get_hex_value(name, value)
     })
 
     if not type_ok then
-        logs.error.notify(err)
+        logs.notify.error(err)
 
         return defaults[name]
     end
@@ -93,7 +93,7 @@ local function get_hex_value(name, value)
     local rgb = vim.api.nvim_get_color_by_name(value)
 
     if rgb == -1 then
-        logs.error.notify("colors(%s): %q is not a valid color", name, value)
+        logs.notify.error("colors(%s): %q is not a valid color", name, value)
 
         return defaults[name]
     end

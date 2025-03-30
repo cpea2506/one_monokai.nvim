@@ -1,17 +1,26 @@
+---@class logs
 local logs = {}
 
-logs.error = {
-    ---Display error message.
-    ---
-    ---NOTE: This function receives params that will be passed to `string.format`.
-    ---@param s string
-    ---@param ... any
-    notify = function(s, ...)
-        local message = string.format(s, ...)
+---Display a notification to the user
+---@param log_level string
+---@param s string
+local function notify(log_level, s, ...)
+    local message = string.format(s, ...)
 
-        vim.notify_once(message, vim.log.levels.ERROR, {
-            title = "One Monokai",
-        })
+    vim.notify_once(message, log_level, {
+        title = "One Monokai",
+    })
+end
+
+---@class notify
+---@field error fun(s:string, ...) #Show error message
+---@field warning fun(s: string, ...) #Show warning message
+logs.notify = {
+    error = function(s, ...)
+        notify(vim.log.levels.ERROR, s, ...)
+    end,
+    warning = function(s, ...)
+        notify(vim.log.levels.WARNING, s, ...)
     end,
 }
 
