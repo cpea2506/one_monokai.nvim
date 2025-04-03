@@ -358,6 +358,13 @@ local defaults = {
     NvimTreeSymlink = { fg = colors.pink, bold = true },
     NvimTreeWindowPicker = { fg = colors.white, bg = colors.aqua, bold = true },
 
+    -- oil
+    OilFile = { link = "Normal" },
+    OilDir = { link = "Directory" },
+    OilDirIcon = { fg = colors.yellow },
+    OilLink = { fg = colors.pink, bold = true },
+    OilLinkTarget = { link = "OilLink" },
+
     -- bufferline
     BufferLineDiagnostic = { fg = colors.dark_gray },
     BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = config.italics },
