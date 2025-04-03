@@ -59,6 +59,7 @@ local defaults = {
     Nontext = { fg = colors.dark_gray:lighten(0.8) },
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
     NormalFloat = { link = "Normal" },
+    WinBar = { link = "Normal" },
     WinBarNC = { link = "NormalNC" },
     Question = { fg = colors.yellow },
     Search = { fg = colors.bg, bg = colors.yellow },
