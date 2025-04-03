@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.5.0...v2.6.0) (2025-04-03)
+
+
+### Features
+
+* **highlights:** add support for `oil.nvim` ([#103](https://github.com/cpea2506/one_monokai.nvim/issues/103)) ([3331421](https://github.com/cpea2506/one_monokai.nvim/commit/33314214b5d56ff2f5c37450e8519f9896ab937d))
+* **highlights:** link `WinBar` with `Normal` ([#104](https://github.com/cpea2506/one_monokai.nvim/issues/104)) ([23cf91c](https://github.com/cpea2506/one_monokai.nvim/commit/23cf91c26ed12b072bb344f43d911818a0db686f))
+
 ## [2.5.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.4.0...v2.5.0) (2025-03-26)
 
 
