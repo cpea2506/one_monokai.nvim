@@ -6,7 +6,7 @@ describe("Override config with color utility", function()
             colors = {
                 lmao = "#812873",
             },
-            themes = function(c)
+            highlights = function(c)
                 return {
                     Normal = { fg = c.lmao:darken(0.5) },
                 }
@@ -25,7 +25,7 @@ describe("Override config with color utility", function()
             colors = {
                 lmao = "#812873",
             },
-            themes = function(c)
+            highlights = function(c)
                 return {
                     Normal = { fg = c.lmao:lighten(0.5) },
                 }
