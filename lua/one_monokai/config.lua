@@ -2,12 +2,12 @@ local config = {}
 
 ---@class options
 ---@field transparent boolean #Whether to enable transparent background
----@field colors colors #Custom colors
+---@field colors? colors #Custom colors
 ---@field highlights? fun(colors:colors):groups #Custom highlight groups
 ---@field italics boolean #Whether to apply italics to certain highlight groups
 local defaults = {
     transparent = false,
-    colors = {},
+    colors = nil,
     ---@deprecated
     themes = nil,
     highlights = nil,
