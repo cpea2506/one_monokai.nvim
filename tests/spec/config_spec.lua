@@ -12,6 +12,7 @@ describe("Override config", function()
         colors = {
             pink = "#61afef",
             lmao = "#dedeff",
+            alien = 0xABCDFF,
         },
         highlights = function(c)
             return {
@@ -35,6 +36,8 @@ describe("Override config", function()
         assert.equal(expected.colors.pink, colors.pink)
         ---@diagnostic disable-next-line: undefined-field
         assert.equal(expected.colors.lmao, colors.lmao)
+        ---@diagnostic disable-next-line: undefined-field
+        assert.equal(expected.colors.alien, colors.alien)
     end)
 
     it("should change default highlights", function()
