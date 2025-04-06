@@ -2,12 +2,12 @@
 local logs = {}
 
 ---Display a notification to the user
----@param log_level string
+---@param level vim.log.levels
 ---@param s string
-local function notify(log_level, s, ...)
+local function notify(level, s, ...)
     local message = string.format(s, ...)
 
-    vim.notify_once(message, log_level, {
+    vim.notify_once(message, level, {
         title = "One Monokai",
     })
 end
@@ -20,7 +20,7 @@ logs.notify = {
         notify(vim.log.levels.ERROR, s, ...)
     end,
     warning = function(s, ...)
-        notify(vim.log.levels.WARNING, s, ...)
+        notify(vim.log.levels.WARN, s, ...)
     end,
 }
 
