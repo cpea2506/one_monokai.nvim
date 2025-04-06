@@ -51,12 +51,12 @@ require("one_monokai").setup({
 
 ### Available Options
 
-| Option        | Description                      | Type                       | Note             |
-| ------------- | -------------------------------- | -------------------------- | ---------------- |
-| `transparent` | Enables a transparent background | `boolean`                  | N/A              |
-| `colors`      | Custom color definitions         | `table<string, string>`    | N/A              |
-| `highlights`      | Custom highlight groups          | `function(colors): table` | `:h nvim_set_hl` |
-| `italics`     | Enables italic                   | `boolean`                  | N/A              |
+| Option        | Description                      | Type                            | Note             |
+| ------------- | -------------------------------- | ------------------------------- | ---------------- |
+| `transparent` | Enables a transparent background | `boolean`                       | N/A              |
+| `colors`      | Custom color definitions         | `table<string, string\|number>` | N/A              |
+| `highlights`  | Custom highlight groups          | `function(colors): table`       | `:h nvim_set_hl` |
+| `italics`     | Enables italic                   | `boolean`                       | N/A              |
 
 ### Default Configuration
 
@@ -91,8 +91,10 @@ colors["<color-name>"]:lighten(alpha)
 require("one_monokai").setup({
     transparent = true,  -- Enable transparent background
     colors = {
-        lmao = "#ffffff", -- Define a new color
         pink = "#ec6075", -- Override a default color
+        lmao = "#ffffff", -- Define a new color as hexadecimal string
+        human = 0xFFABCD, -- Define a new color as number
+        alien = 16755661, -- Why not?
     },
     highlights = function(colors)
         -- Customize highlight groups
@@ -109,7 +111,7 @@ require("one_monokai").setup({
 ```
 
 > [!TIP]
-> To find the highlight group for an item, place the cursor inside it and run `:Inspect`. Refer to `:h :Inspect` for more information.
+> To find the highlight group for an item, place the cursor under it and run `:Inspect`. Refer to `:h :Inspect` for more information.
 
 ## :champagne: Plugin Support
 

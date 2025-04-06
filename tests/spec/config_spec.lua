@@ -3,7 +3,9 @@ local one_monokai = require "one_monokai"
 
 describe("Config options", function()
     it("could be indexed without options field", function()
-        assert.are.same({}, config.colors)
+        assert.is_false(config.transparent)
+        assert.is_nil(config.colors)
+        assert.is_true(config.italics)
     end)
 end)
 
@@ -12,6 +14,7 @@ describe("Override config", function()
         colors = {
             pink = "#61afef",
             lmao = "#dedeff",
+            alien = 0xABCDFF,
         },
         highlights = function(c)
             return {
@@ -35,6 +38,8 @@ describe("Override config", function()
         assert.equal(expected.colors.pink, colors.pink)
         ---@diagnostic disable-next-line: undefined-field
         assert.equal(expected.colors.lmao, colors.lmao)
+        ---@diagnostic disable-next-line: undefined-field
+        assert.equal(expected.colors.alien, colors.alien)
     end)
 
     it("should change default highlights", function()

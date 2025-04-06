@@ -30,10 +30,11 @@ local defaults = {
 ---@type colors
 colors = vim.deepcopy(defaults)
 
----Convert hex value to rgb
----@param color string
+---Converts a hex color to an RGB table
+---@param color string #Hex color
+---@return integer[] #RGB table {r, g, b}
 local function hex2rgb(color)
-    color = string.lower(color)
+    color = color:lower()
 
     return {
         tonumber(color:sub(2, 3), 16),
@@ -42,69 +43,79 @@ local function hex2rgb(color)
     }
 end
 
----@param fg string #foreground color
----@param bg string #background color
----@param alpha number #number between 0 and 1.
----@source: https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua#L9-L37
+---Blends two hex colors together based on the alpha value.
+---
+---[View source](https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua)
+---@param fg string #Foreground hex color
+---@param bg string #Background hex color
+---@param alpha number #Blend factor between 0 (only bg) and 1 (only fg)
+---@return string #Hex color of the resulting blended color
 local function blend(fg, bg, alpha)
     local bg_rgb = hex2rgb(bg)
     local fg_rgb = hex2rgb(fg)
 
-    local blend_channel = function(i)
-        local ret = (alpha * fg_rgb[i] + ((1 - alpha) * bg_rgb[i]))
+    local r = alpha * fg_rgb[1] + (1 - alpha) * bg_rgb[1] + 0.5
+    local g = alpha * fg_rgb[2] + (1 - alpha) * bg_rgb[2] + 0.5
+    local b = alpha * fg_rgb[3] + (1 - alpha) * bg_rgb[3] + 0.5
 
-        return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+    return ("#%02x%02x%02x"):format(r, g, b)
+end
+
+---Darkens the current hex color
+---@param s string
+---@param alpha number #Value between 0 and 1
+function string.darken(s, alpha)
+    return blend(s, "#000000", alpha)
+end
+
+---Lightens the current hex color
+---@param s string
+---@param alpha number #Value between 0 and 1
+function string.lighten(s, alpha)
+    return blend(s, "#ffffff", alpha)
+end
+
+---Resolve and retrieve the value of a color
+---@param name string #Name of the color
+---@param value string|number #Value of the color
+---@return string|number? #Hex color or 24-bit RGB value, or default if invalid
+local function resolve_color(name, value)
+    local color_type = type(value)
+
+    -- Resolve string first to optimize the common case
+    if color_type == "string" then
+        if value:lower() == "none" then
+            return value
+        end
+
+        local rgb = vim.api.nvim_get_color_by_name(value)
+
+        if rgb ~= -1 then
+            return value
+        end
     end
 
-    return ("#%02x%02x%02x"):format(blend_channel(1), blend_channel(2), blend_channel(3))
-end
-
----@param alpha number #number between 0 and 1
-function string:darken(alpha)
-    return blend(self, "#000000", alpha)
-end
-
----@param alpha number #number between 0 and 1
-function string:lighten(alpha)
-    return blend(self, "#ffffff", alpha)
-end
-
----Get the hex value of a color
----@param name string #name of the color
----@param value any #value of the color
----@return string? #hex string or `nil` if invalid
-local function get_hex_value(name, value)
-    local logs = require "one_monokai.logs"
-
-    local type_ok, err = pcall(vim.validate, {
-        ["colors(" .. name .. ")"] = { value, "string" },
-    })
-
-    if not type_ok then
-        logs.error(err)
-
-        return defaults[name]
-    end
-
-    if value:lower() == "none" then
+    if color_type == "number" and value >= 0 and value <= 0xFFFFFF then
         return value
     end
 
-    local rgb = vim.api.nvim_get_color_by_name(value)
+    local logs = require "one_monokai.logs"
+    local default = defaults[name]
 
-    if rgb == -1 then
-        logs.error("colors(%s): %q is not a valid color", name, value)
+    logs.error(
+        "colors(%s): expected hex color (#rrggbb) or 24-bit RGB color, got %q. Fallback to %q.",
+        name,
+        value,
+        default
+    )
 
-        return defaults[name]
-    end
-
-    return ("#%06x"):format(rgb)
+    return default
 end
 
 local config = require "one_monokai.config"
 
-for name, value in pairs(config.colors) do
-    colors[name] = get_hex_value(name, value)
+for name, value in pairs(config.colors or {}) do
+    colors[name] = resolve_color(name, value)
 end
 
 return colors
