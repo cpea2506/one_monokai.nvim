@@ -3,7 +3,9 @@ local one_monokai = require "one_monokai"
 
 describe("Config options", function()
     it("could be indexed without options field", function()
-        assert.are.same({}, config.colors)
+        assert.is_false(config.transparent)
+        assert.is_nil(config.colors)
+        assert.is_true(config.italics)
     end)
 end)
 
