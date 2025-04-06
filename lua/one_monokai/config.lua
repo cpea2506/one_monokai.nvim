@@ -27,7 +27,7 @@ function config.extend(opts)
     local logs = require "one_monokai.logs"
 
     if opts.themes then
-        logs.notify.warning(
+        logs.warning(
             "config: %q option has been deprecated and will be removed soon. Please update your config to use %q instead.",
             "themes",
             "highlights"
