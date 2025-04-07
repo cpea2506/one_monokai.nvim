@@ -1,7 +1,7 @@
 local highlights = {}
 
 ---Set highlight groups
----@param groups groups Highlight groups
+---@param groups groups #Highlight groups
 local function set_highlight(groups)
     local logs = require "one_monokai.logs"
     local set_hl = vim.api.nvim_set_hl
