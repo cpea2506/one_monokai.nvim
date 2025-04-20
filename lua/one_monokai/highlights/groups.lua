@@ -71,6 +71,8 @@ local defaults = {
     Visual = { bg = colors.dark_gray },
     WarningMsg = { fg = colors.yellow },
 
+    QuickFixLine = { bg = colors.vulcan },
+
     Directory = { fg = colors.aqua },
     SpecialKey = { fg = colors.pink },
     Title = { fg = colors.yellow },
