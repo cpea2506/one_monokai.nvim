@@ -57,6 +57,7 @@ local defaults = {
     ModeMsg = { fg = colors.yellow },
     MoreMsg = { fg = colors.yellow },
     Nontext = { fg = colors.dark_gray:lighten(0.8) },
+    Whitespace = { fg = colors.dark_gray:darken(0.91) },
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
     NormalFloat = { link = "Normal" },
     WinBar = { link = "Normal" },
