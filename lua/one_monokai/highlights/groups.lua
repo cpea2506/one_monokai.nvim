@@ -582,6 +582,18 @@ local defaults = {
     NotifyWARNBorder = { fg = colors.yellow },
     NotifyWARNIcon = { fg = colors.yellow },
     NotifyWARNTitle = { fg = colors.yellow },
+
+    -- echasnovski/mini.nvim
+    MiniStatuslineDevinfo = { fg = colors.fg, bg = colors.vulcan },
+    MiniStatuslineFileinfo = { link = "MiniStatuslineDevinfo" },
+    MiniStatuslineFilename = { fg = colors.fg, bg = colors.black },
+    MiniStatuslineInactive = { link = "MiniStatuslineFilename" },
+    MiniStatuslineModeNormal = { fg = colors.dark_blue, bg = colors.green, bold = true },
+    MiniStatuslineModeInsert = { fg = colors.dark_blue, bg = colors.yellow, bold = true },
+    MiniStatuslineModeVisual = { fg = colors.dark_blue, bg = colors.purple, bold = true },
+    MiniStatuslineModeCommand = { fg = colors.dark_blue, bg = colors.aqua, bold = true },
+    MiniStatuslineModeReplace = { fg = colors.dark_blue, bg = colors.pink, bold = true },
+    MiniStatuslineModeOther = { fg = colors.dark_blue, bg = colors.green, bold = true }, -- fallback
 }
 
 -- hide all semantic highlights by default,
