@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.6.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.5.0...v2.6.0) (2025-06-25)
+
+
+### Features
+
+* **colors:** allow custom color to be a number ([#107](https://github.com/cpea2506/one_monokai.nvim/issues/107)) ([c6154cb](https://github.com/cpea2506/one_monokai.nvim/commit/c6154cb90f800d194ed2beafd8c17569df1c8aa5))
+* **highlights:** add highlight for `QuickFixLine` ([#109](https://github.com/cpea2506/one_monokai.nvim/issues/109)) ([c233020](https://github.com/cpea2506/one_monokai.nvim/commit/c233020488c413cd949814a788951cceb5874c8b))
+* **highlights:** add highlight for `Whitespace` ([#110](https://github.com/cpea2506/one_monokai.nvim/issues/110)) ([4d2cac5](https://github.com/cpea2506/one_monokai.nvim/commit/4d2cac56c5d263af2666b3a177c381c913d7525f))
+* **highlights:** add support for `oil.nvim` ([#103](https://github.com/cpea2506/one_monokai.nvim/issues/103)) ([3331421](https://github.com/cpea2506/one_monokai.nvim/commit/33314214b5d56ff2f5c37450e8519f9896ab937d))
+* **highlights:** link `WinBar` with `Normal` ([#104](https://github.com/cpea2506/one_monokai.nvim/issues/104)) ([23cf91c](https://github.com/cpea2506/one_monokai.nvim/commit/23cf91c26ed12b072bb344f43d911818a0db686f))
+* support `mini.nvim` ([#112](https://github.com/cpea2506/one_monokai.nvim/issues/112)) ([81cf09a](https://github.com/cpea2506/one_monokai.nvim/commit/81cf09a666536f87278ba0d18b6ae5d9059a269d))
+
+
+### Performance Improvements
+
+* **highlights:** load `colors` module lazily when user highlight is present ([#108](https://github.com/cpea2506/one_monokai.nvim/issues/108)) ([1d63116](https://github.com/cpea2506/one_monokai.nvim/commit/1d6311633f9fbd948c363bd210b2176ae07a79f0))
+
 ## [2.5.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.4.0...v2.5.0) (2025-03-26)
 
 
