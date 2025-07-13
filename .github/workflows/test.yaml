@@ -5,45 +5,39 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   unit_tests:
-    name: Run tests on ${{ matrix.os }} with Neovim ${{ matrix.neovim }}
+    name: Run tests on ${{ matrix.os }} with Neovim ${{ matrix.nvim_version }}
     strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: ubuntu-latest
-            neovim: stable
-            url: https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
-          - os: ubuntu-latest
-            neovim: nightly
-            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
-          - os: macos-14
-            neovim: stable
-            url: https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz
-          - os: macos-14
-            neovim: nightly
-            url: https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-arm64.tar.gz
+     fail-fast: false
+     matrix:
+      os: [windows-latest, ubuntu-latest, macos-latest]
+      nvim_version: [stable, nightly]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - uses: notomo/action-setup-nvim-lua@v2
+
+      - name: Setup neovim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: ${{ matrix.nvim_version }}
+
       - run: date +%F > todays-date
+
       - name: Restore cache for today's nightly.
         uses: actions/cache@v4
         with:
           path: _neovim
-          key: ${{ runner.os }}-${{ matrix.url }}-${{ hashFiles('todays-date') }}
-      - name: Prepare
-        run: |
-          test -d _neovim || {
-            mkdir -p _neovim
-            curl -sL ${{ matrix.url }} | tar xzf - --strip-components=1 -C "$PWD/_neovim"
-          }
-          mkdir -p ~/.local/share/nvim/site/pack/vendor/start
-          git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/site/pack/vendor/start/plenary.nvim
-          ln -s $PWD ~/.local/share/nvim/site/pack/vendor/start
+          key: ${{ runner.os }}-${{ matrix.nvim_version }}-${{ hashFiles('todays-date') }}
+
+      - name: Install vusted
+        run: luarocks install vusted
+
       - name: Run tests
-        run: |
-          export PATH="$PWD/_neovim/bin:$PATH"
-          nvim --version
-          make test
+        run: vusted tests
