@@ -469,10 +469,10 @@ local defaults = {
     BlinkCmpKindVariable = { fg = colors.cyan },
 
     -- git-conflict
-    GitConflictCurrent = { bg = colors.cyan:darken(0.4) },
-    GitConflictIncoming = { bg = colors.green:darken(0.4) },
-    GitConflictCurrentLabel = { fg = colors.white },
-    GitConflictIncomingLabel = { fg = colors.white },
+    GitConflictCurrent = { bg = colors.cyan:darken(0.3) },
+    GitConflictIncoming = { bg = colors.aqua:darken(0.3) },
+    GitConflictCurrentLabel = { fg = colors.fg, bg = colors.cyan:darken(0.6) },
+    GitConflictIncomingLabel = { fg = colors.fg, bg = colors.aqua:darken(0.6) },
 
     -- lazy
     LazyButton = { fg = colors.white, bg = colors.vulcan },
