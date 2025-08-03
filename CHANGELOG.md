@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.7.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.6.0...v2.7.0) (2025-08-03)
+
+
+### Features
+
+* **highlight:** `snacks.nvim` support ([#113](https://github.com/cpea2506/one_monokai.nvim/issues/113)) ([140938b](https://github.com/cpea2506/one_monokai.nvim/commit/140938bcb9ffc8f89e9b44ac678830e0165a0d42))
+* **highlight:** update `git-conflict` colors ([#116](https://github.com/cpea2506/one_monokai.nvim/issues/116)) ([3e3a3cd](https://github.com/cpea2506/one_monokai.nvim/commit/3e3a3cd40f7964f4048d41445498262bd26522bb))
+
 ## [2.6.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.5.0...v2.6.0) (2025-06-25)
 
 
