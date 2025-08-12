@@ -233,7 +233,7 @@ local defaults = {
 
     -- diff
     DiffAdd = { bg = colors.green:darken(0.3) },
-    DiffChange = { fg = colors.white:darken(0.3) },
+    DiffChange = { bg = colors.white:darken(0.3) },
     DiffDelete = { bg = colors.red:darken(0.3) },
     DiffText = { bg = colors.cyan:darken(0.3) },
 
@@ -473,6 +473,13 @@ local defaults = {
     GitConflictIncoming = { bg = colors.aqua:darken(0.3) },
     GitConflictCurrentLabel = { fg = colors.fg, bg = colors.cyan:darken(0.6) },
     GitConflictIncomingLabel = { fg = colors.fg, bg = colors.aqua:darken(0.6) },
+
+    -- conflict-marker
+    ConflictOurs = { bg = colors.cyan:darken(0.3) },
+    ConflictTheirs = { bg = colors.aqua:darken(0.3) },
+    ConflictOursMarker = { fg = colors.fg, bg = colors.cyan:darken(0.6) },
+    ConflictTheirsMarker = { fg = colors.fg, bg = colors.aqua:darken(0.6) },
+    ConflictMid = { fg = colors.white, bg = colors.vulcan },
 
     -- lazy
     LazyButton = { fg = colors.white, bg = colors.vulcan },
