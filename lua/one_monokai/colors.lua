@@ -1,4 +1,5 @@
 ---@class one_monokai.colors
+---@field [string] string|number
 local colors = {}
 
 ---@type one_monokai.colors
