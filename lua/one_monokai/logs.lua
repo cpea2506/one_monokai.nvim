@@ -1,7 +1,7 @@
----@class logs
+---@class one_monokai.logs
 local logs = {}
 
----Display a notification to the user
+---Display a notification to the user.
 ---@param level vim.log.levels
 ---@param s string|number
 ---@param ... any
@@ -13,14 +13,14 @@ local function notify(level, s, ...)
     })
 end
 
----Display an error message to the user
+---Display an error message to the user.
 ---@param s string|number
 ---@param ... any
 logs.error = function(s, ...)
     notify(vim.log.levels.ERROR, s, ...)
 end
 
----Display a warning message to the user
+---Display a warning message to the user.
 ---@param s string|number
 ---@param ... any
 logs.warning = function(s, ...)
