@@ -1,6 +1,7 @@
+---@class one_monokai.colors
 local colors = {}
 
----@class colors
+---@type one_monokai.colors
 local defaults = {
     fg = "#abb2bf",
     bg = "#282c34",
@@ -27,12 +28,11 @@ local defaults = {
     none = "NONE",
 }
 
----@type colors
 colors = vim.deepcopy(defaults)
 
----Converts a hex color to an RGB table
----@param color string #Hex color
----@return integer[] #RGB table {r, g, b}
+---Converts a hex color to an RGB table.
+---@param color string #Hex color.
+---@return integer[] #RGB table {r, g, b}.
 local function hex2rgb(color)
     color = color:lower()
 
@@ -45,11 +45,11 @@ end
 
 ---Blends two hex colors together based on the alpha value.
 ---
----[View source](https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua)
----@param fg string #Foreground hex color
----@param bg string #Background hex color
----@param alpha number #Blend factor between 0 (only bg) and 1 (only fg)
----@return string #Hex color of the resulting blended color
+---[View source](https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua).
+---@param fg string #Foreground hex color.
+---@param bg string #Background hex color.
+---@param alpha number #Blend factor between 0 (only bg) and 1 (only fg).
+---@return string #Hex color of the resulting blended color.
 local function blend(fg, bg, alpha)
     local bg_rgb = hex2rgb(bg)
     local fg_rgb = hex2rgb(fg)
@@ -61,25 +61,25 @@ local function blend(fg, bg, alpha)
     return ("#%02x%02x%02x"):format(r, g, b)
 end
 
----Darkens the current hex color
+---Darkens the current hex color.
 ---@param s string
----@param alpha number #Value between 0 and 1
+---@param alpha number #Value between 0 and 1.
 function string.darken(s, alpha)
     return blend(s, "#000000", alpha)
 end
 
----Lightens the current hex color
+---Lightens the current hex color.
 ---@param s string
----@param alpha number #Value between 0 and 1
+---@param alpha number #Value between 0 and 1.
 function string.lighten(s, alpha)
     return blend(s, "#ffffff", alpha)
 end
 
----Resolve and retrieve the value of a color
----@param name string #Name of the color
----@param value string|number #Value of the color
----@return string|number? #Hex color or 24-bit RGB value, or default if invalid
-local function resolve_color(name, value)
+---Resolve and retrieve the value of a color.
+---@param name string #Name of the color.
+---@param value string|number #Value of the color.
+---@return string|number? #Hex color or 24-bit RGB value, or default if invalid.
+local function resolve(name, value)
     local color_type = type(value)
 
     -- Resolve string first to optimize the common case
@@ -115,7 +115,7 @@ end
 local config = require "one_monokai.config"
 
 for name, value in pairs(config.colors or {}) do
-    colors[name] = resolve_color(name, value)
+    colors[name] = resolve(name, value)
 end
 
 return colors

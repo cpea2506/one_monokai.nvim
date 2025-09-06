@@ -1,10 +1,11 @@
+---@class one_monokai.config
+---@field transparent boolean
+---@field colors? one_monokai.colors
+---@field highlights? fun(colors:one_monokai.colors):one_monokai.highlights.groups
+---@field italics boolean
 local config = {}
 
----@class options
----@field transparent boolean #Whether to enable transparent background
----@field colors? colors #Custom colors
----@field highlights? fun(colors:colors):groups #Custom highlight groups
----@field italics boolean #Whether to apply italics to certain highlight groups
+---@type one_monokai.config
 local defaults = {
     transparent = false,
     colors = nil,
@@ -14,11 +15,10 @@ local defaults = {
     italics = true,
 }
 
----@type options
 local options = vim.deepcopy(defaults)
 
----Extend default with user's config
----@param opts options
+---Extend default with user's config.
+---@param opts one_monokai.config
 function config.extend(opts)
     if not opts or vim.tbl_isempty(opts) then
         return

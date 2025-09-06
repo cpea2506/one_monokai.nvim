@@ -1,9 +1,11 @@
+---@class one_monokai.highlights.groups
+---@field [string] vim.api.keyset.highlight
 local groups = {}
 
 local colors = require "one_monokai.colors"
 local config = require "one_monokai.config"
 
----@class groups
+---@type one_monokai.highlights.groups
 local defaults = {
     Boolean = { fg = colors.cyan },
     Character = { fg = colors.yellow },
@@ -764,15 +766,13 @@ local defaults = {
     SnacksPickerMatch = { fg = colors.green },
 }
 
--- hide all semantic highlights by default,
--- only enable those from the default table
+-- Hide all semantic highlights by default, only enable those from the default table.
 for _, semantic_group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
     if not defaults[semantic_group] then
         defaults[semantic_group] = {}
     end
 end
 
----@type groups
 groups = vim.deepcopy(defaults)
 
 return groups
