@@ -1,8 +1,8 @@
 ---@class one_monokai.config
----@field transparent boolean
----@field colors? one_monokai.colors
----@field highlights? fun(colors:one_monokai.colors):one_monokai.highlights.groups
----@field italics boolean
+---@field transparent boolean #Whether to enable transparent background.
+---@field colors? one_monokai.colors #Custom colors.
+---@field highlights? fun(colors:one_monokai.colors):one_monokai.highlights.groups #Custom highlight groups.
+---@field italics boolean #Whether to apply italics to certain highlight groups.
 local config = {}
 
 ---@type one_monokai.config
