@@ -11,7 +11,7 @@ local groups = {
     MiniStatuslineModeVisual = { fg = colors.dark_blue, bg = colors.purple, bold = true },
     MiniStatuslineModeCommand = { fg = colors.dark_blue, bg = colors.aqua, bold = true },
     MiniStatuslineModeReplace = { fg = colors.dark_blue, bg = colors.pink, bold = true },
-    MiniStatuslineModeOther = { fg = colors.dark_blue, bg = colors.green, bold = true }, -- fallback
+    MiniStatuslineModeOther = { fg = colors.dark_blue, bg = colors.green, bold = true },
 
     MiniAnimateCursor = { reverse = true, nocombine = true },
     MiniAnimateNormalFloat = { link = "NormalFloat" },
