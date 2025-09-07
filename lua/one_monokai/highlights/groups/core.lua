@@ -3,42 +3,6 @@ local config = require "one_monokai.config"
 
 ---@type one_monokai.highlights.groups
 local groups = {
-    Boolean = { fg = colors.cyan },
-    Character = { fg = colors.yellow },
-    Constant = { fg = colors.aqua },
-    Float = { fg = colors.purple },
-    Number = { fg = colors.purple },
-    String = { fg = colors.yellow },
-
-    StorageClass = { fg = colors.cyan },
-    Structure = { fg = colors.cyan },
-    Type = { fg = colors.aqua },
-    Typedef = { fg = colors.aqua },
-
-    Function = { fg = colors.green },
-    Identifier = { fg = colors.green },
-
-    Keyword = { fg = colors.cyan },
-    Label = { fg = colors.pink },
-    Operator = { fg = colors.pink },
-    Statement = { fg = colors.pink },
-
-    Define = { fg = colors.pink },
-    Include = { fg = colors.pink },
-    Macro = { fg = colors.green },
-    PreCondit = { fg = colors.pink },
-    PreProc = { fg = colors.green },
-    Conceal = { fg = colors.light_gray },
-
-    Delimiter = { fg = colors.pink },
-    Special = { fg = colors.purple },
-    SpecialChar = { fg = colors.pink },
-    SpecialComment = { fg = colors.cyan },
-    Tag = { fg = colors.pink },
-
-    Comment = { fg = colors.gray, italic = config.italics },
-    Todo = { fg = colors.orange, bold = true, italic = config.italics },
-
     Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
     Visual = { bg = colors.dark_gray },
 
@@ -94,6 +58,43 @@ local groups = {
     DiagnosticUnderlineInfo = { sp = colors.green, undercurl = true },
     DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true },
     DiagnosticWarn = { fg = colors.yellow },
+
+    -- Do not exceed this line. All further additions should be placed above.
+    Boolean = { fg = colors.cyan },
+    Character = { fg = colors.yellow },
+    Constant = { fg = colors.aqua },
+    Float = { fg = colors.purple },
+    Number = { fg = colors.purple },
+    String = { fg = colors.yellow },
+
+    StorageClass = { fg = colors.cyan },
+    Structure = { fg = colors.cyan },
+    Type = { fg = colors.aqua },
+    Typedef = { fg = colors.aqua },
+
+    Function = { fg = colors.green },
+    Identifier = { fg = colors.green },
+
+    Keyword = { fg = colors.cyan },
+    Label = { fg = colors.pink },
+    Operator = { fg = colors.pink },
+    Statement = { fg = colors.pink },
+
+    Define = { fg = colors.pink },
+    Include = { fg = colors.pink },
+    Macro = { fg = colors.green },
+    PreCondit = { fg = colors.pink },
+    PreProc = { fg = colors.green },
+    Conceal = { fg = colors.light_gray },
+
+    Delimiter = { fg = colors.pink },
+    Special = { fg = colors.purple },
+    SpecialChar = { fg = colors.pink },
+    SpecialComment = { fg = colors.cyan },
+    Tag = { fg = colors.pink },
+
+    Comment = { fg = colors.gray, italic = config.italics },
+    Todo = { fg = colors.orange, bold = true, italic = config.italics },
 }
 
 return groups
