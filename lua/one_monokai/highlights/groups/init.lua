@@ -36,6 +36,7 @@ local modules = {
 }
 
 for _, module in ipairs(modules) do
+    ---@type table<string, vim.api.keyset.highlight>
     local hl_groups = require(("one_monokai.highlights.groups.%s"):format(module))
 
     for name, attrs in pairs(hl_groups) do
