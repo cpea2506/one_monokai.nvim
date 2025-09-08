@@ -1,38 +1,6 @@
 ---@class one_monokai.highlights
 local highlights = {}
 
----@type string[]
-local plugins = {
-    "blink_cmp",
-    "bufferline",
-    "checkhealth",
-    "conflict_markers",
-    "crates",
-    "dashboard",
-    "diff",
-    "flash",
-    "fzf",
-    "git_conflict",
-    "indent_blankline",
-    "lazy",
-    "leap",
-    "lsp",
-    "mason",
-    "mini",
-    "nvim_cmp",
-    "nvim_navic",
-    "nvim_notify",
-    "nvimtree",
-    "oil",
-    "rainbow_delimiters",
-    "sj",
-    "snacks",
-    "telescope",
-    "treesitter",
-    "vim_illuminate",
-    "whichkey",
-}
-
 ---Set highlight groups.
 ---@param groups one_monokai.highlights.groups #Highlight groups.
 local function set_highlight(groups)
