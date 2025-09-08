@@ -3,12 +3,11 @@
 local groups = {}
 
 ---@type string[]
-local modules = {
+local plugins = {
     "blink_cmp",
     "bufferline",
     "checkhealth",
     "conflict_markers",
-    "core",
     "crates",
     "dashboard",
     "diff",
@@ -35,11 +34,23 @@ local modules = {
     "whichkey",
 }
 
-for _, module in ipairs(modules) do
+for _, plugin in ipairs(plugins) do
     ---@type table<string, vim.api.keyset.highlight>
-    local hl_groups = require(("one_monokai.highlights.groups.%s"):format(module))
+    local default_groups = require(("one_monokai.highlights.groups.%s"):format(plugin))
 
-    for name, attrs in pairs(hl_groups) do
+    for name, attrs in pairs(default_groups) do
+        groups[name] = attrs
+    end
+end
+
+local config = require "one_monokai.config"
+local colors = require "one_monokai.colors"
+
+if config.highlights then
+    ---@type table<string, vim.api.keyset.highlight>
+    local user_groups = config.highlights(colors)
+
+    for name, attrs in pairs(user_groups) do
         groups[name] = attrs
     end
 end
