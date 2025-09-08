@@ -18,13 +18,16 @@ end
 
 ---Load all highlight groups.
 function highlights.load()
+    -- Core groups should be loaded first to prevent screen flickering.
     local core_groups = require "one_monokai.highlights.groups.core"
     set_highlight(core_groups)
 
-    local async
+    ---@type uv.uv_async_t?
+    local async = nil
+
     async = vim.uv.new_async(vim.schedule_wrap(function()
-        local default_groups = require "one_monokai.highlights.groups"
-        set_highlight(default_groups)
+        local groups = require "one_monokai.highlights.groups"
+        set_highlight(groups)
 
         if async ~= nil then
             async:close()
