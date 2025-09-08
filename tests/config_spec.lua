@@ -43,10 +43,12 @@ describe("Override config", function()
     end)
 
     it("should change default highlights", function()
-        local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+        vim.schedule(function()
+            local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
-        assert.equal(expected.colors.lmao, ("#%06x"):format(hl.fg))
-        assert.is_true(hl.italic)
+            assert.equal(expected.colors.lmao, ("#%06x"):format(hl.fg))
+            assert.is_true(hl.italic)
+        end)
     end)
 
     it("should disable all italics", function()
@@ -83,10 +85,12 @@ describe("Override wrong config", function()
     end)
 
     it("should fallback to default highlights", function()
-        local default = require "one_monokai.highlights.groups"
-        local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
+        vim.schedule(function()
+            local default = require "one_monokai.highlights.groups"
+            local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
 
-        assert.equal(default.Normal.fg, ("#%06x"):format(hl.fg))
-        assert.is_nil(hl.italic)
+            assert.equal(default.Normal.fg, ("#%06x"):format(hl.fg))
+            assert.is_nil(hl.italic)
+        end)
     end)
 end)
