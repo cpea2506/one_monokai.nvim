@@ -8,9 +8,9 @@ local function set_highlight(groups)
     local set_hl = vim.api.nvim_set_hl
 
     for name, attrs in pairs(groups) do
-        local status_ok, err = pcall(set_hl, 0, name, attrs)
+        local ok, err = pcall(set_hl, 0, name, attrs)
 
-        if not status_ok then
+        if not ok then
             logs.error("highlights(%s): %s", name, err)
         end
     end
@@ -18,15 +18,24 @@ end
 
 ---Load all highlight groups.
 function highlights.load()
-    local config = require "one_monokai.config"
-    local default = require "one_monokai.highlights.groups"
+    -- Core groups should be loaded first to prevent screen flickering.
+    local core_groups = require "one_monokai.highlights.groups.core"
+    set_highlight(core_groups)
 
-    set_highlight(default)
+    ---@type uv.uv_async_t?
+    local async = nil
 
-    if config.highlights then
-        local colors = require "one_monokai.colors"
+    async = vim.uv.new_async(vim.schedule_wrap(function()
+        local groups = require "one_monokai.highlights.groups"
+        set_highlight(groups)
 
-        set_highlight(config.highlights(colors))
+        if async ~= nil then
+            async:close()
+        end
+    end))
+
+    if async ~= nil then
+        async:send()
     end
 end
 
