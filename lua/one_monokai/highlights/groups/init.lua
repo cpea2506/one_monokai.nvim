@@ -44,9 +44,9 @@ for _, plugin in ipairs(plugins) do
 end
 
 local config = require "one_monokai.config"
-local colors = require "one_monokai.colors"
 
 if config.highlights then
+    local colors = require "one_monokai.colors"
     ---@type table<string, vim.api.keyset.highlight>
     local user_groups = config.highlights(colors)
 
