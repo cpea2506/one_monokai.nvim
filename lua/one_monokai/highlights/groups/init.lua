@@ -12,6 +12,7 @@ local plugins = {
     "dashboard",
     "diff",
     "flash",
+    "fyler",
     "fzf",
     "git_conflict",
     "indent_blankline",
