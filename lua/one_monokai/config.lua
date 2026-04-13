@@ -9,8 +9,6 @@ local config = {}
 local defaults = {
     transparent = false,
     colors = nil,
-    ---@deprecated
-    themes = nil,
     highlights = nil,
     italics = true,
 }
@@ -22,18 +20,6 @@ local options = vim.deepcopy(defaults)
 function config.extend(opts)
     if not opts or vim.tbl_isempty(opts) then
         return
-    end
-
-    local logs = require "one_monokai.logs"
-
-    if opts.themes then
-        logs.warning(
-            "config: %q option has been deprecated and will be removed soon. Please update your config to use %q instead.",
-            "themes",
-            "highlights"
-        )
-
-        opts.highlights = opts.themes
     end
 
     options = vim.tbl_deep_extend("force", options, opts)
