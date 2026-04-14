@@ -32,7 +32,7 @@
 
 ### Requirements
 
-- Neovim >= 0.9.1
+- Neovim >= 0.12
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for enhanced syntax highlighting (optional) 😇
 
 ## :gear: Setup
