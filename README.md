@@ -32,7 +32,7 @@
 
 ### Requirements
 
-- Neovim >= 0.12
+- Neovim >= 0.12.0
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for enhanced syntax highlighting (optional) 😇
 
 ## :gear: Setup
@@ -51,12 +51,19 @@ require("one_monokai").setup({
 
 ### Available Options
 
-| Option        | Description                      | Type                            | Note             |
-| ------------- | -------------------------------- | ------------------------------- | ---------------- |
-| `transparent` | Enables a transparent background | `boolean`                       | N/A              |
-| `colors`      | Custom color definitions         | `table<string, string\|number>` | N/A              |
-| `highlights`  | Custom highlight groups          | `function(colors): table`       | `:h nvim_set_hl` |
-| `italics`     | Enables italic                   | `boolean`                       | N/A              |
+| Option        | Description                      | Type                            | Note                                |
+| ------------- | -------------------------------- | ------------------------------- | ----------------------------------- |
+| `transparent` | Enables a transparent background | `boolean`                       | N/A                                 |
+| `colors`      | Custom color definitions         | `table<string, string\|number>` | N/A                                 |
+| `highlights`  | Custom highlight groups          | `function(colors): table`       | `:h nvim_set_hl`                    |
+| `italics`     | Enables italic                   | `boolean`                       | N/A                                 |
+| `cache`       | Cache options                    | `table`                         | See [Cache Options](#cache-options) |
+
+#### Cache Options
+
+| Sub-Option | Description             | Type     | Note |
+| ---------- | ----------------------- | -------- | ---- |
+| `path`     | Path to cache directory | `string` | N/A  |
 
 ### Default Configuration
 
@@ -68,6 +75,9 @@ require("one_monokai").setup({
         return {}
     end,
     italics = true,
+    cache = {
+        path = vim.fs.joinpath(vim.fn.stdpath "cache", "one_monokai"),
+    }
 })
 ```
 
@@ -107,6 +117,9 @@ require("one_monokai").setup({
         }
     end,
     italics = false, -- Disable italic
+    cache = {
+        path = vim.fs.joinpath(vim.fn.stdpath "config", "cache", "one_monokai"), -- Update cache directory
+    }
 })
 ```
 
