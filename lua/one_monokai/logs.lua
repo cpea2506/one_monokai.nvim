@@ -8,9 +8,7 @@ local logs = {}
 local function notify(level, s, ...)
     local message = string.format(s, ...)
 
-    vim.notify(message, level, {
-        title = "One Monokai",
-    })
+    vim.notify("[One Monokai] " .. message, level)
 end
 
 ---Display an error message to the user.
