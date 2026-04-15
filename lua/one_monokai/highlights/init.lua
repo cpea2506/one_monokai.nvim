@@ -101,7 +101,7 @@ function highlights.load()
     local config = require "one_monokai.config"
 
     if vim.fn.getftime(config.cache.path) == -1 then
-        vim.uv.fs_mkdir(config.cache.path, tonumber("0755", 8))
+        vim.fn.mkdir(config.cache.path, "p")
     end
 
     local highlights_path = vim.fs.joinpath(config.cache.path, "highlights")
