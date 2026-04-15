@@ -47,9 +47,11 @@ local groups = {
     PmenuSel = { link = "Visual" },
     PmenuThumb = { fg = colors.dark_green, bg = colors.dark_gray },
 
+    OkMsg = { fg = colors.green },
     ErrorMsg = { fg = colors.red },
     WarningMsg = { fg = colors.yellow },
 
+    DiagnosticOk = { fg = colors.green },
     DiagnosticError = { fg = colors.red },
     DiagnosticHint = { fg = colors.light_gray },
     DiagnosticInfo = { fg = colors.white },
