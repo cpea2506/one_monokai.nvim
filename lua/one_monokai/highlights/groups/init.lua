@@ -8,6 +8,7 @@ local plugins = {
     "bufferline",
     "checkhealth",
     "conflict_markers",
+    "core",
     "crates",
     "dashboard",
     "diff",
