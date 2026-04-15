@@ -47,19 +47,19 @@ local groups = {
     PmenuSel = { link = "Visual" },
     PmenuThumb = { fg = colors.dark_green, bg = colors.dark_gray },
 
-    OkMsg = { fg = colors.green },
+    OkMsg = { fg = colors.green:lighten(0.7) },
     ErrorMsg = { fg = colors.red },
     WarningMsg = { fg = colors.yellow },
 
-    DiagnosticOk = { fg = colors.green },
+    DiagnosticOk = { fg = colors.green:lighten(0.7) },
     DiagnosticError = { fg = colors.red },
     DiagnosticHint = { fg = colors.light_gray },
     DiagnosticInfo = { fg = colors.white },
+    DiagnosticWarn = { fg = colors.yellow },
     DiagnosticUnderlineError = { sp = colors.red, undercurl = true },
     DiagnosticUnderlineHint = { sp = colors.light_gray, undercurl = true },
-    DiagnosticUnderlineInfo = { sp = colors.green, undercurl = true },
+    DiagnosticUnderlineInfo = { sp = colors.white, undercurl = true },
     DiagnosticUnderlineWarn = { sp = colors.yellow, undercurl = true },
-    DiagnosticWarn = { fg = colors.yellow },
 
     -- Do not exceed this line. All further additions should be placed above.
     Boolean = { fg = colors.cyan },
