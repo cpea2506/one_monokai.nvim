@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.8.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.7.0...v2.8.0) (2026-04-15)
+
+
+### Features
+
+* cache highlights ([#123](https://github.com/cpea2506/one_monokai.nvim/issues/123)) ([f2c8560](https://github.com/cpea2506/one_monokai.nvim/commit/f2c8560ad48abe7e07f4900d13fff22bc71b8c9c))
+* **highlights:** add *Ok* groups ([#124](https://github.com/cpea2506/one_monokai.nvim/issues/124)) ([0648e18](https://github.com/cpea2506/one_monokai.nvim/commit/0648e183b828fc75a2a8f55814513c17c2fe5f4f))
+* **highlights:** add support for `fyler.nvim` ([#120](https://github.com/cpea2506/one_monokai.nvim/issues/120)) ([047a023](https://github.com/cpea2506/one_monokai.nvim/commit/047a0239831458866945d5c2d111ff1d282d1966))
+* **highlights:** update `Diagnostic*` groups ([#125](https://github.com/cpea2506/one_monokai.nvim/issues/125)) ([abcab21](https://github.com/cpea2506/one_monokai.nvim/commit/abcab2146407ff9c4a0320d63db4f5ad67a14553))
+
+
+### Bug Fixes
+
+* update cache when updating highlight groups and colors ([#126](https://github.com/cpea2506/one_monokai.nvim/issues/126)) ([143e025](https://github.com/cpea2506/one_monokai.nvim/commit/143e025288e32aa9b73d4577989b3ed5e4caa62c))
+
 ## [2.7.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.6.0...v2.7.0) (2025-09-08)
 
 
