@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.1](https://github.com/cpea2506/one_monokai.nvim/compare/v2.8.0...v2.8.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* correct path to project `.git` folder on cache ([#127](https://github.com/cpea2506/one_monokai.nvim/issues/127)) ([cd9fd87](https://github.com/cpea2506/one_monokai.nvim/commit/cd9fd87dc30271aad698d7ff4204bd594afe473a))
+
 ## [2.8.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.7.0...v2.8.0) (2026-04-15)
 
 
