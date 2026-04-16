@@ -80,12 +80,8 @@ local function should_update_cache()
         saved_hash_file:close()
     end
 
-    local hash = hashing(config.options)
-    local root = vim.fs.root(0, "lua")
-
-    if root then
-        hash = hash .. vim.fn.getftime(vim.fs.joinpath(root, ".git"))
-    end
+    local root = debug.getinfo(1).source:sub(2, 56)
+    local hash = hashing(config.options) .. vim.fn.getftime(vim.fs.joinpath(root, ".git"))
 
     if hash ~= saved_hash then
         saved_hash_file = io.open(saved_hash_path, "wb")
