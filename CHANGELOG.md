@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.8.1...v2.9.0) (2026-06-21)
+
+
+### Features
+
+* **highlights:** update `fyler` groups ([#129](https://github.com/cpea2506/one_monokai.nvim/issues/129)) ([26e95c1](https://github.com/cpea2506/one_monokai.nvim/commit/26e95c14dd3dcd4bf5752d19a54a28817f7d8ea7))
+
 ## [2.8.1](https://github.com/cpea2506/one_monokai.nvim/compare/v2.8.0...v2.8.1) (2026-04-16)
 
 
