@@ -44,8 +44,10 @@ local groups = {
     Folded = { fg = colors.gray, bg = colors.dark_blue },
 
     Pmenu = { link = "NormalFloat" },
+    PmenuBorder = { link = "FloatBorder" },
     PmenuSel = { link = "Visual" },
     PmenuThumb = { fg = colors.dark_green, bg = colors.dark_gray },
+    PmenuMatch = { fg = colors.aqua },
 
     OkMsg = { fg = colors.green:lighten(0.7) },
     ErrorMsg = { fg = colors.red },
