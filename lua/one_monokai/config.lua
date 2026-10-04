@@ -1,9 +1,6 @@
 ---@class one_monokai.config
 local config = {}
 
----@class one_monokai.options.cache
----@field path string #Path to cache directory.
-
 ---@class one_monokai.options
 local defaults = {
     transparent = false,
