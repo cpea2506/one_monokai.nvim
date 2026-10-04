@@ -3,14 +3,11 @@ local config = require "one_monokai.config"
 
 ---@type one_monokai.highlights.groups
 local groups = {
-    LspInfoBorder = { link = "FloatBorder" },
-    LspInfoFiletype = { fg = colors.white },
-    LspInfoList = { fg = colors.aqua },
-    LspInfoTitle = { fg = colors.cyan },
     LspInlayHint = { link = "Comment" },
     LspReferenceRead = { bg = colors.vulcan, bold = true },
     LspReferenceText = { bg = colors.vulcan, bold = true },
     LspReferenceWrite = { bg = colors.vulcan, bold = true },
+
     ["@lsp.mod.deprecated"] = { fg = colors.light_gray, strikethrough = true },
     ["@lsp.mod.documentation"] = { link = "Constant" },
     ["@lsp.type.class"] = { link = "Type" },
