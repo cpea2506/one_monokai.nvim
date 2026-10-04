@@ -1,3 +1,5 @@
+---@diagnostic disable:undefined-global,undefined-field
+
 local one_monokai = require "one_monokai"
 
 describe("Override config with color utility", function()

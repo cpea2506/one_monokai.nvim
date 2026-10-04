@@ -6,7 +6,7 @@ local groups = {
     ["@variable"] = { fg = colors.fg },
     ["@variable.builtin"] = { fg = colors.pink },
     ["@variable.member"] = { link = "Identifier" },
-    ["@variable.parameter"] = { fg = colors.orange, italic = config.italics },
+    ["@variable.parameter"] = { fg = colors.orange, italic = config.options.italics },
     ["@variable.parameter.builtin"] = { link = "@variable.parameter" },
 
     ["@constant"] = { link = "Constant" },
@@ -105,7 +105,7 @@ local groups = {
 
     ["@none"] = {},
 
-    TreesitterContext = { bg = config.transparent and colors.bg:lighten(0.85) or colors.bg:darken(0.8) },
+    TreesitterContext = { bg = config.options.transparent and colors.bg:lighten(0.85) or colors.bg:darken(0.8) },
 }
 
 return groups

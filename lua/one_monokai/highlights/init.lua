@@ -44,6 +44,15 @@ local function write_cache_file(path)
 
     local lines = {
         [[return string.dump(function()
+if vim.g.colors_name then
+    vim.cmd.hi "clear"
+end
+if vim.fn.exists "syntax_on" == 1 then
+    vim.cmd.syntax "reset"
+end
+vim.o.background = "dark"
+vim.o.termguicolors = true
+vim.g.colors_name = "one_monokai"
 local logs = require "one_monokai.logs"
 local set_hl = vim.api.nvim_set_hl
 local function set_highlight(name, attrs)
@@ -72,7 +81,7 @@ local function should_update_cache()
     local config = require "one_monokai.config"
 
     local saved_hash = nil
-    local saved_hash_path = vim.fs.joinpath(config.cache.path, "hash")
+    local saved_hash_path = vim.fs.joinpath(config.options.cache.path, "hash")
     local saved_hash_file = io.open(saved_hash_path)
 
     if saved_hash_file then
@@ -80,18 +89,22 @@ local function should_update_cache()
         saved_hash_file:close()
     end
 
-    local root = debug.getinfo(1).source:sub(2, 56)
-    local hash = hashing(config.options) .. vim.fn.getftime(vim.fs.joinpath(root, ".git"))
+    local info = debug.getinfo(1)
 
-    if hash ~= saved_hash then
-        saved_hash_file = io.open(saved_hash_path, "wb")
+    if info then
+        local root = info.source:sub(2, 56)
+        local hash = hashing(config.options) .. vim.fn.getftime(vim.fs.joinpath(root, ".git"))
 
-        if saved_hash_file then
-            saved_hash_file:write(hash)
-            saved_hash_file:close()
+        if hash ~= saved_hash then
+            saved_hash_file = io.open(saved_hash_path, "wb")
+
+            if saved_hash_file then
+                saved_hash_file:write(hash)
+                saved_hash_file:close()
+            end
+
+            return true
         end
-
-        return true
     end
 
     return false
@@ -101,11 +114,11 @@ end
 function highlights.load()
     local config = require "one_monokai.config"
 
-    if vim.fn.getftime(config.cache.path) == -1 then
-        vim.fn.mkdir(config.cache.path, "p")
+    if vim.fn.getftime(config.options.cache.path) == -1 then
+        vim.fn.mkdir(config.options.cache.path, "p")
     end
 
-    local highlights_path = vim.fs.joinpath(config.cache.path, "highlights")
+    local highlights_path = vim.fs.joinpath(config.options.cache.path, "highlights")
 
     if should_update_cache() then
         write_cache_file(highlights_path)

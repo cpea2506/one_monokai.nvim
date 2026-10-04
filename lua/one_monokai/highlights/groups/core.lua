@@ -3,7 +3,7 @@ local config = require "one_monokai.config"
 
 ---@type one_monokai.highlights.groups
 local groups = {
-    Normal = { fg = colors.fg, bg = config.transparent and colors.none or colors.bg },
+    Normal = { fg = colors.fg, bg = config.options.transparent and colors.none or colors.bg },
     Visual = { bg = colors.dark_gray },
 
     NormalFloat = { link = "Normal" },
@@ -30,7 +30,7 @@ local groups = {
     Question = { fg = colors.yellow },
     Search = { fg = colors.bg, bg = colors.yellow },
     SignColumn = {},
-    TabLine = { fg = colors.fg, bg = config.transparent and colors.none or colors.dark_blue },
+    TabLine = { fg = colors.fg, bg = config.options.transparent and colors.none or colors.dark_blue },
     VertSplit = { fg = colors.fg },
     Directory = { fg = colors.aqua },
     SpecialKey = { fg = colors.pink },
@@ -97,8 +97,8 @@ local groups = {
     SpecialComment = { fg = colors.cyan },
     Tag = { fg = colors.pink },
 
-    Comment = { fg = colors.gray, italic = config.italics },
-    Todo = { fg = colors.orange, bold = true, italic = config.italics },
+    Comment = { fg = colors.gray, italic = config.options.italics },
+    Todo = { fg = colors.orange, bold = true, italic = config.options.italics },
 }
 
 return groups

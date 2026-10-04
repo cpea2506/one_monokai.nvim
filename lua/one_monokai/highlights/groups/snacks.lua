@@ -58,8 +58,8 @@ local groups = {
     SnacksPickerInputBorder = { link = "SnacksPickerBorder" },
     SnacksPickerBorder = { link = "FloatBorder" },
     SnacksPickerSelected = {
-        fg = config.transparent and colors.pink or colors.fg,
-        bg = config.transparent and colors.none or colors.vulcan,
+        fg = config.options.transparent and colors.pink or colors.fg,
+        bg = config.options.transparent and colors.none or colors.vulcan,
         bold = true,
     },
     SnacksPickerMatch = { fg = colors.green },

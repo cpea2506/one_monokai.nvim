@@ -1,8 +1,6 @@
 ---@class one_monokai.colors
----@field [string] string|number
 local colors = {}
 
----@type one_monokai.colors
 local defaults = {
     fg = "#abb2bf",
     bg = "#282c34",
@@ -33,15 +31,19 @@ colors = vim.deepcopy(defaults)
 
 ---Converts a hex color to an RGB table.
 ---@param color string #Hex color.
----@return integer[] #RGB table {r, g, b}.
+---@return (integer)[]? #RGB table {r, g, b}.
 local function hex2rgb(color)
     color = color:lower()
 
-    return {
-        tonumber(color:sub(2, 3), 16),
-        tonumber(color:sub(4, 5), 16),
-        tonumber(color:sub(6, 7), 16),
-    }
+    local r = tonumber(color:sub(2, 3), 16)
+    local g = tonumber(color:sub(4, 5), 16)
+    local b = tonumber(color:sub(6, 7), 16)
+
+    if not r or not g or not b then
+        return nil
+    end
+
+    return { r, g, b }
 end
 
 ---Blends two hex colors together based on the alpha value.
@@ -50,10 +52,14 @@ end
 ---@param fg string #Foreground hex color.
 ---@param bg string #Background hex color.
 ---@param alpha number #Blend factor between 0 (only bg) and 1 (only fg).
----@return string #Hex color of the resulting blended color.
+---@return string? #Hex color of the resulting blended color.
 local function blend(fg, bg, alpha)
     local bg_rgb = hex2rgb(bg)
     local fg_rgb = hex2rgb(fg)
+
+    if not bg_rgb or not fg_rgb then
+        return nil
+    end
 
     local r = alpha * fg_rgb[1] + (1 - alpha) * bg_rgb[1] + 0.5
     local g = alpha * fg_rgb[2] + (1 - alpha) * bg_rgb[2] + 0.5
@@ -66,14 +72,28 @@ end
 ---@param s string
 ---@param alpha number #Value between 0 and 1.
 function string.darken(s, alpha)
-    return blend(s, "#000000", alpha)
+    local value = blend(s, "#000000", alpha)
+
+    if not value then
+        local logs = require "one_monokai.logs"
+        logs.error("colors: invalid color to darken, expected hex color (#rrggbb), got %q.", s)
+    end
+
+    return value
 end
 
 ---Lightens the current hex color.
 ---@param s string
 ---@param alpha number #Value between 0 and 1.
 function string.lighten(s, alpha)
-    return blend(s, "#ffffff", alpha)
+    local value = blend(s, "#ffffff", alpha)
+
+    if not value then
+        local logs = require "one_monokai.logs"
+        logs.error("colors: invalid color to lighten, expected hex color (#rrggbb), got %q.", s)
+    end
+
+    return value
 end
 
 ---Resolve and retrieve the value of a color.
@@ -115,7 +135,7 @@ end
 
 local config = require "one_monokai.config"
 
-for name, value in pairs(config.colors or {}) do
+for name, value in pairs(config.options.colors or {}) do
     colors[name] = resolve(name, value)
 end
 

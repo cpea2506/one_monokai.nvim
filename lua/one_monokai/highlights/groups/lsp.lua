@@ -24,7 +24,7 @@ local groups = {
     ["@lsp.type.method"] = { link = "Function" },
     ["@lsp.type.number"] = { link = "Number" },
     ["@lsp.type.operator"] = { link = "Operator" },
-    ["@lsp.type.parameter"] = { fg = colors.orange, italic = config.italics },
+    ["@lsp.type.parameter"] = { fg = colors.orange, italic = config.options.italics },
     ["@lsp.type.property"] = { link = "Identifier" },
     ["@lsp.type.string"] = { link = "String" },
     ["@lsp.type.struct"] = { link = "Type" },
