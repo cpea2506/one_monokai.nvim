@@ -2,7 +2,6 @@
 ---@field [string] vim.api.keyset.highlight
 local groups = {}
 
----@type string[]
 local plugins = {
     "blink_cmp",
     "bufferline",
@@ -46,15 +45,10 @@ for _, plugin in ipairs(plugins) do
 end
 
 local config = require "one_monokai.config"
+local colors = require "one_monokai.colors"
 
-if config.highlights then
-    local colors = require "one_monokai.colors"
-    ---@type table<string, vim.api.keyset.highlight>
-    local user_groups = config.highlights(colors)
-
-    for name, attrs in pairs(user_groups) do
-        groups[name] = attrs
-    end
+for name, attrs in pairs(config.options.highlights(colors)) do
+    groups[name] = attrs
 end
 
 return groups

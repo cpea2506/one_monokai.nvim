@@ -4,17 +4,22 @@ local config = require "one_monokai.config"
 ---@type one_monokai.highlights.groups
 local groups = {
     BufferLineDiagnostic = { fg = colors.dark_gray },
-    BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = config.italics },
+    BufferLineDiagnosticSelected = { fg = colors.light_gray, bold = true, italic = config.options.italics },
     BufferLineDiagnosticVisible = { fg = colors.dark_gray },
     BufferLineErrorDiagnostic = { fg = colors.dark_gray, sp = colors.red },
-    BufferLineErrorDiagnosticSelected = { fg = colors.red, sp = colors.red, bold = true, italic = config.italics },
+    BufferLineErrorDiagnosticSelected = {
+        fg = colors.red,
+        sp = colors.red,
+        bold = true,
+        italic = config.options.italics,
+    },
     BufferLineErrorDiagnosticVisible = { fg = colors.red },
     BufferLineHintDiagnostic = { fg = colors.dark_gray, sp = colors.light_gray },
     BufferLineHintDiagnosticSelected = {
         fg = colors.light_gray,
         sp = colors.light_gray,
         bold = true,
-        italic = config.italics,
+        italic = config.options.italics,
     },
     BufferLineHintDiagnosticVisible = { fg = colors.light_gray },
     BufferLineIndicatorSelected = { fg = colors.aqua },
@@ -23,7 +28,7 @@ local groups = {
         fg = colors.green,
         sp = colors.green,
         bold = true,
-        italic = config.italics,
+        italic = config.options.italics,
     },
     BufferLineInfoDiagnosticVisible = { fg = colors.green },
     BufferLineModified = { fg = colors.pink },
@@ -37,7 +42,7 @@ local groups = {
         fg = colors.yellow,
         sp = colors.yellow,
         bold = true,
-        italic = config.italics,
+        italic = config.options.italics,
     },
     BufferLineWarningDiagnosticVisible = { fg = colors.yellow },
 }

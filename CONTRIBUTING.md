@@ -24,7 +24,6 @@ Thank you for creating them.
 ### Setting up development tools
 
 1. Formatter: [Stylua](https://github.com/johnnymorganz/stylua#installation)
-2. Linter: [Selene](https://kampfkarren.github.io/selene/cli/installation.html)
 3. [Make](https://github.com/wkusnierczyk/make)
 
 ### Code conventions
@@ -35,35 +34,12 @@ Thank you for creating them.
   # configurations are already stored in .stylua.toml
   stylua -c .
   ```
-  
-- Make sure **Selene** do not scream at you even with *Warning ⚠️* 
 
-  ```bash
-  # configuration are already stored in selene.toml and neovim.yml
-  selene .
-  ```
-  
 ### Start developing
+
 - Use a [git-feature-branch](https://www.atlassian.com/git/tutorials/comparing-workflows) instead of the main branch.
 - Use a [rebase-workflow](http://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 - Name your branches meaningfully. Ex: `(feat/docs/...)/<what-your-pr-does>`
-- Make sure all the [tests](tests/spec) pass locally before pushing with [`make test`](Makefile) command. Ex output:
-
-  ```bash
-  $ make test
-  nvim --headless --noplugin -u tests/minimal_init.lua +Test
-  Starting...Scheduling: tests/spec/config_spec.lua
-  
-  ========================================
-  Testing:        one_monokai.nvim/tests/spec/highlight_spec.lua
-  Success ||      Highlight should create new instance
-  Success ||      Highlight should be able to extend default groups
-
-  Success:        2
-  Failed :        0
-  Errors :        0
-  ========================================
-  ```
 
 ### Open PRs
 

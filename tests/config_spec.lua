@@ -1,13 +1,7 @@
+---@diagnostic disable:undefined-global,undefined-field
+
 local config = require "one_monokai.config"
 local one_monokai = require "one_monokai"
-
-describe("Config options", function()
-    it("could be indexed without options field", function()
-        assert.is_false(config.transparent)
-        assert.is_nil(config.colors)
-        assert.is_true(config.italics)
-    end)
-end)
 
 describe("Override config", function()
     local expected = {
@@ -29,16 +23,14 @@ describe("Override config", function()
     local colors = require "one_monokai.colors"
 
     it("should change the default config", function()
-        assert.is_false(config.transparent)
-        assert.are.same(expected.colors, config.colors)
-        assert.are.same(expected.highlights(colors), config.highlights(colors))
+        assert.is_false(config.options.transparent)
+        assert.are.same(expected.colors, config.options.colors)
+        assert.are.same(expected.highlights(colors), config.options.highlights(colors))
     end)
 
     it("should change default colors", function()
         assert.equal(expected.colors.pink, colors.pink)
-        ---@diagnostic disable-next-line: undefined-field
         assert.equal(expected.colors.lmao, colors.lmao)
-        ---@diagnostic disable-next-line: undefined-field
         assert.equal(expected.colors.alien, colors.alien)
     end)
 

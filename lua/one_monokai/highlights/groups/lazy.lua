@@ -9,7 +9,7 @@ local groups = {
     LazyCommit = { fg = colors.green },
     LazyDimmed = { link = "Comment" },
     LazyCommitIssue = { link = "Number" },
-    LazyCommitScope = { italic = config.italics },
+    LazyCommitScope = { italic = config.options.italics },
     LazyCommitType = { fg = colors.yellow, bold = true },
     LazyDir = { fg = colors.yellow },
     LazyH1 = { fg = colors.black, bg = colors.white },

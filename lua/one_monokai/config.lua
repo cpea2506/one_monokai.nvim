@@ -1,19 +1,20 @@
----@class one_monokai.config.cache
----@field path string #Path to cache directory.
-
 ---@class one_monokai.config
----@field transparent boolean #Whether to enable transparent background.
----@field colors? one_monokai.colors #Custom colors.
----@field highlights? fun(colors:one_monokai.colors):one_monokai.highlights.groups #Custom highlight groups.
----@field italics boolean #Whether to apply italics to certain highlight groups.
----@field cache one_monokai.config.cache #Cache options.
 local config = {}
 
----@type one_monokai.config
+---@class one_monokai.options.cache
+---@field path string #Path to cache directory.
+
+---@class one_monokai.options
 local defaults = {
     transparent = false,
-    colors = nil,
-    highlights = nil,
+    ---@type one_monokai.colors
+    colors = {},
+    ---@param colors one_monokai.colors
+    ---@return one_monokai.highlights.groups
+    ---@diagnostic disable-next-line: unused
+    highlights = function(colors)
+        return {}
+    end,
     italics = true,
     cache = {
         path = vim.fs.joinpath(vim.fn.stdpath "cache", "one_monokai"),
@@ -23,7 +24,7 @@ local defaults = {
 config.options = vim.deepcopy(defaults)
 
 ---Extend default with user's config.
----@param opts one_monokai.config
+---@param opts one_monokai.options
 function config.extend(opts)
     if not opts or vim.tbl_isempty(opts) then
         return
@@ -31,11 +32,5 @@ function config.extend(opts)
 
     config.options = vim.tbl_deep_extend("force", config.options, opts)
 end
-
-setmetatable(config, {
-    __index = function(_, k)
-        return config.options[k]
-    end,
-})
 
 return config
