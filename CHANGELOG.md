@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.9.0](https://github.com/cpea2506/one_monokai.nvim/compare/v2.8.1...v2.9.0) (2026-10-04)
+
+
+### Features
+
+* **highlights:** update `fyler` groups ([#129](https://github.com/cpea2506/one_monokai.nvim/issues/129)) ([26e95c1](https://github.com/cpea2506/one_monokai.nvim/commit/26e95c14dd3dcd4bf5752d19a54a28817f7d8ea7))
+* **highlights:** update popup menu highlights ([#131](https://github.com/cpea2506/one_monokai.nvim/issues/131)) ([907cb55](https://github.com/cpea2506/one_monokai.nvim/commit/907cb55796037a9839d121b239237bbb9fe764e0))
+* **lsp:** more semantic token highlights ([#132](https://github.com/cpea2506/one_monokai.nvim/issues/132)) ([5433ea5](https://github.com/cpea2506/one_monokai.nvim/commit/5433ea59a483eb60f672c37fa7e82c9727233490))
+
+
+### Bug Fixes
+
+* remove types warning and enhance code completion ([#134](https://github.com/cpea2506/one_monokai.nvim/issues/134)) ([4a802ff](https://github.com/cpea2506/one_monokai.nvim/commit/4a802ff850aea4763982e279c059222ad0c483ac))
+
 ## [2.8.1](https://github.com/cpea2506/one_monokai.nvim/compare/v2.8.0...v2.8.1) (2026-04-16)
 
 
