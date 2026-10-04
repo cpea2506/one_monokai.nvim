@@ -36,7 +36,7 @@ local plugins = {
 }
 
 for _, plugin in ipairs(plugins) do
-    ---@type table<string, vim.api.keyset.highlight>
+    ---@type one_monokai.highlights.groups
     local default_groups = require(("one_monokai.highlights.groups.%s"):format(plugin))
 
     for name, attrs in pairs(default_groups) do
